@@ -1,0 +1,9 @@
+<!-- es unda gadavitano sxva komponentshi -->
+
+<h2>Journey</h2>
+<app-destinations (placeChanged)="fromValue = $event"></app-destinations>
+
+<div *ngIf="fromValue">
+  <h2>{{ fromValue.name }}</h2>
+  <img [src]="fromValue.imageUrl" />
+</div>
