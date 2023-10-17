@@ -58,6 +58,7 @@ export class DestinationsComponent implements OnInit {
         imageUrl: this.getPhotoIrl(place),
         iconUrl: place?.icon,
       };
+      console.log(place);
 
       this.ngZone.run(() => {
         this.placeChanged.emit(result);

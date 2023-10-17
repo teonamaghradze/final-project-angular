@@ -8,4 +8,5 @@ import { PlaceSearchResult } from './features/destinations/destinations.componen
 })
 export class AppComponent {
   fromValue: PlaceSearchResult | undefined;
+  toValue: PlaceSearchResult | undefined;
 }

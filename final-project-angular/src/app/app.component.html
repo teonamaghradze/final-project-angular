@@ -1,9 +1,18 @@
 <!-- es unda gadavitano sxva komponentshi -->
 
 <h2>Journey</h2>
-<app-destinations (placeChanged)="fromValue = $event"></app-destinations>
+<div>
+  <div class="input-area">
+    <h2>I want to go from</h2>
+    <app-destinations (placeChanged)="fromValue = $event"></app-destinations>
+  </div>
 
-<div *ngIf="fromValue">
-  <h2>{{ fromValue.name }}</h2>
-  <img [src]="fromValue.imageUrl" />
+  <h2>to</h2>
+  <app-destinations (placeChanged)="toValue = $event"></app-destinations>
+</div>
+
+<div class="display-area">
+  <app-destination-details [data]="fromValue"></app-destination-details>
+  <app-destination-details [data]="toValue"></app-destination-details>
+  <!-- <app-map></app-map> -->
 </div>
