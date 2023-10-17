@@ -1,5 +1,3 @@
-/// <reference types="googlemaps" />
-
 import {
   Component,
   Input,

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DestinationsComponent } from './features/destinations/destinations.component';
 import { DestinationDetailsComponent } from './features/destination-details/destination-details.component';
-// import { MapComponent } from './features/map/map.component';
+import { MapDisplayComponent } from './features/map-display/map-display.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +16,7 @@ import { DestinationDetailsComponent } from './features/destination-details/dest
     BrowserAnimationsModule,
     DestinationsComponent,
     DestinationDetailsComponent,
-    // MapComponent,
+    MapDisplayComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
