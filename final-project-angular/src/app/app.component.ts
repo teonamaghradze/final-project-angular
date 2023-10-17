@@ -6,7 +6,4 @@ import { PlaceSearchResult } from './features/road-trip/destinations/destination
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  // fromValue: PlaceSearchResult | undefined;
-  // toValue: PlaceSearchResult | undefined;
-}
+export class AppComponent {}
