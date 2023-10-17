@@ -1,7 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaceSearchResult } from '../destinations/destinations.component';
-import { GoogleMapsModule, MapDirectionsService } from '@angular/google-maps';
+import {
+  GoogleMapsModule,
+  MapDirectionsService,
+  GoogleMap,
+} from '@angular/google-maps';
 import { map } from 'rxjs';
 
 @Component({
@@ -15,9 +19,12 @@ import { map } from 'rxjs';
 export class MapDisplayComponent {
   @Input() from: PlaceSearchResult | undefined;
   @Input() to: PlaceSearchResult | undefined;
+  @ViewChild('map', { static: true }) map!: GoogleMap;
 
   zoom = 5;
   directionsResult: google.maps.DirectionsResult | undefined;
+  markerPosition: google.maps.LatLng | undefined;
+
   constructor(private directionsService: MapDirectionsService) {}
   ngOnChanges() {
     const fromLocation = this.from?.location;
@@ -25,7 +32,18 @@ export class MapDisplayComponent {
 
     if (fromLocation && toLocation) {
       this.getDirections(fromLocation, toLocation);
+    } else if (fromLocation) {
+      this.gotToLocation(fromLocation);
+    } else if (toLocation) {
+      this.gotToLocation(toLocation);
     }
+  }
+
+  gotToLocation(location: google.maps.LatLng) {
+    this.markerPosition = location;
+    this.map.panTo(location);
+    this.zoom = 17;
+    this.directionsResult = undefined;
   }
 
   getDirections(from: google.maps.LatLng, to: google.maps.LatLng) {
@@ -40,6 +58,7 @@ export class MapDisplayComponent {
       .pipe(map((res: any) => res.result))
       .subscribe((result: any) => {
         this.directionsResult = result;
+        this.markerPosition = undefined;
       });
   }
 }

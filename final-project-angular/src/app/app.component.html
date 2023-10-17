@@ -11,7 +11,7 @@
   <app-destinations (placeChanged)="toValue = $event"></app-destinations>
 </div>
 
-<div class="display-area">
+<div [hidden]="!fromValue?.address && !toValue?.address" class="display-area">
   <app-destination-details [data]="fromValue"></app-destination-details>
   <app-destination-details [data]="toValue"></app-destination-details>
   <app-map-display [from]="fromValue" [to]="toValue"></app-map-display>
