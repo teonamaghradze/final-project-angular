@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlaceSearchResult } from './features/destinations/destinations.component';
+import { PlaceSearchResult } from './features/road-trip/destinations/destinations.component';
 
 @Component({
   selector: 'app-root',
