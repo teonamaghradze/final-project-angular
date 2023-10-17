@@ -7,6 +7,6 @@ import { PlaceSearchResult } from './features/destinations/destinations.componen
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  fromValue: PlaceSearchResult | undefined;
-  toValue: PlaceSearchResult | undefined;
+  // fromValue: PlaceSearchResult | undefined;
+  // toValue: PlaceSearchResult | undefined;
 }
