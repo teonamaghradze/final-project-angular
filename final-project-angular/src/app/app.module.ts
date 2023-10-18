@@ -11,6 +11,10 @@ import { TripDetailsComponent } from './features/trip-plan/trip-details/trip-det
 import { RoadTripComponent } from './features/road-trip/road-trip.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MainPageComponent } from './main-page/main-page.component';
+import { WaveComponent } from './wave/wave.component';
+// import { LoginComponent } from './features/login/login.component';
+// import { RegisterComponent } from './features/register/register.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +23,10 @@ import { HttpClientModule } from '@angular/common/http';
     TripListComponent,
     TripDetailsComponent,
     TopBarComponent,
+    MainPageComponent,
+    WaveComponent,
+    // LoginComponent,
+    // RegisterComponent,
   ],
   imports: [
     BrowserModule,

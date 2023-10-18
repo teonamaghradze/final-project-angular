@@ -4,13 +4,30 @@ html,
 body {
   height: 100%;
 }
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("./assets/cover.jpg");
+  background-position: top 40% right;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: -51px;
+  right: 619px;
+  bottom: 0;
+  left: -94%;
+  background-color: white;
+  z-index: -1;
+  transform: skewX(-20deg);
+  transform-origin: right top;
 }
