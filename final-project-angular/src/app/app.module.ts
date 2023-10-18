@@ -9,6 +9,8 @@ import { TripSearchComponent } from './features/trip-plan/trip-search/trip-searc
 import { TripListComponent } from './features/trip-plan/trip-list/trip-list.component';
 import { TripDetailsComponent } from './features/trip-plan/trip-details/trip-details.component';
 import { RoadTripComponent } from './features/road-trip/road-trip.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { RoadTripComponent } from './features/road-trip/road-trip.component';
     TripSearchComponent,
     TripListComponent,
     TripDetailsComponent,
+    TopBarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     RoadTripComponent,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
