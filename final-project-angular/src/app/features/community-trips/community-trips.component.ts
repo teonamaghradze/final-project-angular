@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-community-trips',
@@ -11,7 +12,7 @@ export class CommunityTripsComponent {
   inputName: string = '';
   filteredData: any[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
@@ -33,5 +34,9 @@ export class CommunityTripsComponent {
         .toLowerCase()
         .includes(this.inputName.toLowerCase());
     });
+  }
+
+  showDetails(cardId: number) {
+    this.router.navigate(['/card-details', cardId]);
   }
 }

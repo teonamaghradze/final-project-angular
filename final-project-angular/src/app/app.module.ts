@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
 import { WaveComponent } from './wave/wave.component';
 import { CommunityTripsComponent } from './features/community-trips/community-trips.component';
+import { CommunityTripDetailsComponent } from './features/community-trip-details/community-trip-details.component';
 // import { LoginComponent } from './features/login/login.component';
 // import { RegisterComponent } from './features/register/register.component';
 
@@ -27,6 +28,7 @@ import { CommunityTripsComponent } from './features/community-trips/community-tr
     MainPageComponent,
     WaveComponent,
     CommunityTripsComponent,
+    CommunityTripDetailsComponent,
     // LoginComponent,
     // RegisterComponent,
   ],

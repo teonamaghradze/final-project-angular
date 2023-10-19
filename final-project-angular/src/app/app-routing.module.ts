@@ -5,6 +5,7 @@ import { LoginComponent } from './features/login/login.component';
 import { RegisterComponent } from './features/register/register.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { CommunityTripsComponent } from './features/community-trips/community-trips.component';
+import { CommunityTripDetailsComponent } from './features/community-trip-details/community-trip-details.component';
 
 const routes: Routes = [
   { path: '', component: TopBarComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'community', component: CommunityTripsComponent },
+  { path: 'card-details/:id', component: CommunityTripDetailsComponent },
 ];
 
 @NgModule({

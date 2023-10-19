@@ -13,7 +13,11 @@
   </header>
 
   <div class="city-cards-container">
-    <div class="city-card" *ngFor="let city of filteredData">
+    <div
+      class="city-card"
+      *ngFor="let city of filteredData"
+      (click)="showDetails(city.id)"
+    >
       <img src="{{ city.cover }}" alt="" />
       <h2>{{ city.title }}</h2>
       <p>{{ city.description }}</p>
