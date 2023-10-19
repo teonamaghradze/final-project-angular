@@ -18,11 +18,11 @@
       *ngFor="let city of filteredData"
       (click)="showDetails(city.id)"
     >
-      <img src="{{ city.cover }}" alt="" />
+      <img class="cover-image" src="{{ city.cover }}" alt="" />
       <h2>{{ city.title }}</h2>
       <p>{{ city.description }}</p>
       <div class="author">
-        <p>{{ city.avatar }}</p>
+        <img class="avatar" src="{{ city.avatar }}" alt="" />
         <p>{{ city.author }}</p>
       </div>
     </div>

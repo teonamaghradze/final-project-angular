@@ -1,5 +1,10 @@
-<!-- <h1>{{ cardDetails?.author }}</h1> -->
+<div class="image-container">
+  <img class="cover" src="{{ cardData.cover }}" alt="" />
+</div>
 
-<!-- <h1>{{ (cardDetails$ | async)?.author }}</h1> -->
+<section>
+  <button>Back</button>
+  <h1>{{ cardData?.title }}</h1>
 
-<h1>{{ cardData?.author }}</h1>
+  <img src="{{ cardData.avatar }}" alt="" />
+</section>

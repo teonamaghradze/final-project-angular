@@ -1,10 +1,14 @@
 header {
   display: flex;
   gap: 3rem;
-  margin-top: 15rem;
-  margin-left: 4rem;
-  max-width: 35rem;
+  padding-top: 15rem;
+  padding-left: 4rem;
+  // max-width: 35rem;
 
+  .main-txt {
+    position: relative;
+    z-index: 4;
+  }
   h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -23,6 +27,7 @@ header {
     font-weight: 200;
     margin-bottom: 2rem;
     line-height: 1.8rem;
+    max-width: 35rem;
   }
   button {
     background-color: #9b8df1;
@@ -73,4 +78,56 @@ header {
     align-items: center;
     margin-top: 7rem;
   }
+}
+
+header {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("../../assets/cover.jpg");
+  background-position: top 40% right;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  top: -51px;
+  right: 619px;
+  bottom: 0;
+  left: -94%;
+  background-color: red;
+  z-index: -1;
+  transform: skewX(-20deg);
+  transform-origin: right top;
+}
+
+header {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background: url("../../assets/cover.jpg");
+  background-position: top 20% right;
+  background-size: 60rem;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-attachment: fixed;
+  // position: relative; /* Ensure positioning context */
+}
+
+header::after {
+  content: "";
+  position: absolute; /* Position relative to the 'header' */
+
+  right: 619px;
+  bottom: 0;
+  left: -94%;
+
+  background-color: white;
+  background-size: 60rem;
+
+  background-attachment: fixed;
+
+  z-index: 0;
+  transform: skewX(-20deg);
+  transform-origin: right top;
 }
