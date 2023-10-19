@@ -48,7 +48,7 @@ export class TripListComponent implements OnInit {
     this.tripService.getData().subscribe((data: any) => {
       this.hotelData = data;
       console.log(this.hotelData);
-      console.log(data.data);
+      // console.log(data.data);
     });
   }
 }
