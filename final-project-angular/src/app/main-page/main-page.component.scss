@@ -3,7 +3,6 @@ header {
   gap: 3rem;
   padding-top: 15rem;
   padding-left: 4rem;
-  // max-width: 35rem;
 
   .main-txt {
     position: relative;
@@ -111,12 +110,11 @@ header {
   background-repeat: no-repeat;
   z-index: -1;
   background-attachment: fixed;
-  // position: relative; /* Ensure positioning context */
 }
 
 header::after {
   content: "";
-  position: absolute; /* Position relative to the 'header' */
+  position: absolute;
 
   right: 619px;
   bottom: 0;
