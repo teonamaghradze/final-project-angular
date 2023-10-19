@@ -1,14 +1,30 @@
-main {
-  background-color: white;
-  //   height: 100%;
-}
-
 header {
+  h1 {
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+  }
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 15rem;
+
+  input {
+    padding: 1rem;
+    width: 40rem;
+    border: 2px solid rgb(239, 237, 237);
+    outline: none;
+    border-radius: 10px;
+  }
+
+  input:focus {
+    border: 2px solid #9b8df1;
+  }
 }
 
 .city-cards-container {

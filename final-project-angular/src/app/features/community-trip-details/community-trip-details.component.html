@@ -1,10 +1,33 @@
 <div class="image-container">
-  <img class="cover" src="{{ cardData.cover }}" alt="" />
+  <img class="cover" src="{{ cardData?.cover }}" alt="" />
 </div>
 
 <section>
   <button>Back</button>
   <h1>{{ cardData?.title }}</h1>
 
-  <img src="{{ cardData.avatar }}" alt="" />
+  <img src="{{ cardData?.avatar }}" alt="" />
+
+  <div class="day-plans">
+    <button (click)="toggleDay('day1')">day1</button>
+    <p *ngIf="showDay.day1">{{ cardData?.day1 }}</p>
+
+    <button (click)="toggleDay('day2')">day2</button>
+    <p *ngIf="showDay.day2">{{ cardData?.day2 }}</p>
+
+    <button (click)="toggleDay('day3')">day3</button>
+    <p *ngIf="showDay.day3">{{ cardData?.day3 }}</p>
+
+    <button *ngIf="showDay.day4" (click)="toggleDay('day4')">day4</button>
+    <p *ngIf="showDay.day4">{{ cardData?.day4 }}</p>
+
+    <button *ngIf="showDay.day5" (click)="toggleDay('day5')">day5</button>
+    <p *ngIf="showDay.day5">{{ cardData?.day5 }}</p>
+
+    <button *ngIf="showDay.day6" (click)="toggleDay('day6')">day6</button>
+    <p *ngIf="showDay.day6">{{ cardData?.day6 }}</p>
+
+    <button *ngIf="showDay.day7" (click)="toggleDay('day7')">day7</button>
+    <p *ngIf="showDay.day7">{{ cardData?.day7 }}</p>
+  </div>
 </section>

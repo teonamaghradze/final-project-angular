@@ -7,6 +7,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { CommunityTripsComponent } from './features/community-trips/community-trips.component';
 import { CommunityTripDetailsComponent } from './features/community-trip-details/community-trip-details.component';
 import { MapsComponent } from './features/maps/maps.component';
+import { TripListComponent } from './features/trip-plan/trip-list/trip-list.component';
 
 const routes: Routes = [
   { path: '', component: TopBarComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'community', component: CommunityTripsComponent },
   { path: 'card-details/:id', component: CommunityTripDetailsComponent },
   { path: 'maps', component: MapsComponent },
+  { path: 'restaurants', component: TripListComponent },
 ];
 
 @NgModule({

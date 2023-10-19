@@ -58,6 +58,7 @@ export class MapDisplayComponent {
       .pipe(map((res: any) => res.result))
       .subscribe((result: any) => {
         this.directionsResult = result;
+        console.log(result);
         this.markerPosition = undefined;
       });
   }

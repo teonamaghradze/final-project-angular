@@ -40,15 +40,15 @@ import { TripService } from '../services/trip.service';
   styleUrls: ['./trip-list.component.scss'],
 })
 export class TripListComponent implements OnInit {
-  hotelData: any;
+  restaurantData: any;
 
   constructor(private tripService: TripService) {}
 
   ngOnInit() {
     this.tripService.getData().subscribe((data: any) => {
-      this.hotelData = data;
-      console.log(this.hotelData);
-      // console.log(data.data);
+      this.restaurantData = data;
+      // console.log(this.hotelData);
+      // return data.data.map((el: any) => console.log(el));
     });
   }
 }
