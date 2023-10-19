@@ -1,16 +1,17 @@
-<h2>Journey</h2>
-<div>
-  <div class="input-area">
-    <h2>I want to go from</h2>
-    <app-destinations (placeChanged)="fromValue = $event"></app-destinations>
+<div class="roads-container">
+  <div>
+    <div class="input-area">
+      <h2>I want to go from</h2>
+      <app-destinations (placeChanged)="fromValue = $event"></app-destinations>
+    </div>
+
+    <h2>to</h2>
+    <app-destinations (placeChanged)="toValue = $event"></app-destinations>
   </div>
 
-  <h2>to</h2>
-  <app-destinations (placeChanged)="toValue = $event"></app-destinations>
-</div>
-
-<div [hidden]="!fromValue?.address && !toValue?.address" class="display-area">
-  <app-destination-details [data]="fromValue"></app-destination-details>
-  <app-destination-details [data]="toValue"></app-destination-details>
-  <app-map-display [from]="fromValue" [to]="toValue"></app-map-display>
+  <div [hidden]="!fromValue?.address && !toValue?.address" class="display-area">
+    <app-destination-details [data]="fromValue"></app-destination-details>
+    <app-destination-details [data]="toValue"></app-destination-details>
+    <app-map-display [from]="fromValue" [to]="toValue"></app-map-display>
+  </div>
 </div>

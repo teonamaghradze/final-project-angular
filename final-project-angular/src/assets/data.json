@@ -1,0 +1,68 @@
+[
+  {
+    "cover": "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&q=80&w=1948&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "avatar": "A",
+    "title": "Discover Seoul: An 8-Day Adventure",
+    "description": "Embark on an exciting 8-day journey through the vibrant city of Seoul...",
+    "author": "Ash Simpson",
+    "duration": "8 days",
+    "rating": 0,
+    "fulltitle": "Discover Seoul: An 8-Day Adventure",
+    "date": "8 Oct 2023",
+    "fulldescription": "Embark on an exciting 8-day journey through the vibrant city of Seoul, South Korea. Explore iconic landmarks, indulge in delicious cuisine, and immerse yourself in the rich culture of this captivating destination.",
+    "id": "0"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&q=80&w=1794&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Explore Tokyo: A 7-Day Escape",
+    "description": "Experience the magic of Tokyo in a week-long adventure...",
+    "author": "Erika Tanaka",
+    "duration": "7 days",
+    "rating": 0,
+    "fulltitle": "Explore Tokyo: A 7-Day Escape",
+    "date": "15 Nov 2023",
+    "fulldescription": "Experience the magic of Tokyo in a week-long adventure. Discover the fusion of modernity and tradition, and savor exquisite Japanese cuisine.",
+    "avatar": "E",
+    "id": "1"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Roam in Rome: A 10-Day Expedition",
+    "description": "Embark on a journey through the timeless city of Rome...",
+    "author": "Giuseppe Rossi",
+    "duration": "10 days",
+    "rating": 0,
+    "fulltitle": "Roam in Rome: A 10-Day Expedition",
+    "date": "2 Jan 2024",
+    "avatar": "G",
+
+    "fulldescription": "Embark on a journey through the timeless city of Rome. Explore ancient ruins, savor delicious Italian dishes, and immerse yourself in the art and history of this eternal city.",
+    "id": "2"
+  },
+  {
+    "cover": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=2020&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Escape to Paris: A Romantic Getaway",
+    "description": "Indulge in the romance of Paris for a memorable 5-day getaway...",
+    "author": "Sophie Dupont",
+    "duration": "5 days",
+    "rating": 0,
+    "fulltitle": "Escape to Paris: A Romantic Getaway",
+    "date": "14 Feb 2024",
+    "fulldescription": "Indulge in the romance of Paris for a memorable 5-day getaway. Visit iconic landmarks, savor fine French cuisine, and enjoy the city of love.",
+    "id": "3",
+    "avatar": "S"
+  },
+  {
+    "title": "Adventures in New York: A 6-Day Experience",
+    "description": "Explore the bustling streets of New York for an unforgettable 6-day adventure...",
+    "author": "Michael Johnson",
+    "duration": "6 days",
+    "rating": 0,
+    "fulltitle": "Adventures in New York: A 6-Day Experience",
+    "date": "20 Mar 2024",
+    "avatar": "M",
+
+    "fulldescription": "Explore the bustling streets of New York for an unforgettable 6-day adventure. Discover the city that never sleeps and immerse yourself in its vibrant culture.",
+    "id": "4"
+  }
+]

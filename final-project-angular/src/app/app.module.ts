@@ -13,6 +13,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainPageComponent } from './main-page/main-page.component';
 import { WaveComponent } from './wave/wave.component';
+import { CommunityTripsComponent } from './features/community-trips/community-trips.component';
 // import { LoginComponent } from './features/login/login.component';
 // import { RegisterComponent } from './features/register/register.component';
 
@@ -25,6 +26,7 @@ import { WaveComponent } from './wave/wave.component';
     TopBarComponent,
     MainPageComponent,
     WaveComponent,
+    CommunityTripsComponent,
     // LoginComponent,
     // RegisterComponent,
   ],

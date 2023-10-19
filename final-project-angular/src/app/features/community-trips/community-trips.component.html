@@ -1,0 +1,26 @@
+<main>
+  <header>
+    <h1>Trip finder</h1>
+    <p>
+      Find trips created by other users and get inspired for your next trip!
+    </p>
+
+    <input
+      (input)="filterCity($event)"
+      type="text"
+      placeholder="Search destinations (Cities only)"
+    />
+  </header>
+
+  <div class="city-cards-container">
+    <div class="city-card" *ngFor="let city of filteredData">
+      <img src="{{ city.cover }}" alt="" />
+      <h2>{{ city.title }}</h2>
+      <p>{{ city.description }}</p>
+      <div class="author">
+        <p>{{ city.avatar }}</p>
+        <p>{{ city.author }}</p>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,35 @@
+main {
+  background-color: white;
+  //   height: 100%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15rem;
+}
+
+.city-cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 5rem;
+  margin: 12rem;
+
+  .city-card {
+    width: 250px;
+    .author {
+      display: flex;
+      gap: 0.5rem;
+    }
+    img {
+      width: 100%;
+      height: 200px;
+      border-radius: 0.4rem;
+    }
+    h2 {
+      font-size: 0.9rem;
+    }
+  }
+}
