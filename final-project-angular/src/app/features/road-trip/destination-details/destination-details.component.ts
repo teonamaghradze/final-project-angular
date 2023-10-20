@@ -9,15 +9,17 @@ import { MatCardModule } from '@angular/material/card';
   imports: [CommonModule, MatCardModule],
   // templateUrl: './destination-details.component.html',
   template: `
-    <mat-card *ngIf="data?.address">
-      <div>
-        <img class="place-img" [src]="data?.imageUrl" mat-card-image />
-      </div>
-      <mat-card-header>
-        <img mat-card-avatar [src]="data?.iconUrl" />
-        <mat-card-title> {{ data?.name }} </mat-card-title>
-      </mat-card-header>
-    </mat-card>
+    <div class="destination-images">
+      <mat-card *ngIf="data?.address">
+        <div>
+          <img class="place-img" [src]="data?.imageUrl" mat-card-image />
+        </div>
+        <mat-card-header>
+          <img mat-card-avatar [src]="data?.iconUrl" />
+          <mat-card-title> {{ data?.name }} </mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
   `,
 
   styles: [
@@ -25,6 +27,16 @@ import { MatCardModule } from '@angular/material/card';
       :host {
         display: block;
       }
+
+      mat-card {
+        width: 316px;
+        height: 310px;
+        div img {
+          height: 229px;
+          width: 100%;
+        }
+      }
+
       .img-box {
         display: flex;
         .place-img {

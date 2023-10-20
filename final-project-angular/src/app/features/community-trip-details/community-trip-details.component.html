@@ -1,43 +1,44 @@
-<div class="image-container">
-  <img class="cover" src="{{ cardData?.cover }}" alt="" />
-</div>
-
-<section>
-  <div>
+<div class="details-container">
+  <section>
     <div>
-      <button routerLink="/community" class="back-btn">&#8592; Back</button>
-      <h1>{{ cardData?.title }}</h1>
-    </div>
+      <div>
+        <button routerLink="/community" class="back-btn">&#8592; Back</button>
+        <h1>{{ cardData?.title }}</h1>
+      </div>
 
-    <div class="author-container">
-      <div class="author-date">
-        <img class="avatar" src="{{ cardData?.avatar }}" alt="" />
-        <div>
-          <p class="author">{{ cardData?.author }}</p>
-          <p class="date">{{ cardData?.date }}</p>
+      <div class="author-container">
+        <div class="author-date">
+          <img class="avatar" src="{{ cardData?.avatar }}" alt="" />
+          <div>
+            <p class="author">{{ cardData?.author }}</p>
+            <p class="date">{{ cardData?.date }}</p>
+          </div>
+        </div>
+        <div class="likes">
+          <img class="icon" src="{{ cardData?.likes }}" alt="" />
+          <span>{{ cardData?.count }}</span>
         </div>
       </div>
-      <div class="likes">
-        <img class="icon" src="{{ cardData?.likes }}" alt="" />
-        <span>{{ cardData?.count }}</span>
-      </div>
+
+      <p>{{ cardData?.fulldescription }}</p>
     </div>
 
-    <p>{{ cardData?.fulldescription }}</p>
-  </div>
-
-  <div class="day-plans">
-    <ng-container
-      *ngFor="
-        let day of ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7']
-      "
-    >
-      <ng-container *ngIf="cardData[day]">
-        <button (click)="toggleDay(day)">
-          {{ "Day " + day.split("day")[1] }}
-        </button>
-        <p *ngIf="showDay[day]">{{ cardData[day] }}</p>
+    <div class="day-plans">
+      <ng-container
+        *ngFor="
+          let day of ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7']
+        "
+      >
+        <ng-container *ngIf="cardData[day]">
+          <button (click)="toggleDay(day)">
+            {{ "Day " + day.split("day")[1] }}
+          </button>
+          <p *ngIf="showDay[day]">{{ cardData[day] }}</p>
+        </ng-container>
       </ng-container>
-    </ng-container>
+    </div>
+  </section>
+  <div class="image-container">
+    <img class="cover" src="{{ cardData?.cover }}" alt="" />
   </div>
-</section>
+</div>
