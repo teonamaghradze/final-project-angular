@@ -27,25 +27,17 @@
   </div>
 
   <div class="day-plans">
-    <button (click)="toggleDay('day1')">day1</button>
-    <p *ngIf="showDay.day1">{{ cardData?.day1 }}</p>
-
-    <button (click)="toggleDay('day2')">day2</button>
-    <p *ngIf="showDay.day2">{{ cardData?.day2 }}</p>
-
-    <button (click)="toggleDay('day3')">day3</button>
-    <p *ngIf="showDay.day3">{{ cardData?.day3 }}</p>
-
-    <button *ngIf="showDay.day4" (click)="toggleDay('day4')">day4</button>
-    <p *ngIf="showDay.day4">{{ cardData?.day4 }}</p>
-
-    <button *ngIf="showDay.day5" (click)="toggleDay('day5')">day5</button>
-    <p *ngIf="showDay.day5">{{ cardData?.day5 }}</p>
-
-    <button *ngIf="showDay.day6" (click)="toggleDay('day6')">day6</button>
-    <p *ngIf="showDay.day6">{{ cardData?.day6 }}</p>
-
-    <button *ngIf="showDay.day7" (click)="toggleDay('day7')">day7</button>
-    <p *ngIf="showDay.day7">{{ cardData?.day7 }}</p>
+    <ng-container
+      *ngFor="
+        let day of ['day1', 'day2', 'day3', 'day4', 'day5', 'day6', 'day7']
+      "
+    >
+      <ng-container *ngIf="cardData[day]">
+        <button (click)="toggleDay(day)">
+          {{ "Day " + day.split("day")[1] }}
+        </button>
+        <p *ngIf="showDay[day]">{{ cardData[day] }}</p>
+      </ng-container>
+    </ng-container>
   </div>
 </section>
