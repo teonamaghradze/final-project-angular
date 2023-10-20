@@ -21,6 +21,7 @@ import { UserDataService } from './services/user-data.service';
 
 import { Router } from '@angular/router';
 import { NgIf } from '@angular/common';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-register',

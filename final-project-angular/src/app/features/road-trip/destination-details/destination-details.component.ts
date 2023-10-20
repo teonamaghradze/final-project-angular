@@ -10,7 +10,9 @@ import { MatCardModule } from '@angular/material/card';
   // templateUrl: './destination-details.component.html',
   template: `
     <mat-card *ngIf="data?.address">
-      <img class="place-img" [src]="data?.imageUrl" mat-card-image />
+      <div>
+        <img class="place-img" [src]="data?.imageUrl" mat-card-image />
+      </div>
       <mat-card-header>
         <img mat-card-avatar [src]="data?.iconUrl" />
         <mat-card-title> {{ data?.name }} </mat-card-title>
@@ -18,18 +20,19 @@ import { MatCardModule } from '@angular/material/card';
     </mat-card>
   `,
 
-  // styleUrls: ['./destination-details.component.scss'],
-
   styles: [
     `
       :host {
         display: block;
       }
-      .place-img {
-        height: 200px;
-        width: 300px;
-        object-fit: cover;
-        /* object-position: center; */
+      .img-box {
+        display: flex;
+        .place-img {
+          height: 200px;
+          width: 300px;
+          object-fit: cover;
+          /* object-position: center; */
+        }
       }
     `,
   ],

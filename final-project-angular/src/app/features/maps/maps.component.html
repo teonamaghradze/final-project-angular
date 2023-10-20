@@ -1,34 +1,38 @@
 <div class="container">
-  <input #placeInput id="placeInput" placeholder="Enter a place" />
-  <button id="searchButton" (click)="searchPlace(placeInput.value)">
-    Search
-  </button>
+  <div>
+    <input #placeInput id="placeInput" placeholder="Enter a place" />
+    <button id="searchButton" (click)="searchPlace(placeInput.value)">
+      Search
+    </button>
 
-  <div class="map-container">
-    <google-map
-      #googleMap
-      [height]="'400px'"
-      [width]="'750px'"
-      [center]="center"
-      [zoom]="zoom"
-      (mapClick)="moveMap($event)"
-      (mapMousemove)="move($event)"
-    >
-    </google-map>
-  </div>
+    <div class="map-container">
+      <google-map
+        #googleMap
+        [height]="'500px'"
+        [width]="'750px'"
+        [center]="center"
+        [zoom]="zoom"
+        (mapClick)="moveMap($event)"
+        (mapMousemove)="move($event)"
+      >
+      </google-map>
 
-  <div class="map-data">
-    <div>Latitude: {{ display?.lat }}</div>
-    <div>Longitude: {{ display?.lng }}</div>
-  </div>
+      <div class="restaurant-data">
+        <div *ngFor="let resto of restaurants" class="resto-data">
+          <p>{{ resto.name }}</p>
+          <p>{{ resto.address }}</p>
+          <p>{{ resto?.cuisine?.description }}</p>
+          <img src="{{ resto.photo?.images.small.url }}" alt="" />
 
-  <div *ngFor="let resto of restaurants" class="resto-data">
-    <p>{{ resto.name }}</p>
-    <p>{{ resto.address }}</p>
-    <p>{{ resto?.cuisine?.description }}</p>
-    <img src="{{ resto.photo?.images.small.url }}" alt="" />
+          <p>{{ resto.price }}</p>
+          <p>{{ resto.rating }}</p>
+        </div>
+      </div>
+    </div>
 
-    <p>{{ resto.price }}</p>
-    <p>{{ resto.rating }}</p>
+    <div class="map-data">
+      <div>Latitude: {{ display?.lat }}</div>
+      <div>Longitude: {{ display?.lng }}</div>
+    </div>
   </div>
 </div>

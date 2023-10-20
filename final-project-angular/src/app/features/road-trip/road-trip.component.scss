@@ -1,17 +1,40 @@
 .display-area {
-  // display: flex;
   // flex-direction: column;
 
   height: calc(100vh - 180px);
   //   margin-right: 1000px;
-  > div {
-    width: 30%;
-    padding: 8px;
-    height: inherit;
-    overflow: auto;
+  // > div {
+  //   width: 30%;
+  //   padding: 8px;
+  //   height: inherit;
+  //   overflow: auto;
 
-    > * {
-      margin-bottom: 16px;
-    }
-  }
+  //   > * {
+  //     margin-bottom: 16px;
+  //   }
+  // }
+}
+
+// .roads-container {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+// }
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  border: 1px solid #e3e3e3;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  // text-align: center;
 }
