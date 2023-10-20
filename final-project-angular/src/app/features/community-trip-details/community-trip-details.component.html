@@ -3,10 +3,28 @@
 </div>
 
 <section>
-  <button>Back</button>
-  <h1>{{ cardData?.title }}</h1>
+  <div>
+    <div>
+      <button routerLink="/community" class="back-btn">&#8592; Back</button>
+      <h1>{{ cardData?.title }}</h1>
+    </div>
 
-  <img src="{{ cardData?.avatar }}" alt="" />
+    <div class="author-container">
+      <div class="author-date">
+        <img class="avatar" src="{{ cardData?.avatar }}" alt="" />
+        <div>
+          <p class="author">{{ cardData?.author }}</p>
+          <p class="date">{{ cardData?.date }}</p>
+        </div>
+      </div>
+      <div class="likes">
+        <img class="icon" src="{{ cardData?.likes }}" alt="" />
+        <span>{{ cardData?.count }}</span>
+      </div>
+    </div>
+
+    <p>{{ cardData?.fulldescription }}</p>
+  </div>
 
   <div class="day-plans">
     <button (click)="toggleDay('day1')">day1</button>

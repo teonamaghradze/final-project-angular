@@ -21,15 +21,18 @@
       <img class="cover-image" src="{{ city.cover }}" alt="" />
       <h2>{{ city.title }}</h2>
       <p>{{ city.description }}</p>
-      <div class="author">
-        <img class="avatar" src="{{ city.avatar }}" alt="" />
-        <p>{{ city.author }}</p>
-      </div>
 
-      <div>
-        <p>{{ city.duration }}</p>
-        <p>{{ city.count }}</p>
-        <img class="likes" src="{{ city.likes }}" alt="" />
+      <div class="card-footer">
+        <div class="author">
+          <img class="avatar" src="{{ city.avatar }}" alt="" />
+          <p>{{ city.author }}</p>
+        </div>
+
+        <div class="likes-duration">
+          <p>{{ city.duration }} • {{ city.count }}</p>
+          <!-- <p>{{ city.count }}</p> -->
+          <img class="likes" src="{{ city.likes }}" alt="" />
+        </div>
       </div>
     </div>
   </div>

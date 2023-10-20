@@ -15,22 +15,71 @@
 
 .cover {
   display: block;
-  width: 700px;
+  width: 600px;
 }
 h1 {
   color: white;
+  width: 500px;
+  margin-bottom: 7rem;
 }
 
 section {
   z-index: 2;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .author-container {
+    display: flex;
+    align-items: center;
+    gap: 15rem;
+    // justify-content: space-between;
+    .author-date {
+      display: flex;
+      align-items: center;
+      .date {
+        margin-bottom: 0;
+      }
+      .author {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  .back-btn {
+    margin-bottom: 16rem;
+    color: white;
+    background-color: rgb(41, 40, 39);
+    padding: 0.4rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  .back-btn:hover {
+    background-color: antiquewhite;
+    color: black;
+  }
+  .avatar {
+    width: 3rem;
+    border-radius: 50%;
+  }
+
+  .likes {
+    display: flex;
+    align-items: center;
+    .icon {
+      width: 2rem;
+    }
+  }
 }
 
 .day-plans {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 20rem 40rem 20rem 2rem;
+  margin-right: 5rem;
+  width: 500px;
 
   button {
     cursor: pointer;

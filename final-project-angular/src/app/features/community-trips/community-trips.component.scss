@@ -31,10 +31,19 @@ header {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 5rem;
-  margin: 12rem;
+  margin: 10rem;
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 1rem 1rem 1rem;
+  }
 
   .city-card {
-    width: 250px;
+    width: 270px;
+    box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px 0px;
 
     .author {
       display: flex;
@@ -42,8 +51,12 @@ header {
       align-items: center;
     }
     .avatar {
-      width: 45px;
+      width: 32px;
       border-radius: 50%;
+      ~ p {
+        font-size: 13px;
+        margin-top: 10px;
+      }
     }
     .cover-image {
       width: 100%;
@@ -52,9 +65,23 @@ header {
     }
     h2 {
       font-size: 0.9rem;
+      padding: 0 1rem 0 1rem;
+      ~ p {
+        padding: 0 1rem 0 1rem;
+      }
     }
+
     :hover {
       cursor: pointer;
+    }
+    .likes-duration {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-top: 10px;
+        font-size: 13px;
+      }
     }
   }
 }
