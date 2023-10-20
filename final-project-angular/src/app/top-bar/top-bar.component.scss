@@ -48,14 +48,14 @@
       transition-duration: 1.5s;
     }
 
-    span:last-child {
+    span:not(:first-child) {
       cursor: pointer;
       color: #393939;
       border: 2px solid white;
       border-radius: 0;
     }
 
-    span:last-child:hover {
+    span:not(:first-child):hover {
       border-bottom: 2px solid #9b8df1;
       transition-duration: 1.3s;
     }

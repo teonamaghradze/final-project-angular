@@ -1,5 +1,10 @@
 <div class="container">
+  <div class="image-container">
+    <img src="../../../assets/sign-up.jpg" alt="" />
+  </div>
+
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <h1>Sign Up</h1>
     <div class="flex">
       <label for="email"> Email:</label>
       <input type="text" id="email" formControlName="email" />

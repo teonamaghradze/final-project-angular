@@ -16,8 +16,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'community', component: CommunityTripsComponent },
   { path: 'card-details/:id', component: CommunityTripDetailsComponent },
-  { path: 'maps', component: MapsComponent },
-  { path: 'restaurants', component: TripListComponent },
+  { path: 'restaurants', component: MapsComponent },
+  // { path: 'restaurants', component: TripListComponent },
 ];
 
 @NgModule({
