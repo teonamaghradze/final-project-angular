@@ -2,18 +2,25 @@
   {
     "cover": "https://images.unsplash.com/photo-1538485399081-7191377e8241?auto=format&fit=crop&q=80&w=1948&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
-    "title": "Discover Seoul: An 8-Day Adventure",
-    "description": "Embark on an exciting 8-day journey through the vibrant city of Seoul...",
+    "title": "Discover Seoul: An 3-Day Adventure",
+    "description": "Embark on an exciting 3-day journey through the vibrant city of Seoul...",
     "author": "Ash Simpson",
     "duration": "3 days",
     "rating": 0,
-    "fulltitle": "Discover Seoul: An 8-Day Adventure",
+    "fulltitle": "Discover Seoul: An 3-Day Adventure",
     "date": "8 Oct 2023",
-    "fulldescription": "Embark on an exciting 8-day journey through the vibrant city of Seoul, South Korea. Explore iconic landmarks, indulge in delicious cuisine, and immerse yourself in the rich culture of this captivating destination.",
+    "fulldescription": "Embark on an exciting 3-day journey through the vibrant city of Seoul, South Korea. Explore iconic landmarks, indulge in delicious cuisine, and immerse yourself in the rich culture of this captivating destination.",
     "id": "0",
+    "day1-title": "Ocloud Hotel",
     "day1": "Day 1: Arrival and Exploration\n\n- Arrive in Seoul and check into your hotel.\n- Explore the local neighborhood and try some traditional Korean dishes.",
+    "day2-title": "The Place Dining (더플레이스다이닝)",
+
     "day2": "Day 2: Historic Sites and Culture\n\n- Visit Gyeongbokgung Palace, a royal palace from the Joseon Dynasty.\n- Explore Bukchon Hanok Village, known for its traditional Korean houses.\n- Experience a traditional tea ceremony.",
-    "day3": "Day 3: Modern Seoul\n\n- Visit Myeongdong for shopping and street food.\n- Explore Namsan Seoul Tower for panoramic city views.\n- Enjoy the lively nightlife in Hongdae."
+
+    "day3-title": "N Seoul Tower",
+    "day3": "Day 3: Modern Seoul\n\n- Visit Myeongdong for shopping and street food.\n- Explore Namsan Seoul Tower for panoramic city views.\n- Enjoy the lively nightlife in Hongdae.",
+    "likes": "https://i.fbcd.co/products/original/4cb3dfa788bdb2c97db08616a58304e4b6dd72d374e551cc419a77c4af6ec16e.jpg",
+    "count": "0"
   },
   {
     "cover": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&q=80&w=1794&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -27,45 +34,80 @@
     "fulldescription": "Experience the magic of Tokyo in a week-long adventure. Discover the fusion of modernity and tradition, and savor exquisite Japanese cuisine.",
     "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
     "id": "1",
+    "day1-title": "Ocloud Hotel",
+
     "day1": "Day 1: Arrival in Tokyo\n\n- Arrive in Tokyo and check into your accommodation.\n- Get a taste of Japanese cuisine at a local restaurant.",
+    "day2-title": "The Place Dining (더플레이스다이닝)",
+
     "day2": "Day 2: Explore Tokyo's Districts\n\n- Visit Shibuya Crossing, one of the busiest intersections in the world.\n- Explore Akihabara, the electronic and anime district.\n- Enjoy traditional Japanese tea at a local teahouse.",
+    "day3-title": "N Seoul Tower",
+
     "day3": "Day 3: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street.",
+    "day4-title": "Hongdae Shopping Street",
+
     "day4": "Day 4: Arrival in Tokyo\n\n- Arrive in Tokyo and check into your accommodation.\n- Get a taste of Japanese cuisine at a local restaurant.",
+
+    "day5-title": "City Centro by Marriott Oaxaca",
     "day5": "Day 5: Explore Tokyo's Districts\n\n- Visit Shibuya Crossing, one of the busiest intersections in the world.\n- Explore Akihabara, the electronic and anime district.\n- Enjoy traditional Japanese tea at a local teahouse.",
+
+    "day6-title": "Museo Cretácico",
     "day6": "Day 6: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street.",
-    "day7": "Day 7: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street."
+
+    "day7-title": "Zona Arqueológica de Atzompa",
+    "day7": "Day 7: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street.",
+    "likes": "https://i.fbcd.co/products/original/4cb3dfa788bdb2c97db08616a58304e4b6dd72d374e551cc419a77c4af6ec16e.jpg",
+    "count": "2"
   },
   {
     "cover": "https://images.unsplash.com/photo-1604580864964-0462f5d5b1a8?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "title": "Roam in Rome: A 10-Day Expedition",
+    "title": "Roam in Rome: A 3-Day Expedition",
     "description": "Embark on a journey through the timeless city of Rome...",
     "author": "Giuseppe Rossi",
     "duration": "3 days",
     "rating": 0,
-    "fulltitle": "Roam in Rome: A 10-Day Expedition",
+    "fulltitle": "Roam in Rome: A 3-Day Expedition",
     "date": "2 Jan 2024",
     "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
 
     "fulldescription": "Embark on a journey through the timeless city of Rome. Explore ancient ruins, savor delicious Italian dishes, and immerse yourself in the art and history of this eternal city.",
     "id": "2",
+
+    "day1-title": "City Centro by Marriott Oaxaca",
     "day1": "Day 1: Arrival in Rome\n\n- Arrive in Rome and check into your hotel.\n- Enjoy an authentic Italian dinner at a local trattoria.",
+
+    "day2-title": "City Centro by Marriott Oaxaca",
     "day2": "Day 2: Ancient Rome\n\n- Visit the Colosseum, a symbol of ancient Rome.\n- Explore the Roman Forum, the heart of ancient Rome's political and social life.\n- Savor Italian gelato at a nearby gelateria.",
-    "day3": "Day 3: Vatican City\n\n- Explore Vatican City, home to St. Peter's Basilica and the Vatican Museums.\n- Admire the Sistine Chapel's famous ceiling painted by Michelangelo."
+
+    "day3-title": "Museo Cretácico",
+    "day3": "Day 3: Vatican City\n\n- Explore Vatican City, home to St. Peter's Basilica and the Vatican Museums.\n- Admire the Sistine Chapel's famous ceiling painted by Michelangelo.",
+    "likes": "https://i.fbcd.co/products/original/4cb3dfa788bdb2c97db08616a58304e4b6dd72d374e551cc419a77c4af6ec16e.jpg",
+    "count": "0"
   },
   {
     "cover": "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=2020&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Escape to Paris: A Romantic Getaway",
     "description": "Indulge in the romance of Paris for a memorable 5-day getaway...",
     "author": "Sophie Dupont",
-    "duration": "5 days",
+    "duration": "3 days",
     "rating": 0,
     "fulltitle": "Escape to Paris: A Romantic Getaway",
     "date": "14 Feb 2024",
     "fulldescription": "Indulge in the romance of Paris for a memorable 5-day getaway. Visit iconic landmarks, savor fine French cuisine, and enjoy the city of love.",
     "id": "3",
-    "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ"
+    "day1-title": "City Centro by Marriott Oaxaca",
+    "day1": "Day 1: Arrival in Rome\n\n- Arrive in Rome and check into your hotel.\n- Enjoy an authentic Italian dinner at a local trattoria.",
+
+    "day2-title": "City Centro by Marriott Oaxaca",
+    "day2": "Day 2: Ancient Rome\n\n- Visit the Colosseum, a symbol of ancient Rome.\n- Explore the Roman Forum, the heart of ancient Rome's political and social life.\n- Savor Italian gelato at a nearby gelateria.",
+
+    "day3-title": "Museo Cretácico",
+    "day3": "Day 3: Vatican City\n\n- Explore Vatican City, home to St. Peter's Basilica and the Vatican Museums.\n- Admire the Sistine Chapel's famous ceiling painted by Michelangelo.",
+    "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
+    "likes": "https://i.fbcd.co/products/original/4cb3dfa788bdb2c97db08616a58304e4b6dd72d374e551cc419a77c4af6ec16e.jpg",
+    "count": "10"
   },
   {
+    "cover": "https://images.unsplash.com/photo-1485871981521-5b1fd3805eee?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     "title": "Adventures in New York: A 6-Day Experience",
     "description": "Explore the bustling streets of New York for an unforgettable 6-day adventure...",
     "author": "Michael Johnson",
@@ -76,6 +118,26 @@
     "avatar": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
 
     "fulldescription": "Explore the bustling streets of New York for an unforgettable 6-day adventure. Discover the city that never sleeps and immerse yourself in its vibrant culture.",
-    "id": "4"
+    "id": "4",
+    "day1-title": "Ocloud Hotel",
+
+    "day1": "Day 1: Arrival in Tokyo\n\n- Arrive in Tokyo and check into your accommodation.\n- Get a taste of Japanese cuisine at a local restaurant.",
+    "day2-title": "The Place Dining (더플레이스다이닝)",
+
+    "day2": "Day 2: Explore Tokyo's Districts\n\n- Visit Shibuya Crossing, one of the busiest intersections in the world.\n- Explore Akihabara, the electronic and anime district.\n- Enjoy traditional Japanese tea at a local teahouse.",
+    "day3-title": "N Seoul Tower",
+
+    "day3": "Day 3: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street.",
+    "day4-title": "Hongdae Shopping Street",
+
+    "day4": "Day 4: Arrival in Tokyo\n\n- Arrive in Tokyo and check into your accommodation.\n- Get a taste of Japanese cuisine at a local restaurant.",
+
+    "day5-title": "City Centro by Marriott Oaxaca",
+    "day5": "Day 5: Explore Tokyo's Districts\n\n- Visit Shibuya Crossing, one of the busiest intersections in the world.\n- Explore Akihabara, the electronic and anime district.\n- Enjoy traditional Japanese tea at a local teahouse.",
+
+    "day6-title": "Museo Cretácico",
+    "day6": "Day 6: Traditional Tokyo\n\n- Discover the historic district of Asakusa.\n- Visit Senso-ji Temple, Tokyo's oldest temple.\n- Try street food at Nakamise Shopping Street.",
+    "likes": "https://i.fbcd.co/products/original/4cb3dfa788bdb2c97db08616a58304e4b6dd72d374e551cc419a77c4af6ec16e.jpg",
+    "count": "0"
   }
 ]
