@@ -45,10 +45,10 @@ export class TripListComponent implements OnInit {
   constructor(private tripService: TripService) {}
 
   ngOnInit() {
-    this.tripService.getData().subscribe((data: any) => {
-      this.restaurantData = data;
-      // console.log(this.hotelData);
-      // return data.data.map((el: any) => console.log(el));
-    });
+    // this.tripService.getData().subscribe((data: any) => {
+    //   this.restaurantData = data;
+    //   console.log(this.restaurantData);
+    //   return data.data.map((el: any) => console.log(el));
+    // });
   }
 }
