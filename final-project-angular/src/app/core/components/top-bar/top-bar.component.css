@@ -1,0 +1,74 @@
+.top-bar-container {
+  display: flex;
+  align-items: center;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding-bottom: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 333;
+}
+.top-bar-container .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 5rem;
+  cursor: pointer;
+}
+.top-bar-container .logo-container img {
+  width: 2rem;
+}
+.top-bar-container .logo-container span {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.top-bar-container .trips-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 20rem;
+  color: #9b8df1;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.top-bar-container .trips-container span {
+  background-color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+.top-bar-container .trips-container span:first-child:hover {
+  cursor: pointer;
+  background-color: #9b8df1;
+  color: white;
+  transition-duration: 1.5s;
+}
+.top-bar-container .trips-container span:not(:first-child) {
+  cursor: pointer;
+  color: #393939;
+  border: 2px solid white;
+  border-radius: 0;
+}
+.top-bar-container .trips-container span:not(:first-child):hover {
+  border-bottom: 2px solid #9b8df1;
+  transition-duration: 1.3s;
+}
+.top-bar-container .login-signup {
+  display: flex;
+  gap: 0.5rem;
+}
+.top-bar-container .login-signup button {
+  background: #2a3055;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+  color: white;
+}
+.top-bar-container .login-signup button:last-child {
+  background: #9b8df1;
+}/*# sourceMappingURL=top-bar.component.css.map */

@@ -16,6 +16,8 @@ import { GoogleMapsModule } from '@angular/google-maps';
 import { MapsComponent } from './features/maps/maps.component';
 import { AdvantagesComponent } from './features/landingpage/advantages/advantages.component';
 import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
+import { TestimonialsComponent } from './features/landingpage/testimonials/testimonials.component';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FavoriteTripsComponent } from './features/community/favorite-trips/favo
     MapsComponent,
     AdvantagesComponent,
     FavoriteTripsComponent,
+    TestimonialsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

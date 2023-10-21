@@ -1,0 +1,14 @@
+<h1>Don't take our word for it</h1>
+
+<p>
+  See what our users have to say about revolutionizing their travel experiences
+  with Trip Planner.
+</p>
+<section>
+  <div *ngFor="let testimonial of testimonials">
+    <img src="{{ testimonial.avatar }}" alt="" />
+    <p class="txt">{{ testimonial.text }}</p>
+    <hr />
+    <p>{{ testimonial.author }}</p>
+  </div>
+</section>

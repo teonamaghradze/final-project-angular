@@ -1,0 +1,48 @@
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 14rem;
+  margin-bottom: 2rem;
+  color: #9b8df1;
+}
+h1 ~ p {
+  font-size: 18px;
+  text-align: center;
+  color: #bcbaba;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  gap: 3rem;
+  margin: 11rem;
+}
+section div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 2px solid #9b8df1;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.txt {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #bcbaba;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+div p:last-child {
+  font-size: 14px;
+  color: #777;
+}/*# sourceMappingURL=testimonials.component.css.map */
