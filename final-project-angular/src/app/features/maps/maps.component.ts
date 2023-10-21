@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { TripService } from '../trip-plan/services/trip.service';
+import { TripService } from '../road-plan/services/trip.service';
 
 @Component({
   selector: 'app-maps',
