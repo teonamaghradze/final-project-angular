@@ -15,27 +15,31 @@
   </header>
 
   <div class="city-cards-container">
-    <div
-      class="city-card"
-      *ngFor="let city of filteredData"
-      (click)="showDetails(city.id)"
-    >
-      <img class="cover-image" src="{{ city.cover }}" alt="" />
-      <h2>{{ city.title }}</h2>
-      <p>{{ city.description }}</p>
+    <div class="city-card" *ngFor="let city of filteredData">
+      <button
+        (click)="toggleCard(city)"
+        [ngClass]="{ 'red-button': isCardSaved(city) }"
+      >
+        {{ isCardSaved(city) ? "Remove" : "Add" }}
+      </button>
 
-      <div class="card-footer">
-        <div class="author">
-          <img class="avatar" src="{{ city.avatar }}" alt="" />
-          <p>{{ city.author }}</p>
-        </div>
+      <div (click)="showDetails(city.id)">
+        <img class="cover-image" src="{{ city.cover }}" alt="" />
+        <h2>{{ city.title }}</h2>
+        <p>{{ city.description }}</p>
 
-        <div class="likes-duration">
-          <p>{{ city.duration }} • {{ city.count }}</p>
-          <img class="likes" src="{{ city.likes }}" alt="" />
+        <div class="card-footer">
+          <div class="author">
+            <img class="avatar" src="{{ city.avatar }}" alt="" />
+            <p>{{ city.author }}</p>
+          </div>
+
+          <div class="likes-duration">
+            <p>{{ city.duration }} • {{ city.count }}</p>
+            <img class="likes" src="{{ city.likes }}" alt="" />
+          </div>
         </div>
       </div>
-      <button routerLink="/roads" (click)="clicked()">add</button>
     </div>
   </div>
 </main>

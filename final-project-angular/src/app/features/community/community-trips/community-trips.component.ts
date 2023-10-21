@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -12,11 +12,13 @@ export class CommunityTripsComponent {
   inputName: string = '';
   filteredData: any[] = [];
 
+  // Create a collection to store saved cards
+  savedCards: any[] = [];
+
   constructor(private http: HttpClient, private router: Router) {
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
-
         this.filteredData = [...this.data];
       },
       (error) => {
@@ -38,6 +40,23 @@ export class CommunityTripsComponent {
         .toLowerCase()
         .includes(this.inputName.toLowerCase());
     });
+  }
+
+  // Toggle the card's presence in the savedCards collection
+  toggleCard(card: any) {
+    const index = this.savedCards.indexOf(card);
+    if (index === -1) {
+      this.savedCards.push(card);
+    } else {
+      this.savedCards.splice(index, 1);
+    }
+
+    console.log(this.savedCards);
+  }
+
+  // Check if a card is in the savedCards collection
+  isCardSaved(card: any) {
+    return this.savedCards.includes(card);
   }
 
   showDetails(cardId: number) {
