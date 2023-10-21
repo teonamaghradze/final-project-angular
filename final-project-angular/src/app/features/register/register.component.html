@@ -1,11 +1,12 @@
-<button routerLink="/login">Log In</button>
+<!-- <button routerLink="/login">Log In</button> -->
 
 <div class="container">
-  <!-- <div class="image-container">
+  <div class="image-container">
     <img src="../../../assets/sign-up.jpg" alt="" />
-  </div> -->
+  </div>
 
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <h2>New user? Sign up now</h2>
     <h1>Sign Up</h1>
     <div class="flex">
       <label for="email"> Email:</label>
@@ -89,4 +90,4 @@
   </form>
 </div>
 
-<app-login></app-login>
+<app-login class=".app-login"></app-login>

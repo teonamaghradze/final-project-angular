@@ -15,8 +15,6 @@ import { CommunityTripDetailsComponent } from './features/community/community-tr
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapsComponent } from './features/maps/maps.component';
 import { AdvantagesComponent } from './features/landingpage/advantages/advantages.component';
-// import { LoginComponent } from './features/login/login.component';
-// import { RegisterComponent } from './features/register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +26,6 @@ import { AdvantagesComponent } from './features/landingpage/advantages/advantage
     CommunityTripDetailsComponent,
     MapsComponent,
     AdvantagesComponent,
-    // LoginComponent,
-    // RegisterComponent,
   ],
   imports: [
     BrowserModule,

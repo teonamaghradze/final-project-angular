@@ -2,6 +2,7 @@
   img {
     // width: 40%;
     height: 100vh;
+    // position: relative;
   }
 
   .image-container {
@@ -24,8 +25,16 @@
   }
 }
 
+app-login {
+  position: relative;
+  z-index: 22;
+  bottom: 598px;
+}
+
 form {
+  position: relative;
   max-width: 600px;
+  z-index: 333;
 
   margin: 0 auto;
   padding: 20px;
