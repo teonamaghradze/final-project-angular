@@ -17,6 +17,7 @@ import { CommunityTripsComponent } from './features/community-trips/community-tr
 import { CommunityTripDetailsComponent } from './features/community-trip-details/community-trip-details.component';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { MapsComponent } from './features/maps/maps.component';
+import { AdvantagesComponent } from './features/advantages/advantages.component';
 // import { LoginComponent } from './features/login/login.component';
 // import { RegisterComponent } from './features/register/register.component';
 
@@ -32,6 +33,7 @@ import { MapsComponent } from './features/maps/maps.component';
     CommunityTripsComponent,
     CommunityTripDetailsComponent,
     MapsComponent,
+    AdvantagesComponent,
     // LoginComponent,
     // RegisterComponent,
   ],

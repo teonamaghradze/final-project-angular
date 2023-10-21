@@ -25,6 +25,10 @@ export class CommunityTripsComponent {
     );
   }
 
+  clicked() {
+    console.log('clicked');
+  }
+
   filterCity(event: any) {
     this.inputName = event.target.value;
     console.log(this.inputName);

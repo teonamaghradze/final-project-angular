@@ -1,7 +1,9 @@
+<button routerLink="/login">Log In</button>
+
 <div class="container">
-  <div class="image-container">
+  <!-- <div class="image-container">
     <img src="../../../assets/sign-up.jpg" alt="" />
-  </div>
+  </div> -->
 
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
     <h1>Sign Up</h1>
@@ -69,19 +71,6 @@
       </div>
     </div>
 
-    <div class="flex">
-      <label for="website"> Website:</label>
-      <input type="text" id="website" formControlName="website" />
-      <div
-        *ngIf="
-          registrationForm.get('website')?.hasError('pattern') &&
-          registrationForm.get('website')?.touched
-        "
-      >
-        Invalid website URL format.
-      </div>
-    </div>
-
     <div class="check">
       <label>
         <input type="checkbox" formControlName="agreement" />
@@ -97,10 +86,7 @@
     >
       Register
     </button>
-    <button routerLink="/login">Log In</button>
-    <ng-container *ngIf="selectedUser">
-      <button (click)="saveUser()">Save</button>
-      <button (click)="cancelEdit()">Cancel</button>
-    </ng-container>
   </form>
 </div>
+
+<app-login></app-login>

@@ -8,9 +8,10 @@ import { CommunityTripsComponent } from './features/community-trips/community-tr
 import { CommunityTripDetailsComponent } from './features/community-trip-details/community-trip-details.component';
 import { MapsComponent } from './features/maps/maps.component';
 import { TripListComponent } from './features/trip-plan/trip-list/trip-list.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 const routes: Routes = [
-  { path: '', component: TopBarComponent },
+  { path: '', component: MainPageComponent },
   { path: 'roads', component: RoadTripComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },

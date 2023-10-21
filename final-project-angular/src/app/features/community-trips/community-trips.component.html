@@ -1,3 +1,5 @@
+<app-top-bar></app-top-bar>
+
 <main>
   <header>
     <h1>Trip finder</h1>
@@ -30,10 +32,10 @@
 
         <div class="likes-duration">
           <p>{{ city.duration }} • {{ city.count }}</p>
-          <!-- <p>{{ city.count }}</p> -->
           <img class="likes" src="{{ city.likes }}" alt="" />
         </div>
       </div>
+      <button routerLink="/roads" (click)="clicked()">add</button>
     </div>
   </div>
 </main>

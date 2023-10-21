@@ -38,11 +38,6 @@ export class MapsComponent {
               console.log(el);
             });
             return newData;
-            // const newarr = data.data.map((el: any) =>
-            //   // console.log(el.photo?.images.small.url)
-            //   console.log(el)
-            // );
-            // return newarr;
           });
       } else {
         console.error(
