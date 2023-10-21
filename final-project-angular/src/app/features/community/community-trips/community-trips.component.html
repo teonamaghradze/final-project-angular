@@ -14,13 +14,18 @@
     />
   </header>
 
+  <button routerLink="/favorites">SEE FAV TRIPS</button>
   <div class="city-cards-container">
     <div class="city-card" *ngFor="let city of filteredData">
       <button
         (click)="toggleCard(city)"
         [ngClass]="{ 'red-button': isCardSaved(city) }"
       >
-        {{ isCardSaved(city) ? "Remove" : "Add" }}
+        {{ isCardSaved(city) ? "remove &#9825;" : "&#10084;" }}
+      </button>
+
+      <button>
+        <img src="../../../../../../assets/star-solid.svg" alt="" />
       </button>
 
       <div (click)="showDetails(city.id)">

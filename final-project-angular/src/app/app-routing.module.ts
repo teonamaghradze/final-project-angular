@@ -8,6 +8,7 @@ import { CommunityTripDetailsComponent } from './features/community/community-tr
 import { MapsComponent } from './features/maps/maps.component';
 import { MainPageComponent } from './features/landingpage/main-page/main-page.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   { path: 'card-details/:id', component: CommunityTripDetailsComponent },
   { path: 'restaurants', component: MapsComponent },
+  { path: 'favorites', component: FavoriteTripsComponent },
 ];
 
 @NgModule({

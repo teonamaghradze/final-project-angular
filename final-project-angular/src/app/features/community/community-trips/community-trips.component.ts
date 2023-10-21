@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { CardService } from '../services/card.service';
 
 @Component({
   selector: 'app-community-trips',
@@ -13,9 +14,13 @@ export class CommunityTripsComponent {
   filteredData: any[] = [];
 
   // Create a collection to store saved cards
-  savedCards: any[] = [];
+  savedCards: any = [];
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+    private cardService: CardService
+  ) {
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
@@ -25,10 +30,6 @@ export class CommunityTripsComponent {
         console.error('Error loading data:', error);
       }
     );
-  }
-
-  clicked() {
-    console.log('clicked');
   }
 
   filterCity(event: any) {
@@ -44,22 +45,24 @@ export class CommunityTripsComponent {
 
   // Toggle the card's presence in the savedCards collection
   toggleCard(card: any) {
-    const index = this.savedCards.indexOf(card);
+    const index = this.cardService.getSavedCards().indexOf(card);
+
     if (index === -1) {
-      this.savedCards.push(card);
+      this.cardService.addCard(card);
     } else {
-      this.savedCards.splice(index, 1);
+      this.cardService.removeCard(card);
     }
 
-    console.log(this.savedCards);
+    this.savedCards = this.cardService.getSavedCards();
   }
 
   // Check if a card is in the savedCards collection
   isCardSaved(card: any) {
-    return this.savedCards.includes(card);
+    return this.cardService.isCardSaved(card);
   }
-
   showDetails(cardId: number) {
-    this.router.navigate(['/card-details', cardId]);
+    this.cardService.showDetails(cardId);
+
+    // this.router.navigate(['/card-details', cardId]);
   }
 }
