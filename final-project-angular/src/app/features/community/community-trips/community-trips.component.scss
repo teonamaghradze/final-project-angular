@@ -15,11 +15,16 @@ header {
   padding-top: 15rem;
 
   input {
-    padding: 1rem;
     width: 40rem;
     border: 2px solid rgb(239, 237, 237);
     outline: none;
     border-radius: 10px;
+    background-image: url("../../../../assets/magnifying-glass-solid.svg");
+    background-repeat: no-repeat;
+    background-size: 1rem;
+    background-position: left 3% center;
+
+    padding: 1rem 2.5rem;
   }
 
   input:focus {
