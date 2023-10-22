@@ -18,18 +18,14 @@ import { Users } from './interfaces/users';
 import { UserDataService } from './services/user-data.service';
 
 import { Router } from '@angular/router';
-import { NgIf } from '@angular/common';
-import { LoginComponent } from '../login/login.component';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
-  standalone: true,
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FormsModule, ReactiveFormsModule, NgIf, LoginComponent],
+  selector: 'sign-up-register',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
 })
-export class RegisterComponent {
+export class SignUpComponent {
   registrationForm: FormGroup;
 
   //empty array to push registered users
@@ -43,7 +39,8 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private userDataService: UserDataService,
     private router: Router,
-    private cd: ChangeDetectorRef
+    private cd: ChangeDetectorRef,
+    private http: HttpClient
   ) {
     console.log(this.selectedUser, 'seslds');
     this.userData = this.userDataService.getUsersData();
@@ -102,7 +99,16 @@ export class RegisterComponent {
       alert('You are registered');
       this.cd.markForCheck();
 
-      localStorage.setItem('userData', JSON.stringify(this.userData));
+      this.http.post<any>('http://localhost:3000/users', formData).subscribe(
+        (res) => {
+          alert('signup successfull');
+          this.registrationForm.reset();
+          this.router.navigate(['/login']);
+        },
+        (err) => {
+          alert('not registered');
+        }
+      );
     }
   }
 

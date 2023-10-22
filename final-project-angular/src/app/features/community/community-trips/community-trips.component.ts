@@ -13,14 +13,7 @@ export class CommunityTripsComponent {
   inputName: string = '';
   filteredData: any[] = [];
 
-  // Create a collection to store saved cards
-  savedCards: any = [];
-
-  constructor(
-    private http: HttpClient,
-    private router: Router,
-    private cardService: CardService
-  ) {
+  constructor(private http: HttpClient, private cardService: CardService) {
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
@@ -46,14 +39,11 @@ export class CommunityTripsComponent {
   // Toggle the card's presence in the savedCards collection
   toggleCard(card: any) {
     const index = this.cardService.getSavedCards().indexOf(card);
-
     if (index === -1) {
       this.cardService.addCard(card);
     } else {
       this.cardService.removeCard(card);
     }
-
-    this.savedCards = this.cardService.getSavedCards();
   }
 
   // Check if a card is in the savedCards collection
@@ -62,7 +52,5 @@ export class CommunityTripsComponent {
   }
   showDetails(cardId: number) {
     this.cardService.showDetails(cardId);
-
-    // this.router.navigate(['/card-details', cardId]);
   }
 }

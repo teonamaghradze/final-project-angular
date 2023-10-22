@@ -18,6 +18,10 @@ import { AdvantagesComponent } from './features/landingpage/advantages/advantage
 import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
 import { TestimonialsComponent } from './features/landingpage/testimonials/testimonials.component';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { LoginComponent } from './features/login/login.component';
+import { SignUpComponent } from './features/sign-up/sign-up.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +36,8 @@ import { FooterComponent } from './core/components/footer/footer.component';
     FavoriteTripsComponent,
     TestimonialsComponent,
     FooterComponent,
+    LoginComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +46,9 @@ import { FooterComponent } from './core/components/footer/footer.component';
     RoadTripComponent,
     HttpClientModule,
     GoogleMapsModule,
+    RouterModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

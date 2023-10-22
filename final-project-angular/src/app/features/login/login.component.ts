@@ -1,17 +1,13 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Users } from '../register/interfaces/users';
+import { Users } from '../sign-up/interfaces/users';
 
-import { RegisterComponent } from '../register/register.component';
-import { FormsModule } from '@angular/forms';
-import { UserDataService } from '../register/services/user-data.service';
+import { UserDataService } from '../sign-up/services/user-data.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  standalone: true,
-  imports: [FormsModule, RegisterComponent],
 })
 export class LoginComponent {
   email: string = '';
@@ -29,7 +25,7 @@ export class LoginComponent {
 
     if (user && user.password === this.password) {
       localStorage.setItem('loggedInUser', JSON.stringify(user));
-      this.router.navigate(['']);
+      //   this.router.navigate(['']);
     } else {
       alert('Invalid email or password');
     }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardService } from '../services/card.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorite-trips',
@@ -9,7 +10,7 @@ import { CardService } from '../services/card.service';
 export class FavoriteTripsComponent {
   favCards: any[] = [];
 
-  constructor(private cardService: CardService) {
+  constructor(private cardService: CardService, private router: Router) {
     this.favCards = this.cardService.getSavedCards();
     console.log(this.favCards);
   }
@@ -19,13 +20,13 @@ export class FavoriteTripsComponent {
   }
 
   toggleCard(card: any) {
-    const index = this.cardService.getSavedCards().indexOf(card);
+    // const index = this.cardService.getSavedCards().indexOf(card);
 
-    if (index === -1) {
-      this.cardService.addCard(card);
-    } else {
-      this.cardService.removeCard(card);
-    }
+    // if (index === -1) {
+    //   this.cardService.addCard(card);
+    // } else {
+    //   this.cardService.removeCard(card);
+    // }
 
     this.favCards = this.cardService.getSavedCards();
   }

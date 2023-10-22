@@ -6,13 +6,12 @@ import { Router } from '@angular/router';
 })
 export class CardService {
   constructor(private router: Router) {}
-  // savedCards: any[] = [];
-  // private savedCards: any[] =
-  //   JSON.parse(localStorage.getItem('savedCards')) || [];
 
   private savedCards: any[] = JSON.parse(
     localStorage.getItem('savedCards') || '[]'
   );
+
+  // private savedCards: any[] = [];
 
   addCard(card: any) {
     this.savedCards.push(card);
@@ -28,14 +27,20 @@ export class CardService {
   }
 
   isCardSaved(card: any) {
-    return this.savedCards.includes(card);
+    const isSaved = this.savedCards.includes(card);
+    this.updateLocalStorage();
+
+    return isSaved;
   }
 
   getSavedCards() {
+    this.updateLocalStorage();
     return this.savedCards;
   }
 
   showDetails(cardId: number) {
+    this.updateLocalStorage();
+
     this.router.navigate(['/card-details', cardId]);
   }
 

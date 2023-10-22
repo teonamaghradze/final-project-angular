@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fdsds",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 1
+    }
+  ]
+}
