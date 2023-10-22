@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'roads', component: RoadTripComponent },
   // canActivate: [AuthGuard],
-  { path: 'login', component: LoginComponent, canActivate: [loginGuard] },
+  { path: 'login', component: LoginComponent },
   { path: 'register', component: SignUpComponent },
   {
     path: 'community',

@@ -62,6 +62,24 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 7
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fssd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 8
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fsf",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 9
     }
   ]
 }

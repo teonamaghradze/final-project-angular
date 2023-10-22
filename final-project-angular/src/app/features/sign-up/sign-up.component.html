@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="image-container">
-    <img src="../../../assets/sign-up.jpg" alt="" />
+  <div class="login-container">
+    <h2>Welcome Back!</h2>
+    <p>To keep connected with us please login with your personal info</p>
+    <a routerLink="/login">Login</a>
   </div>
-
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
-    <h2>New user? Sign up now</h2>
-    <h1>Sign Up</h1>
+    <h2 class="create">Create Account</h2>
     <div class="flex">
       <label for="email"> Email:</label>
       <input type="text" id="email" formControlName="email" />
@@ -85,6 +85,5 @@
     >
       Register
     </button>
-    <a routerLink="/login">go to login</a>
   </form>
 </div>
