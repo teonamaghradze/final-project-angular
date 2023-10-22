@@ -22,6 +22,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './features/login/login.component';
 import { SignUpComponent } from './features/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DestinationsComponent } from './features/road-plan/destinations/destinations.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     ReactiveFormsModule,
     FormsModule,
+    DestinationsComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

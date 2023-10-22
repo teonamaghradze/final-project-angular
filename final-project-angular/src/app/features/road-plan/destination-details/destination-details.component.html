@@ -1,1 +1,11 @@
-<p>destination-details works!</p>
+<div class="destination-images">
+  <mat-card *ngIf="data?.address">
+    <div>
+      <img class="place-img" [src]="data?.imageUrl" mat-card-image />
+    </div>
+    <mat-card-header>
+      <img mat-card-avatar [src]="data?.iconUrl" />
+      <mat-card-title> {{ data?.name }} </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+</div>

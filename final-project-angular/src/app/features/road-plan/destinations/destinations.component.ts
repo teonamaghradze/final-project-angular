@@ -24,10 +24,7 @@ export interface PlaceSearchResult {
   selector: 'app-destinations',
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
-  // templateUrl: './destinations.component.html',
-  template: ` <mat-form-field appearance="outline">
-    <input #inputField matInput [placeholder]="placeholder" />
-  </mat-form-field>`,
+  templateUrl: './destinations.component.html',
   styleUrls: ['./destinations.component.scss'],
 })
 export class DestinationsComponent implements OnInit {

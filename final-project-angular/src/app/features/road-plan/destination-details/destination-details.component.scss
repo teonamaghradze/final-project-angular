@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+
+mat-card {
+  width: 316px;
+  height: 310px;
+  div img {
+    height: 229px;
+    width: 100%;
+  }
+}
+
+.img-box {
+  display: flex;
+  .place-img {
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+  }
+}
