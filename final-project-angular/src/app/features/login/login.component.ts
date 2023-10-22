@@ -25,7 +25,7 @@ export class LoginComponent {
 
     if (user && user.password === this.password) {
       localStorage.setItem('loggedInUser', JSON.stringify(user));
-      //   this.router.navigate(['']);
+      this.router.navigate(['']);
     } else {
       alert('Invalid email or password');
     }

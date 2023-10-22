@@ -8,6 +8,33 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 1
+    },
+    {
+      "email": "v@fmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "dasd",
+      "phoneNumber": "+995555281155",
+      "agreement": true,
+      "id": 2
+    },
+    {
+      "email": "g@g.ge",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fdsd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 3
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fsfd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 4
     }
   ]
 }

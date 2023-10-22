@@ -6,15 +6,15 @@ import { CommunityTripsComponent } from './features/community/community-trips/co
 import { CommunityTripDetailsComponent } from './features/community/community-trip-details/community-trip-details.component';
 import { MapsComponent } from './features/maps/maps.component';
 import { MainPageComponent } from './features/landingpage/main-page/main-page.component';
-import { AuthGuard } from './shared/guards/auth.guard';
 import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
 import { SignUpComponent } from './features/sign-up/sign-up.component';
+import { loginGuard } from './features/login/guards/login.guard';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'roads', component: RoadTripComponent },
   // canActivate: [AuthGuard],
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, canActivate: [loginGuard] },
   { path: 'register', component: SignUpComponent },
   {
     path: 'community',
