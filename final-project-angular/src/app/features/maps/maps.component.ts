@@ -11,7 +11,7 @@ export class MapsComponent {
 
   restaurants: any;
   display: any;
-  center: google.maps.LatLngLiteral = { lat: 10, lng: 10 };
+  center: google.maps.LatLngLiteral = { lat: 0, lng: 0 };
   zoom = 15;
 
   moveMap(event: google.maps.MapMouseEvent) {

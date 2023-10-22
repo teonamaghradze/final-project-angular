@@ -1,15 +1,17 @@
 <div class="container">
   <div>
+    <h2>Search Restaurants</h2>
+
     <input #placeInput id="placeInput" placeholder="Enter a place" />
     <button id="searchButton" (click)="searchPlace(placeInput.value)">
-      Search
+      <img src="../../../assets/magnifying-glass-solid.svg" alt="" />
     </button>
 
     <div class="map-container">
       <google-map
         #googleMap
         [height]="'500px'"
-        [width]="'750px'"
+        [width]="'850px'"
         [center]="center"
         [zoom]="zoom"
         (mapClick)="moveMap($event)"
@@ -17,15 +19,22 @@
       >
       </google-map>
 
-      <div class="restaurant-data">
-        <div *ngFor="let resto of restaurants" class="resto-data">
-          <p>{{ resto.name }}</p>
-          <p>{{ resto.address }}</p>
-          <p>{{ resto?.cuisine?.description }}</p>
-          <img src="{{ resto.photo?.images.small.url }}" alt="" />
+      <div class="restaurant-data-container">
+        <div class="restaurant-data">
+          <div *ngFor="let resto of restaurants" class="resto-data">
+            <p class="name">{{ resto.name }}</p>
+            <p class="address">{{ resto.address }}</p>
+            <p class="description">{{ resto?.cuisine?.description }}</p>
+            <img src="{{ resto.photo?.images.small.url }}" alt="" />
 
-          <p>{{ resto.price }}</p>
-          <p>{{ resto.rating }}</p>
+            <div class="footer">
+              <p class="price">{{ resto.price }}</p>
+
+              <p class="rating" *ngIf="resto.rating">
+                &#9733; {{ resto.rating }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

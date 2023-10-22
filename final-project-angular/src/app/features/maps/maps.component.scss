@@ -2,7 +2,13 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-top: 3rem;
+  // margin-top: 2rem;
+  height: 135%;
+}
+h2 {
+  margin-left: 1rem;
+  font-size: 1.6rem;
+  text-align: center;
 }
 
 input {
@@ -18,44 +24,61 @@ input {
 input:focus {
   border: 2px solid #9b8df1;
 }
-#searchButton {
-  background-color: #9b8df1;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  border-radius: 10px;
-  padding: 1rem 2rem;
-  margin-left: 10px;
-}
 
-#searchButton:hover {
-  background-color: #7362f6;
+#searchButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-left: 10px;
+  img {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .map-container {
-  width: 750px;
-  height: 400px;
+  width: 78%;
 }
 
 .map-data {
   display: flex;
   gap: 10px;
-  margin: 10px;
+  margin-top: 8rem;
 }
 
+.restaurant-data-container {
+  max-height: 500px;
+  overflow-y: auto;
+  max-width: 100%; /* Expand the width to its parent's width */
+  max-height: 500px;
+}
 .resto-data {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin: 10px;
   max-width: 400px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
+  img {
+    width: 100%;
+  }
+  p {
+    margin: 5px 0;
+  }
+  .name {
+    font-weight: bold;
+  }
+  .address {
+    font-style: italic;
+  }
 
-.resto-data p {
-  margin: 5px 0;
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .map-container {
   display: flex;
+  gap: 2rem;
 }
