@@ -4,37 +4,28 @@
       "email": "a@gmail.com",
       "password": "123123123",
       "confirmPassword": "123123123",
-      "nickname": "fdsds",
+      "nickname": "fdsfd",
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 1
     },
     {
-      "email": "v@fmail.com",
+      "email": "aa@gmail.com",
       "password": "123123123",
       "confirmPassword": "123123123",
-      "nickname": "dasd",
-      "phoneNumber": "+995555281155",
+      "nickname": "fsf",
+      "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 2
     },
     {
-      "email": "g@g.ge",
+      "email": "aa@gmail.com",
       "password": "123123123",
       "confirmPassword": "123123123",
-      "nickname": "fdsd",
+      "nickname": "fgd",
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 3
-    },
-    {
-      "email": "a@gmail.com",
-      "password": "123123123",
-      "confirmPassword": "123123123",
-      "nickname": "fsfd",
-      "phoneNumber": "+995555281138",
-      "agreement": true,
-      "id": 4
     }
   ]
 }

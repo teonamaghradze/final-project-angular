@@ -27,6 +27,11 @@ export class UserDataService {
   getUsersData() {
     return this.usersData;
   }
+
+  isEmailExists(email: string): boolean {
+    return this.usersData.some((user) => user.email === email);
+  }
+
   getUserByEmail(email: string) {
     const userEmail = this.usersData.find((user) => user.email === email);
 

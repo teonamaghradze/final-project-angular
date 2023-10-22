@@ -93,22 +93,31 @@ export class SignUpComponent {
 
     if (this.registrationForm.valid) {
       const formData = this.registrationForm.value;
-      this.registrationForm.reset();
 
-      this.userDataService.setUserData(formData);
-      alert('You are registered');
-      this.cd.markForCheck();
+      const emailExists = this.userDataService.isEmailExists(formData.email);
 
-      this.http.post<any>('http://localhost:3000/users', formData).subscribe(
-        (res) => {
-          alert('signup successfull');
-          this.registrationForm.reset();
-          this.router.navigate(['/login']);
-        },
-        (err) => {
-          alert('not registered');
-        }
-      );
+      if (emailExists) {
+        // Handle the case where the email already exists
+        alert('Email already exists. Please use a different email.');
+      } else {
+        this.registrationForm.reset();
+
+        this.userDataService.setUserData(formData);
+        this.cd.markForCheck();
+
+        this.http.post<any>('http://localhost:3000/users', formData).subscribe(
+          (res) => {
+            console.log(formData.email);
+
+            alert('Signup successful');
+            this.registrationForm.reset();
+            this.router.navigate(['/login']);
+          },
+          (err) => {
+            alert('Not registered');
+          }
+        );
+      }
     }
   }
 
