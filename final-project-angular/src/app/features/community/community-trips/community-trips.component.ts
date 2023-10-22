@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { CardService } from '../services/card.service';
 
 @Component({
@@ -12,6 +11,9 @@ export class CommunityTripsComponent {
   data: any;
   inputName: string = '';
   filteredData: any[] = [];
+
+  //select filter
+  selectedDays = '';
 
   constructor(private http: HttpClient, private cardService: CardService) {
     this.http.get('assets/data.json').subscribe(
@@ -27,12 +29,20 @@ export class CommunityTripsComponent {
 
   filterCity(event: any) {
     this.inputName = event.target.value;
-    console.log(this.inputName);
-
     this.filteredData = this.data.filter((item: any) => {
       return item.description
         .toLowerCase()
         .includes(this.inputName.toLowerCase());
+    });
+  }
+
+  filterDays() {
+    console.log(this.selectedDays);
+
+    this.filteredData = this.data.filter((item: any) => {
+      return item.duration
+        .toLowerCase()
+        .includes(this.selectedDays.toLowerCase());
     });
   }
 

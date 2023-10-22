@@ -6,12 +6,23 @@
     <p>
       Find trips created by other users and get inspired for your next trip!
     </p>
-
-    <input
-      (input)="filterCity($event)"
-      type="text"
-      placeholder="Search destinations (Cities only)"
-    />
+    <div>
+      <input
+        (input)="filterCity($event)"
+        type="text"
+        placeholder="Search destinations (Cities only)"
+      />
+      <select (change)="filterDays()" [(ngModel)]="selectedDays">
+        <option value="" selected>Days</option>
+        <option>1 Day</option>
+        <option>2 Days</option>
+        <option>3 Days</option>
+        <option>4 Days</option>
+        <option>5 Days</option>
+        <option>6 Days</option>
+        <option>7 Days</option>
+      </select>
+    </div>
   </header>
 
   <button routerLink="/favorites">SEE FAV TRIPS</button>

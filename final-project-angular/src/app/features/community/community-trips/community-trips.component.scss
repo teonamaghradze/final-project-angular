@@ -12,7 +12,7 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 15rem;
+  padding-top: 12rem;
 
   input {
     width: 40rem;
@@ -29,6 +29,19 @@ header {
 
   input:focus {
     border: 2px solid #9b8df1;
+  }
+
+  select {
+    cursor: pointer;
+    border: 2px solid rgb(239, 237, 237);
+    outline: none;
+    border-radius: 10px;
+    padding: 1rem;
+    border-left: none;
+    option {
+      font-size: 14px;
+      color: #333;
+    }
   }
 }
 
