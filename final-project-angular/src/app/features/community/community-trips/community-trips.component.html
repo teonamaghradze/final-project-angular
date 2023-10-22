@@ -27,7 +27,7 @@
 
   <button routerLink="/favorites">SEE FAV TRIPS</button>
   <div class="city-cards-container">
-    <div class="city-card" *ngFor="let city of filteredData">
+    <div class="city-card" *ngFor="let city of currentlyDisplayedCards">
       <button
         (click)="toggleCard(city)"
         [ngClass]="{ 'red-button': isCardSaved(city) }"
@@ -57,5 +57,11 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="center-button">
+    <button class="load-more-button" (click)="loadMoreCards()">
+      <img src="../../../../assets/spinner-solid.svg" alt="" />
+      Load More
+    </button>
   </div>
 </main>

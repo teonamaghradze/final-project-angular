@@ -110,3 +110,27 @@ header {
 .red-button {
   background-color: red;
 }
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5rem 0 15rem 0;
+}
+
+.load-more-button {
+  color: #9b8df1;
+  padding: 10px 20px;
+  border: 1px solid #9b8df1;
+  border-radius: 6rem;
+  background: none;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 auto;
+
+  cursor: pointer;
+  img {
+    width: 1rem;
+    margin-right: 5px;
+  }
+}
