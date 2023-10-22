@@ -1,13 +1,11 @@
-<form (ngSubmit)="login()" class="login-form">
+<form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form">
   <div class="form-group">
     <label for="email">Email</label>
     <input
       type="email"
       id="email"
-      name="email"
+      formControlName="email"
       required
-      [(ngModel)]="email"
-      #emailInput="ngModel"
       class="form-input"
     />
   </div>
@@ -16,9 +14,8 @@
     <input
       type="password"
       id="password"
-      name="password"
+      formControlName="password"
       required
-      [(ngModel)]="password"
       class="form-input"
     />
   </div>

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { Users } from '../sign-up/interfaces/users';
 
 import { UserDataService } from '../sign-up/services/user-data.service';
+import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +12,46 @@ import { UserDataService } from '../sign-up/services/user-data.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  email: string = '';
-  password: string = '';
+  public loginForm!: FormGroup;
+  email: any;
+  password: any;
 
   constructor(
+    private formBuilder: FormBuilder,
     private userDataService: UserDataService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) {}
 
-  login() {
-    const user: Users | undefined = this.userDataService.getUserByEmail(
-      this.email
-    );
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      email: [''],
+      password: [''],
+    });
+  }
 
-    if (user && user.password === this.password) {
-      localStorage.setItem('loggedInUser', JSON.stringify(user));
-      this.router.navigate(['']);
-    } else {
-      alert('Invalid email or password');
-    }
+  login() {
+    // Get the email and password from the form
+    const email = this.loginForm.value.email;
+    const password = this.loginForm.value.password;
+
+    this.http.get<any>('http://localhost:3000/users').subscribe(
+      (res) => {
+        const user = res.find((el: any) => {
+          return el.email === email && el.password === password;
+        });
+
+        if (user) {
+          alert('login success');
+          this.loginForm.reset();
+          this.router.navigate(['']);
+        } else {
+          alert('user not found');
+        }
+      },
+      (err) => {
+        alert('Something went wrong');
+      }
+    );
   }
 }

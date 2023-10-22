@@ -26,6 +26,42 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 3
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "sfds",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 4
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fsdsfd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 5
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fssd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 6
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "dfsef",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 7
     }
   ]
 }
