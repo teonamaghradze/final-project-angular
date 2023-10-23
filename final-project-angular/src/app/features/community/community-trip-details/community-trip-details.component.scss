@@ -10,6 +10,8 @@
 
 .details-container {
   display: flex;
+  gap: 2rem;
+  margin-top: 9rem;
 }
 
 .cover {
@@ -20,6 +22,7 @@
 h1 {
   color: black;
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 section {
@@ -38,11 +41,18 @@ section {
 
     .author-date {
       display: flex;
-      align-items: center;
+      // align-items: center;
+      font-size: 1rem;
+      gap: 1rem;
+      .author-date-details {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
 
       .date {
-        margin: 0;
         font-size: 0.9rem;
+        color: rgb(173, 168, 168);
       }
 
       .author {
@@ -60,6 +70,7 @@ section {
     cursor: pointer;
     border-radius: 4px;
     font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .back-btn:hover {
@@ -76,7 +87,6 @@ section {
   .likes {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
 
     .icon {
       width: 2rem;
@@ -84,6 +94,7 @@ section {
 
     span {
       font-weight: bold;
+      font-size: 1rem;
     }
   }
 }

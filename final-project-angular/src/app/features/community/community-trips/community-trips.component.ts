@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CardService } from '../services/card.service';
 
@@ -7,12 +7,12 @@ import { CardService } from '../services/card.service';
   templateUrl: './community-trips.component.html',
   styleUrls: ['./community-trips.component.scss'],
 })
-export class CommunityTripsComponent {
+export class CommunityTripsComponent implements OnInit {
   data: any;
   inputName: string = '';
   filteredData: any[] = [];
 
-  //select filter
+  // Select filter
   selectedDays = '';
 
   // load more cards
@@ -20,16 +20,16 @@ export class CommunityTripsComponent {
   numCardsToLoad = 10;
   currentlyDisplayedCards: any[] = [];
 
-  constructor(private http: HttpClient, private cardService: CardService) {
-    this.currentlyDisplayedCards = this.cardService.getSavedCards();
-  }
+  constructor(private http: HttpClient, private cardService: CardService) {}
 
   ngOnInit() {
+    // Load saved filters when the component is initialized
+    this.loadSavedFilters();
+
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
-        this.filteredData = [...this.data];
-        // Initialize 10  cards at first
+        this.filterData();
         this.loadInitialCards();
       },
       (error) => {
@@ -38,13 +38,31 @@ export class CommunityTripsComponent {
     );
   }
 
+  // Save the current filters to local storage
+  saveFilters() {
+    localStorage.setItem('selectedDays', this.selectedDays);
+    localStorage.setItem('inputName', this.inputName);
+  }
+
+  // Load saved filters from local storage
+  loadSavedFilters() {
+    this.selectedDays = localStorage.getItem('selectedDays') || '';
+    this.inputName = localStorage.getItem('inputName') || '';
+  }
+
+  filterData() {
+    this.filteredData = this.data.filter((item: any) => {
+      return (
+        item.description.toLowerCase().includes(this.inputName.toLowerCase()) &&
+        item.duration.toLowerCase().includes(this.selectedDays.toLowerCase())
+      );
+    });
+  }
+
   filterCity(event: any) {
     this.inputName = event.target.value;
-    this.filteredData = this.data.filter((item: any) => {
-      return item.description
-        .toLowerCase()
-        .includes(this.inputName.toLowerCase());
-    });
+    this.filterData();
+    this.saveFilters();
     this.loadInitialCards();
   }
 
@@ -64,12 +82,8 @@ export class CommunityTripsComponent {
 
   filterDays() {
     console.log(this.selectedDays);
-
-    this.filteredData = this.data.filter((item: any) => {
-      return item.duration
-        .toLowerCase()
-        .includes(this.selectedDays.toLowerCase());
-    });
+    this.filterData();
+    this.saveFilters();
     this.loadInitialCards();
   }
 
@@ -82,7 +96,6 @@ export class CommunityTripsComponent {
       this.cardService.removeCard(card);
     }
     // Save the updated saved cards to local storage
-
     localStorage.setItem(
       'savedCards',
       JSON.stringify(this.cardService.getSavedCards())
@@ -93,6 +106,7 @@ export class CommunityTripsComponent {
   isCardSaved(card: any) {
     return this.cardService.isCardSaved(card);
   }
+
   showDetails(cardId: number) {
     this.cardService.showDetails(cardId);
   }

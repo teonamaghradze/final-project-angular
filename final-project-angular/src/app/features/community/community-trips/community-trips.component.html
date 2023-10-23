@@ -8,6 +8,7 @@
     </p>
     <div>
       <input
+        [(ngModel)]="inputName"
         (input)="filterCity($event)"
         type="text"
         placeholder="Search destinations (Cities only)"
