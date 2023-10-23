@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Users } from '../sign-up/interfaces/users';
 
-import { UserDataService } from '../sign-up/services/user-data.service';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +17,9 @@ export class LoginComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userDataService: UserDataService,
     private router: Router,
-    private http: HttpClient
+    private http: HttpClient,
+    private auth: AuthService
   ) {}
 
   ngOnInit(): void {
@@ -42,11 +41,12 @@ export class LoginComponent {
         });
 
         if (user) {
-          alert('login success');
+          this.auth.login();
+          alert('Login success');
           this.loginForm.reset();
           this.router.navigate(['']);
         } else {
-          alert('user not found');
+          alert('User not found');
         }
       },
       (err) => {

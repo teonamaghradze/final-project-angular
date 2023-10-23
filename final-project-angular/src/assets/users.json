@@ -80,6 +80,69 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 9
+    },
+    {
+      "email": "aab@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "ffsdf",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 10
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "wed",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 11
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fsdf",
+      "phoneNumber": "+995555281155",
+      "agreement": true,
+      "id": 12
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "asdsa",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 13
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "12",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 14
+    },
+    {
+      "email": "maghradzeteo@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "dsd",
+      "phoneNumber": "+995555281155",
+      "agreement": true,
+      "id": 15
+    },
+    {
+      "email": "a@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "sfd",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 16
     }
   ]
 }

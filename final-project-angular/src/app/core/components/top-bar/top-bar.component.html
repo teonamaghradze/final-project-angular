@@ -9,8 +9,15 @@
     <span routerLink="/roads">Find Routes</span>
     <span routerLink="/restaurants">Find Restaurants</span>
   </section>
-  <section class="login-signup">
+  <!-- <section class="login-signup">
     <button routerLink="/login">Login</button>
+    <button routerLink="/register">Register</button>
+  </section> -->
+
+  <section class="login-signup">
+    <button (click)="toggleLogin()">
+      {{ auth.isLoggedInUser() ? "Logout" : "Login" }}
+    </button>
     <button routerLink="/register">Register</button>
   </section>
 </nav>
