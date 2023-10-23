@@ -76,6 +76,8 @@
       border: 0;
       cursor: pointer;
       color: white;
+      transform: scale(0.9);
+      transition: 0.4s ease-in-out;
 
       &:last-child {
         background: #9b8df1;
@@ -113,13 +115,17 @@
     display: flex;
     .logo-container {
       // margin-right: 0px;
-      margin-right: 51rem;
-      margin-left: 18rem;
+      // margin-right: 51rem;
+      // margin-left: 18rem;
     }
     .burger {
       display: block;
       cursor: pointer;
       width: 30px;
     }
+  }
+
+  .none {
+    background-color: red;
   }
 }
