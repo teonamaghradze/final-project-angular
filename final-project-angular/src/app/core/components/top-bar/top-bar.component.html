@@ -1,5 +1,10 @@
 <nav class="top-bar-container">
-  <section class="logo-container" routerLink="/">
+  <section
+    class="logo-container"
+    routerLink="/"
+    [class.active]="activeLink === 'logo'"
+    (click)="setActiveLink('logo')"
+  >
     <img src="../../assets/tripplanner-logo-blue.png" alt="trip planner logo" />
     <span>Trip Planner</span>
   </section>
