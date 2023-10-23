@@ -10,8 +10,9 @@
 
 .details-container {
   display: flex;
-  gap: 2rem;
-  margin-top: 9rem;
+  // align-items: center;
+  gap: 6rem;
+  margin-top: 3rem;
 }
 
 .fulldescription {
@@ -19,8 +20,9 @@
   margin-bottom: 3rem;
 }
 .cover {
-  max-width: 60%;
-  width: 1500px;
+  max-width: 766px;
+  margin-top: 5rem;
+  border-radius: 0.5rem;
 }
 
 h1 {

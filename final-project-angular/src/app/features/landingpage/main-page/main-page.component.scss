@@ -46,11 +46,11 @@ header {
     padding: 1rem 2rem;
     border-radius: 2rem;
     cursor: pointer;
-  }
-  button:hover {
-    transform: rotate(8deg);
-    transition: 0.8s ease-in-out;
-    transform-origin: 0 0;
+    &:hover {
+      transform: rotate(8deg);
+      transition: 0.8s ease-in-out;
+      transform-origin: 0 0;
+    }
   }
 
   img {
