@@ -20,7 +20,7 @@ export class AuthGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | UrlTree | Observable<boolean | UrlTree> {
-    if (this.authService.isLoggedIn()) {
+    if (this.authService.isLoggedInUser()) {
       return true;
     } else {
       // If the user is not logged in, redirect to the login page
@@ -29,9 +29,9 @@ export class AuthGuard {
   }
 }
 
-export const authGuard: CanActivateFn = (route, state) => {
-  return true;
-};
+// export const authGuard: CanActivateFn = (route, state) => {
+//   return true;
+// };
 
 // import { CanActivateFn, Router } from '@angular/router';
 // import { inject } from '@angular/core';

@@ -20,7 +20,7 @@
         </div>
       </div>
 
-      <p>{{ cardData?.fulldescription }}</p>
+      <p class="fulldescription">{{ cardData?.fulldescription }}</p>
     </div>
 
     <div class="day-plans">
@@ -33,7 +33,12 @@
           <button (click)="toggleDay(day)">
             {{ "Day " + day.split("day")[1] }}
           </button>
+          <p class="day-title" *ngIf="showDay[day]">
+            {{ cardData[day + "-title"] }}
+            <img class="day-img" src="{{ cardData[day + '-title-img'] }}" />
+          </p>
           <p *ngIf="showDay[day]">{{ cardData[day] }}</p>
+          <!-- <img src="{{ cardData[day + "-title-img"] }}" alt="" /> -->
         </ng-container>
       </ng-container>
     </div>

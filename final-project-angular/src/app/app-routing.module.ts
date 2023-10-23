@@ -9,6 +9,7 @@ import { MainPageComponent } from './features/landingpage/main-page/main-page.co
 import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
 import { SignUpComponent } from './features/sign-up/sign-up.component';
 import { loginGuard } from './features/login/guards/login.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },

@@ -12,6 +12,7 @@
     "fulldescription": "Embark on an exciting 3-day journey through the vibrant city of Seoul, South Korea. Explore iconic landmarks, indulge in delicious cuisine, and immerse yourself in the rich culture of this captivating destination.",
     "id": "0",
     "day1-title": "Ocloud Hotel",
+    "day1-title-img": "https://images.unsplash.com/photo-1514161955277-4ea47eef2ff9?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&fit=crop&h=200&w=200&ixid=eyJhcHBfaWQiOjE3Nzg0fQ",
     "day1": "Day 1: Arrival and Exploration\n\n- Arrive in Seoul and check into your hotel.\n- Explore the local neighborhood and try some traditional Korean dishes.",
     "day2-title": "The Place Dining (더플레이스다이닝)",
 
@@ -827,6 +828,7 @@
     "fulldescription": "Embark on a journey through the ancient city of Athens, where history, culture, and mythology thrive, during a 5-day Greek adventure. Explore ancient ruins, savor Greek cuisine, and immerse yourself in the cradle of Western civilization.",
     "id": "34",
     "day1-title": "Arrival in Athens",
+    "day1-title-img": "https://randomuser.me/api/portraits/men/29.jpg",
     "day1": "Day 1: Arrive in Athens and check into your hotel in Plaka. Visit the Acropolis and enjoy souvlaki at a local taverna.",
     "day2-title": "Ancient Wonders",
     "day2": "Day 2: Explore ancient wonders like the Temple of Olympian Zeus, the Ancient Agora, and the Panathenaic Stadium. Wander through Anafiotika.",

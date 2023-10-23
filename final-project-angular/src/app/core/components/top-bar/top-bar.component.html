@@ -5,19 +5,33 @@
   </section>
 
   <section class="trips-container">
-    <span routerLink="/community">Start Planning</span>
-    <span routerLink="/roads">Find Routes</span>
-    <span routerLink="/restaurants">Find Restaurants</span>
+    <span
+      routerLink="/community"
+      [class.active]="activeLink === 'community'"
+      (click)="setActiveLink('community')"
+      >Start Planning</span
+    >
+    <span
+      routerLink="/roads"
+      [class.active]="activeLink === 'roads'"
+      (click)="setActiveLink('roads')"
+      >Find Routes</span
+    >
+    <span
+      routerLink="/restaurants"
+      [class.active]="activeLink === 'restaurants'"
+      (click)="setActiveLink('restaurants')"
+      >Find Restaurants</span
+    >
   </section>
-  <!-- <section class="login-signup">
-    <button routerLink="/login">Login</button>
-    <button routerLink="/register">Register</button>
-  </section> -->
 
   <section class="login-signup">
     <button (click)="toggleLogin()">
       {{ auth.isLoggedInUser() ? "Logout" : "Login" }}
     </button>
-    <button routerLink="/register">Register</button>
+
+    <button *ngIf="!auth.isLoggedInUser()" routerLink="/register">
+      Register
+    </button>
   </section>
 </nav>

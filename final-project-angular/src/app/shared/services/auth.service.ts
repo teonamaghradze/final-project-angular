@@ -20,4 +20,8 @@ export class AuthService {
   isLoggedInUser(): boolean {
     return this.isLoggedIn;
   }
+
+  get isloggedin() {
+    return this.isLoggedIn;
+  }
 }

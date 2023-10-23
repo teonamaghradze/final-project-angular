@@ -10,6 +10,13 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class TopBarComponent {
   constructor(public auth: AuthService, private router: Router) {}
 
+  activeLink: string = 'community';
+
+  // Function to update the active link when a link is clicked.
+  setActiveLink(link: string) {
+    this.activeLink = link;
+  }
+
   // handle the login/logout action
   toggleLogin() {
     if (this.auth.isLoggedInUser()) {
