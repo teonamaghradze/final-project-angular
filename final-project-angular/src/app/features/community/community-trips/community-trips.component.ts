@@ -21,6 +21,10 @@ export class CommunityTripsComponent {
   currentlyDisplayedCards: any[] = [];
 
   constructor(private http: HttpClient, private cardService: CardService) {
+    this.currentlyDisplayedCards = this.cardService.getSavedCards();
+  }
+
+  ngOnInit() {
     this.http.get('assets/data.json').subscribe(
       (res: any) => {
         this.data = res;
@@ -77,6 +81,12 @@ export class CommunityTripsComponent {
     } else {
       this.cardService.removeCard(card);
     }
+    // Save the updated saved cards to local storage
+
+    localStorage.setItem(
+      'savedCards',
+      JSON.stringify(this.cardService.getSavedCards())
+    );
   }
 
   // Check if a card is in the savedCards collection

@@ -7,45 +7,32 @@ import { Router } from '@angular/router';
 export class CardService {
   constructor(private router: Router) {}
 
-  private savedCards: any[] = JSON.parse(
+  //in fav component save if refreshed
+  public savedCards: any[] = JSON.parse(
     localStorage.getItem('savedCards') || '[]'
   );
 
-  // private savedCards: any[] = [];
-
   addCard(card: any) {
     this.savedCards.push(card);
-    this.updateLocalStorage();
   }
 
   removeCard(card: any) {
     const index = this.savedCards.indexOf(card);
     if (index !== -1) {
       this.savedCards.splice(index, 1);
-      this.updateLocalStorage();
     }
   }
 
   isCardSaved(card: any) {
     const isSaved = this.savedCards.includes(card);
-    this.updateLocalStorage();
-
     return isSaved;
   }
 
   getSavedCards() {
-    this.updateLocalStorage();
     return this.savedCards;
   }
 
   showDetails(cardId: number) {
-    this.updateLocalStorage();
-
     this.router.navigate(['/card-details', cardId]);
-  }
-
-  // Update local storage with the latest saved cards
-  private updateLocalStorage() {
-    localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
   }
 }
