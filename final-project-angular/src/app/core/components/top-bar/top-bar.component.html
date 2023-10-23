@@ -8,8 +8,14 @@
     <img src="../../assets/tripplanner-logo-blue.png" alt="trip planner logo" />
     <span>Trip Planner</span>
   </section>
+  <img
+    class="burger"
+    src="../../../../assets/bars-solid.svg"
+    (click)="showMobileMenu()"
+    alt=""
+  />
 
-  <section class="trips-container">
+  <section class="trips-container" [class.show-mobile-menu]="showMobileMenu">
     <span
       routerLink="/community"
       [class.active]="activeLink === 'community'"
@@ -30,7 +36,7 @@
     >
   </section>
 
-  <section class="login-signup">
+  <section class="login-signup" [class.show-mobile-menu]="showMobileMenu">
     <button (click)="toggleLogin()">
       {{ auth.isLoggedInUser() ? "Logout" : "Login" }}
     </button>

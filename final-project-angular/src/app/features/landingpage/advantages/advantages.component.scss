@@ -80,6 +80,7 @@ p {
   left: 0;
   right: 0;
   overflow-x: hidden;
+  display: block;
 }
 
 .ocean3 {
@@ -90,6 +91,7 @@ p {
   left: 0;
   right: 0;
   overflow-x: hidden;
+  display: block;
 }
 .wave {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='lavender'/%3E%3C/svg%3E");
@@ -122,5 +124,17 @@ p {
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1150px) {
+  .features {
+    flex-direction: column;
+    max-width: 50rem;
+    gap: 4rem;
+  }
+  .ocean2,
+  .ocean3 {
+    display: none;
   }
 }

@@ -11,6 +11,7 @@ export class TopBarComponent {
   constructor(public auth: AuthService, private router: Router) {}
 
   activeLink: string = 'community';
+  isMenuShown: boolean = false;
 
   // Function to update the active link when a link is clicked.
   setActiveLink(link: string) {
@@ -27,5 +28,11 @@ export class TopBarComponent {
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  //show menu
+  showMobileMenu() {
+    this.isMenuShown = !this.isMenuShown;
+    console.log(this.isMenuShown);
   }
 }
