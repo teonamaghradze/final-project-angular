@@ -20,6 +20,7 @@ const routes: Routes = [
   {
     path: 'community',
     component: CommunityTripsComponent,
+    canActivate: [AuthGuard],
   },
   { path: 'card-details/:id', component: CommunityTripDetailsComponent },
   { path: 'restaurants', component: MapsComponent },
