@@ -136,3 +136,10 @@ section {
     display: block;
   }
 }
+
+@media (max-width: 1380px) {
+  .cover {
+    max-width: 705px;
+    margin-top: 12rem;
+  }
+}
