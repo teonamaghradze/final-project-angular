@@ -7,7 +7,20 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   private isLoggedIn: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  // remove later
+  user: any;
+
+  constructor(private http: HttpClient) {
+    this.retrieveUserData();
+  }
+
+  retrieveUserData() {
+    const userData = localStorage.getItem('user');
+    if (userData) {
+      this.user = JSON.parse(userData);
+      this.isLoggedIn = true;
+    }
+  }
 
   login() {
     this.isLoggedIn = true;

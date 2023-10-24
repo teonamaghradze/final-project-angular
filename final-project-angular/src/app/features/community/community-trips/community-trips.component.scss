@@ -184,3 +184,17 @@ header {
 .favorite-button:hover {
   color: #7460f6;
 }
+
+@media (max-width: 1400px) {
+  .city-cards-container {
+    grid-template-columns: repeat(3, 1fr);
+    // margin-left: 11rem;
+  }
+}
+
+@media (max-width: 1100px) {
+  .city-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    // margin-left: 11rem;
+  }
+}

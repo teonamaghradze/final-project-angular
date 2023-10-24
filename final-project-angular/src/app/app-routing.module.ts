@@ -8,15 +8,14 @@ import { MapsComponent } from './features/maps/maps.component';
 import { MainPageComponent } from './features/landingpage/main-page/main-page.component';
 import { FavoriteTripsComponent } from './features/community/favorite-trips/favorite-trips.component';
 import { SignUpComponent } from './features/sign-up/sign-up.component';
-import { loginGuard } from './features/login/guards/login.guard';
+import { LoginGuard } from './features/login/guards/login.guard';
 import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'roads', component: RoadTripComponent },
-  // canActivate: [AuthGuard],
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: SignUpComponent },
+  { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+  { path: 'register', component: SignUpComponent, canActivate: [LoginGuard] },
   {
     path: 'community',
     component: CommunityTripsComponent,

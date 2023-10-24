@@ -65,18 +65,19 @@ p {
 .ocean {
   height: 150px;
   width: 100%;
-  position: absolute;
-  bottom: -1100px;
+  position: relative;
+  bottom: 797px;
   left: 0;
   right: 0;
   overflow-x: hidden;
+  display: block;
 }
 
 .ocean2 {
   height: 150px;
   width: 100%;
-  position: absolute;
-  bottom: -1900px;
+  position: relative;
+  bottom: -731px;
   left: 0;
   right: 0;
   overflow-x: hidden;
@@ -92,6 +93,8 @@ p {
   right: 0;
   overflow-x: hidden;
   display: block;
+  position: relative;
+  bottom: 399px;
 }
 .wave {
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 88.7'%3E%3Cpath d='M800 56.9c-155.5 0-204.9-50-405.5-49.9-200 0-250 49.9-394.5 49.9v31.8h800v-.2-31.6z' fill='lavender'/%3E%3C/svg%3E");
@@ -134,7 +137,8 @@ p {
     gap: 4rem;
   }
   .ocean2,
-  .ocean3 {
+  .ocean3,
+  .ocean {
     display: none;
   }
 }

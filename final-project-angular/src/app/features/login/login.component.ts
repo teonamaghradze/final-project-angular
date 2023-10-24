@@ -45,6 +45,7 @@ export class LoginComponent {
           alert('Login success');
           this.loginForm.reset();
           this.router.navigate(['']);
+          localStorage.setItem('user', JSON.stringify(user));
         } else {
           alert('User not found');
         }

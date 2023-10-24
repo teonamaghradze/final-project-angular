@@ -28,24 +28,3 @@ export class AuthGuard {
     }
   }
 }
-
-// export const authGuard: CanActivateFn = (route, state) => {
-//   return true;
-// };
-
-// import { CanActivateFn, Router } from '@angular/router';
-// import { inject } from '@angular/core';
-// // import { UserDataService } from '../../../Shared/services/user-data.service';
-// import { AuthService } from '../services/auth.service';
-// // AuthService
-
-// export const AuthGuard: CanActivateFn = (route, state) => {
-//   const service = inject(AuthService);
-//   const router = inject(Router);
-
-//   if (!service.isLoggedIn()) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };

@@ -1,7 +1,7 @@
 h1 {
   font-size: 3rem;
   text-align: center;
-  margin-top: 14rem;
+  margin-top: -18rem;
   margin-bottom: 2rem;
   color: #9b8df1;
 
@@ -60,5 +60,12 @@ div p:last-child {
 
   section {
     margin: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  section {
+    flex-direction: column;
+    margin-bottom: -8rem;
   }
 }

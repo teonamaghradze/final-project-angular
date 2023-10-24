@@ -9,10 +9,20 @@ export class UserDataService {
   public isLoggedIn: boolean = false; //es guardistvis
   public currentUser: string = '';
 
+  // user: any;
+
   setUserData(data: Users) {
     this.usersData.push(data);
     console.log(data);
   }
+
+  // retrieveUserData() {
+  //   const userData = localStorage.getItem('user');
+  //   if (userData) {
+  //     this.user = JSON.parse(userData);
+  //     this.isLoggedIn = true;
+  //   }
+  // }
 
   editUserData(index: number, data: Users) {
     console.log(data, 'data');

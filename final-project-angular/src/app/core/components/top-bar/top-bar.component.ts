@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserDataService } from 'src/app/features/sign-up/services/user-data.service';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./top-bar.component.scss'],
 })
 export class TopBarComponent {
+  user: any;
+
   constructor(public auth: AuthService, private router: Router) {}
 
   activeLink: string = 'community';
