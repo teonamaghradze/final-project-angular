@@ -5,27 +5,29 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class CardService {
-  constructor(private router: Router) {}
-
-  //in fav component save if refreshed
-  public savedCards: any[] = JSON.parse(
+  private savedCards: any[] = JSON.parse(
     localStorage.getItem('savedCards') || '[]'
   );
 
+  constructor(private router: Router) {}
+
   addCard(card: any) {
     this.savedCards.push(card);
+    localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
+    console.log('addcard');
   }
 
   removeCard(card: any) {
-    const index = this.savedCards.indexOf(card);
+    const index = this.savedCards.findIndex((c) => c.id === card.id);
     if (index !== -1) {
       this.savedCards.splice(index, 1);
+      localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
     }
+    console.log('removecard');
   }
 
   isCardSaved(card: any) {
-    const isSaved = this.savedCards.includes(card);
-    return isSaved;
+    return this.savedCards.some((c) => c.id === card.id);
   }
 
   getSavedCards() {

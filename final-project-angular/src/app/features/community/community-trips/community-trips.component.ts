@@ -95,11 +95,6 @@ export class CommunityTripsComponent implements OnInit {
     } else {
       this.cardService.removeCard(card);
     }
-    // Save the updated saved cards to local storage
-    localStorage.setItem(
-      'savedCards',
-      JSON.stringify(this.cardService.getSavedCards())
-    );
   }
 
   // Check if a card is in the savedCards collection

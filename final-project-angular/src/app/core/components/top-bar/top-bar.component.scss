@@ -34,7 +34,7 @@
     gap: 2rem;
     margin-right: 20rem;
     color: #9b8df1;
-    font-size: 1.1rem;
+    // font-size: 1.2rem;
     font-weight: 500;
     display: block;
 
@@ -101,6 +101,14 @@
   display: none;
 }
 
+.mobile-nav {
+  display: none;
+}
+
+.mobile-nav-container {
+  display: none;
+}
+
 @media (max-width: 1150px) {
   .trips-container {
     span {
@@ -111,12 +119,8 @@
     display: none;
   }
   .top-bar-container {
-    display: flex;
-    .logo-container {
-      // margin-right: 0px;
-      // margin-right: 51rem;
-      // margin-left: 18rem;
-    }
+    // display: flex;
+
     .burger {
       display: block;
       cursor: pointer;
@@ -124,7 +128,28 @@
     }
   }
 
-  .none {
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    section:first-child {
+      display: flex;
+      flex-direction: column;
+    }
+    section:last-child {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .mobile-nav-container {
+    margin-bottom: 100px;
     background-color: red;
+    display: block;
+    position: absolute;
+    width: 30%;
+
+    top: 101%;
+    right: 0%;
+    padding: 0 2rem;
   }
 }

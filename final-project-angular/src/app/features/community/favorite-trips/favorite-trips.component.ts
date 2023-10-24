@@ -16,4 +16,12 @@ export class FavoriteTripsComponent {
   showDetails(cardId: number) {
     this.cardService.showDetails(cardId);
   }
+
+  deleteCard(cardId: number) {
+    const cardIndex = this.favCards.findIndex((card) => card.id === cardId);
+    if (cardIndex !== -1) {
+      this.favCards.splice(cardIndex, 1);
+      this.cardService.removeCard(cardId);
+    }
+  }
 }
