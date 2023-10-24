@@ -87,8 +87,21 @@ export class CommunityTripsComponent implements OnInit {
     this.loadInitialCards();
   }
 
-  // Toggle the card's presence in the savedCards collection
+  // // Toggle the card's presence in the savedCards collection
+  // toggleCard(card: any) {
+  //   const index = this.cardService.getSavedCards().indexOf(card);
+  //   if (index === -1) {
+  //     this.cardService.addCard(card);
+  //   } else {
+  //     this.cardService.removeCard(card);
+  //   }
+  // }
+
   toggleCard(card: any) {
+    console.log('Toggle Card Called');
+    console.log('Card:', card);
+    console.log('Is Card Saved:', this.isCardSaved(card));
+
     const index = this.cardService.getSavedCards().indexOf(card);
     if (index === -1) {
       this.cardService.addCard(card);
