@@ -26,7 +26,9 @@
     </div>
   </header>
 
-  <button routerLink="/favorites">SEE FAV TRIPS</button>
+  <button class="favorite-button" routerLink="/favorites">
+    See saved trips &#10154;
+  </button>
   <div class="city-cards-container">
     <div class="city-card" *ngFor="let city of currentlyDisplayedCards">
       <div class="add-remove-buttons">

@@ -1,7 +1,7 @@
+<button class="back-btn" routerLink="/community">&#8617; Back</button>
 <div class="city-cards-container">
-  <button routerLink="/community">back</button>
   <div class="city-card" *ngFor="let city of favCards">
-    <button (click)="deleteCard(city.id)">delete</button>
+    <button class="delete-btn" (click)="deleteCard(city.id)">Delete</button>
     <div (click)="showDetails(city.id)">
       <img class="cover-image" src="{{ city.cover }}" alt="" />
       <h2>{{ city.title }}</h2>

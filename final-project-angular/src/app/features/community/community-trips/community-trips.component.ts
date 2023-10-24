@@ -16,8 +16,8 @@ export class CommunityTripsComponent implements OnInit {
   selectedDays = '';
 
   // load more cards
-  numCardsToDisplay = 10;
-  numCardsToLoad = 10;
+  numCardsToDisplay = 12;
+  numCardsToLoad = 8;
   currentlyDisplayedCards: any[] = [];
 
   constructor(private http: HttpClient, private cardService: CardService) {}
@@ -99,7 +99,7 @@ export class CommunityTripsComponent implements OnInit {
 
   toggleCard(card: any) {
     console.log('Toggle Card Called');
-    console.log('Card:', card);
+    // console.log('Card:', card);
     console.log('Is Card Saved:', this.isCardSaved(card));
 
     const index = this.cardService.getSavedCards().indexOf(card);
