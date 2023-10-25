@@ -113,8 +113,6 @@
     display: none;
   }
   .top-bar-container {
-    // display: flex;
-
     .burger {
       display: block;
       cursor: pointer;
@@ -125,6 +123,27 @@
   .mobile-nav {
     display: flex;
     flex-direction: column;
+    .show-mobile-menu {
+      gap: 2.5rem;
+    }
+    span {
+      cursor: pointer;
+      font-size: 1.3rem;
+      color: #2a3055;
+      font-weight: 500;
+      &:hover {
+        color: #9b8df1;
+      }
+    }
+
+    button {
+      cursor: pointer;
+      background: none;
+      padding: 1rem;
+      border: 1px solid #2a3055;
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
     section:first-child {
       display: flex;
       flex-direction: column;
@@ -137,13 +156,38 @@
 
   .mobile-nav-container {
     margin-bottom: 100px;
-    background-color: red;
+    background-color: rgb(241, 219, 255);
+    background-color: #dedbf3;
     display: block;
     position: absolute;
-    width: 30%;
+    min-width: 30%;
+    .mobile-nav {
+      height: 100vh;
+    }
+
+    .mobile-menu-buttons {
+      margin-top: 2rem;
+      padding-bottom: 100%;
+      button {
+        background: none;
+        border: 1px solid #2a3055;
+      }
+    }
 
     top: 101%;
     right: 0%;
     padding: 0 2rem;
+    span:first-child {
+      padding-top: 1.5rem;
+    }
+  }
+}
+
+@media (max-width: 1150px) {
+  .top-bar-container {
+    justify-content: space-around;
+    .trips-container {
+      margin-right: 0;
+    }
   }
 }

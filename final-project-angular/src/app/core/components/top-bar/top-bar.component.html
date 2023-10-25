@@ -59,27 +59,23 @@
       class="mobile-nav"
     >
       <section [class.show-mobile-menu]="showMobileMenu">
-        <span
-          routerLink="/community"
-          [class.active]="activeLink === 'community'"
-          (click)="setActiveLink('community')"
-          >Start Planning</span
+        <span routerLink="/community" (click)="setActiveLink('community')"
+          >Trips</span
         >
-        <span
-          routerLink="/roads"
-          [class.active]="activeLink === 'roads'"
-          (click)="setActiveLink('roads')"
-          >Find Routes</span
+        <span routerLink="/roads" [class.active]="activeLink === 'roads'"
+          >Routes</span
         >
         <span
           routerLink="/restaurants"
           [class.active]="activeLink === 'restaurants'"
-          (click)="setActiveLink('restaurants')"
-          >Find Restaurants</span
+          >Restaurants</span
         >
       </section>
 
-      <section [class.show-mobile-menu]="showMobileMenu">
+      <section
+        class="mobile-menu-buttons"
+        [class.show-mobile-menu]="showMobileMenu"
+      >
         <button (click)="toggleLogin()">
           {{ auth.isLoggedInUser() ? "Logout" : "Login" }}
         </button>

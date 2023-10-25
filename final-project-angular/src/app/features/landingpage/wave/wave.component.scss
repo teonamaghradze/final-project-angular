@@ -6,6 +6,7 @@
   left: 0;
   right: 0;
   overflow-x: hidden;
+  display: block;
 }
 
 .wave {
@@ -39,5 +40,11 @@
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 650px) {
+  .ocean {
+    display: none;
   }
 }

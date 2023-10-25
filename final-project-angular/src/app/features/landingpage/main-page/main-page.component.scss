@@ -127,4 +127,37 @@ header {
 }
 
 @media (max-width: 900px) {
+  .main-section {
+    img {
+      width: 11rem;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    padding-left: 0;
+  }
+
+  .header-2 {
+    text-align: center;
+  }
+  .main-section {
+    text-align: center;
+    .main-txt {
+      margin-left: 0;
+    }
+    h1 {
+      span {
+        border-bottom: none;
+      }
+    }
+
+    .box {
+      flex-direction: column;
+      img:first-child {
+        display: none;
+      }
+    }
+  }
 }
