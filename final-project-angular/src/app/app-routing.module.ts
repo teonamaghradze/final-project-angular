@@ -11,6 +11,7 @@ import { SignUpComponent } from './features/sign-up/sign-up.component';
 import { LoginGuard } from './features/login/guards/login.guard';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { HotelsComponent } from './features/hotels/hotels.component';
+import { HotelDetailsComponent } from './features/hotel-details/hotel-details.component';
 
 const routes: Routes = [
   { path: '', component: MainPageComponent },
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'restaurants', component: MapsComponent },
   { path: 'favorites', component: FavoriteTripsComponent },
   { path: 'hotels', component: HotelsComponent },
+  { path: 'hotels/:id', component: HotelDetailsComponent },
 ];
 
 @NgModule({

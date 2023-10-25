@@ -1,10 +1,16 @@
 <h1>Find Hotels</h1>
 <h1>Find Hotels</h1>
 <h1>Find Hotels</h1>
-<input [(ngModel)]="city" placeholder="Enter City" />
 
-<button (click)="onCityChange()">Search Hotels</button>
-
-<div *ngFor="let hotel of hotelsArr">
-  <p>{{ hotel.regionNames.fullName }}</p>
+<div *ngFor="let hotel of hotels">
+  <p>{{ hotel.city }}</p>
+  <app-image-carousel
+    [images]="[
+      hotel.photo1,
+      hotel.photo2,
+      hotel.photo3,
+      hotel.photo4,
+      hotel.photo5
+    ]"
+  ></app-image-carousel>
 </div>

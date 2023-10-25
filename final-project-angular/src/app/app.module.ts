@@ -25,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DestinationsComponent } from './features/road-plan/destinations/destinations.component';
 import { HotelsComponent } from './features/hotels/hotels.component';
 import { HotelDetailsComponent } from './features/hotel-details/hotel-details.component';
+import { ImageCarouselComponent } from './features/image-carousel/image-carousel.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { HotelDetailsComponent } from './features/hotel-details/hotel-details.co
     SignUpComponent,
     HotelsComponent,
     HotelDetailsComponent,
+    ImageCarouselComponent,
   ],
   imports: [
     BrowserModule,
