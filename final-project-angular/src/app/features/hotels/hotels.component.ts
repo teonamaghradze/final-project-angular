@@ -26,8 +26,8 @@ export class HotelsComponent {
   ngOnInit() {
     this.http.get<any>('/assets/hotels.json').subscribe((res) => {
       this.hotels = res;
+
       this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
-      console.log(this.hotels);
     });
   }
 
@@ -52,16 +52,20 @@ export class HotelsComponent {
     this.filterHotels();
   }
 
-  public sortHotelDesc(): void {
-    this.sortedHotels = this.filteredHotels.sort(
+  sortHotelDesc(): void {
+    this.sortedHotels = this.hotels.sort(
       (a: any, b: any) => a.rating_average - b.rating_average
     );
+    this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
   }
 
-  public sortHotelAsc() {
-    this.sortedHotels = this.filteredHotels.sort((a: any, b: any) => {
+  sortHotelAsc() {
+    console.log(this.hotels);
+
+    this.sortedHotels = this.hotels.sort((a: any, b: any) => {
       return b.rating_average - a.rating_average;
     });
+    this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
   }
 
   generateStars(starRating: number): string {
