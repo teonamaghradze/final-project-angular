@@ -1,0 +1,10 @@
+<h1>Find Hotels</h1>
+<h1>Find Hotels</h1>
+<h1>Find Hotels</h1>
+<input [(ngModel)]="city" placeholder="Enter City" />
+
+<button (click)="onCityChange()">Search Hotels</button>
+
+<div *ngFor="let hotel of hotelsArr">
+  <p>{{ hotel.regionNames.fullName }}</p>
+</div>

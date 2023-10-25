@@ -16,6 +16,7 @@ export class MapsComponent {
     lng: 0,
   };
   zoom = 2;
+  private map!: google.maps.Map;
 
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.center = event.latLng.toJSON();
@@ -27,7 +28,7 @@ export class MapsComponent {
 
   searchPlace(query: string) {
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: query }, (results: any, status) => {
+    geocoder.geocode({ address: query }, (results: any, status: any) => {
       if (status === 'OK' && results[0].geometry.location) {
         const location = results[0].geometry.location.toJSON();
         this.center = location;
@@ -37,12 +38,13 @@ export class MapsComponent {
           .getData(location.lat, location.lng)
           .subscribe((data: any) => {
             this.restaurants = data.data;
+            // this.addMarkers(this.map);
 
             const newData = this.restaurants.map((el: any) => {
               console.log(el);
-              this.center = newData;
             });
-            return newData;
+            // this.center = newData;
+            // return newData;
           });
       } else {
         console.error(

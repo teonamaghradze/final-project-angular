@@ -23,6 +23,8 @@ import { LoginComponent } from './features/login/login.component';
 import { SignUpComponent } from './features/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DestinationsComponent } from './features/road-plan/destinations/destinations.component';
+import { HotelsComponent } from './features/hotels/hotels.component';
+import { HotelDetailsComponent } from './features/hotel-details/hotel-details.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { DestinationsComponent } from './features/road-plan/destinations/destina
     FooterComponent,
     LoginComponent,
     SignUpComponent,
+    HotelsComponent,
+    HotelDetailsComponent,
   ],
   imports: [
     BrowserModule,
