@@ -24,7 +24,7 @@ import { SignUpComponent } from './features/sign-up/sign-up.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DestinationsComponent } from './features/road-plan/destinations/destinations.component';
 import { HotelsComponent } from './features/hotels/hotels.component';
-import { HotelDetailsComponent } from './features/hotel-details/hotel-details.component';
+
 import { ImageCarouselComponent } from './features/image-carousel/image-carousel.component';
 
 @NgModule({
@@ -43,7 +43,6 @@ import { ImageCarouselComponent } from './features/image-carousel/image-carousel
     LoginComponent,
     SignUpComponent,
     HotelsComponent,
-    HotelDetailsComponent,
     ImageCarouselComponent,
   ],
   imports: [

@@ -14,19 +14,25 @@
       routerLink="/community"
       [class.active]="activeLink === 'community'"
       (click)="setActiveLink('community')"
-      >Start Planning</span
+      >Community Trips</span
     >
     <span
       routerLink="/roads"
       [class.active]="activeLink === 'roads'"
       (click)="setActiveLink('roads')"
-      >Find Routes</span
+      >Routes</span
     >
     <span
       routerLink="/restaurants"
       [class.active]="activeLink === 'restaurants'"
       (click)="setActiveLink('restaurants')"
-      >Find Restaurants</span
+      >Restaurants</span
+    >
+    <span
+      routerLink="/hotels"
+      [class.active]="activeLink === 'hotels'"
+      (click)="setActiveLink('hotels')"
+      >Hotels</span
     >
   </section>
 

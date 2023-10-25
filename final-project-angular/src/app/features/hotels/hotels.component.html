@@ -1,26 +1,30 @@
 <section>
-  <input
-    [(ngModel)]="inputName"
-    (input)="filterCity($event)"
-    type="text"
-    placeholder="Find a hotel"
-    class="search-input"
-  />
+  <div class="input-btns">
+    <input
+      [(ngModel)]="inputName"
+      (input)="filterCity($event)"
+      type="text"
+      placeholder="Find a hotel"
+      class="search-input"
+    />
 
-  <div class="sort-btns">
-    <button (click)="sortHotelAsc()" class="sort-button">Sort Asc</button>
-    <button (click)="sortHotelDesc()" class="sort-button">Sort Desc</button>
+    <div class="sort-btns">
+      <button (click)="sortHotelAsc()" class="sort-button">Asc &#8645;</button>
+      <button (click)="sortHotelDesc()" class="sort-button">
+        Desc &#8693;
+      </button>
+    </div>
   </div>
 
   <div class="hotel-list">
     <div *ngFor="let hotel of filteredHotels" class="hotel-card">
-      <header>
+      <header class="header">
         <h4 class="hotel-name">{{ hotel.hotel_name }}</h4>
         <div>
           <p class="hotel-rating">Rating: {{ hotel.rating_average }}</p>
-          <p class="reviews">Reviews: {{ hotel.number_of_reviews }}</p>
         </div>
       </header>
+      <p class="reviews">Reviews: {{ hotel.number_of_reviews }}</p>
 
       <p class="hotel-location">{{ hotel.city }}, {{ hotel.country }}</p>
       <app-image-carousel
@@ -50,5 +54,7 @@
       </p>
     </div>
   </div>
-  <button (click)="loadMoreHotels()" class="load-more-button">Load More</button>
+  <button (click)="loadMoreHotels()" class="load-more-btn">
+    &#10227; Load More
+  </button>
 </section>

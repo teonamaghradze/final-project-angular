@@ -3,14 +3,19 @@
   height: auto;
   overflow: hidden;
   text-align: center;
-}
-
-.carousel img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-}
-
-button {
-  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  img {
+    max-width: 318px;
+    max-height: 218px;
+    transition: transform 0.3s;
+    border-radius: 0.5rem;
+  }
+  button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+  }
 }

@@ -17,9 +17,9 @@ export class HotelsComponent {
   inputName: string = '';
   filteredHotels: any[] = [];
   sortedHotels: any[] = [];
-  // Track the current page and number of hotels to display per page
-  initialHotelsToShow = 10;
-  hotelsToLoad = 10;
+  // current page and number of hotels to display per page
+  initialHotelsToShow = 8;
+  hotelsToLoad = 8;
 
   constructor(private http: HttpClient) {}
 
