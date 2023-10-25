@@ -215,6 +215,15 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 24
+    },
+    {
+      "email": "ab@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "fsf",
+      "phoneNumber": "+995555281155",
+      "agreement": true,
+      "id": 25
     }
   ]
 }

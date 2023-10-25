@@ -40,6 +40,7 @@ export class MapsComponent {
 
             const newData = this.restaurants.map((el: any) => {
               console.log(el);
+              this.center = newData;
             });
             return newData;
           });
