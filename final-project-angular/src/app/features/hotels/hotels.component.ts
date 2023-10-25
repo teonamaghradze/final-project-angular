@@ -1,7 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Router } from '@angular/router';
-import { tap } from 'rxjs';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-hotels',
@@ -16,15 +14,52 @@ export class HotelsComponent {
   imageWidth!: number;
 
   hotels: any;
+  inputName: string = '';
+  filteredHotels: any[] = [];
+  sortedHotels: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get<any>('/assets/hotels.json').subscribe((res) => {
       this.hotels = res;
-
+      this.filteredHotels = res;
       console.log(this.hotels);
     });
+  }
+
+  filterHotels() {
+    this.filteredHotels = this.hotels.filter((hotel: any) => {
+      return (
+        hotel.city.toLowerCase().includes(this.inputName.toLowerCase()) ||
+        hotel.country.toLowerCase().includes(this.inputName.toLowerCase())
+      );
+    });
+  }
+
+  filterCity(event: any) {
+    this.inputName = event.target.value;
+    this.filterHotels();
+  }
+
+  public sortHotelDesc(): void {
+    this.sortedHotels = this.filteredHotels.sort(
+      (a: any, b: any) => a.rating_average - b.rating_average
+    );
+  }
+
+  public sortHotelAsc() {
+    this.sortedHotels = this.filteredHotels.sort((a: any, b: any) => {
+      return b.rating_average - a.rating_average;
+    });
+  }
+
+  generateStars(starRating: number): string {
+    const stars = [];
+    for (let i = 0; i < starRating; i++) {
+      stars.push('&#x2B50;');
+    }
+    return stars.join('');
   }
 
   ngAfterViewInit() {
@@ -51,52 +86,4 @@ export class HotelsComponent {
       this.carouselContainer.nativeElement.style.transform = `translateX(${offset}px)`;
     }
   }
-
-  // city: string = '';
-  // hotelsArr: any[] = [];
-
-  // hotelDetails: any;
-
-  // constructor(private http: HttpClient, private router: Router) {}
-
-  // onCityChange() {
-  //   this.getHotelsList(this.city);
-  // }
-
-  // seeHotelDetails(id: any) {
-  //   if (id) {
-  //     this.router.navigate(['/hotels', id]);
-  //   }
-  // }
-  // getHotelsList(city: string) {
-  //   this.http
-  //     .get('https://hotels4.p.rapidapi.com/locations/v3/search', {
-  //       params: {
-  //         q: city,
-  //       },
-  //       headers: {
-  //         'X-RapidAPI-Key':
-  //           '2be78c4877mshccdbbc203a80f0fp1ce79fjsne64cd595e355',
-  //         'X-RapidAPI-Host': 'hotels4.p.rapidapi.com',
-  //       },
-  //     })
-  //     .pipe(
-  //       tap((data: any) => {
-  //         return data.sr;
-  //       })
-  //     )
-  //     .subscribe((data) => {
-  //       console.log('ქალაქი');
-
-  //       console.log(data);
-
-  //       const hotels = data.sr.filter(
-  //         (site: any) => site.type === 'HOTEL' || site.type === 'NEIGHBORHOOD'
-  //       );
-  //       console.log(hotels);
-
-  //       this.hotelsArr = hotels;
-  //       return this.hotelsArr;
-  //     });
-  // }
 }

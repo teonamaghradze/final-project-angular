@@ -2,8 +2,34 @@
 <h1>Find Hotels</h1>
 <h1>Find Hotels</h1>
 
-<div *ngFor="let hotel of hotels">
-  <p>{{ hotel.city }}</p>
+<input
+  [(ngModel)]="inputName"
+  (input)="filterCity($event)"
+  type="text"
+  placeholder="find hotel"
+/>
+
+<button (click)="sortHotelAsc()">Sort Asc</button>
+<button (click)="sortHotelDesc()">Desc Desc</button>
+
+<div *ngFor="let hotel of filteredHotels">
+  <h4>{{ hotel.hotel_name }}</h4>
+  <p>{{ hotel.city }}, {{ hotel.country }}</p>
+  <p>{{ hotel.addressline1 }}</p>
+  <p>{{ hotel.checkin }}</p>
+  <p>{{ hotel.checkout }}</p>
+
+  <p>reviews:{{ hotel.number_of_reviews }}</p>
+  <p>overview:{{ hotel?.overview }}</p>
+  <p>rating: {{ hotel.rating_average }}</p>
+
+  <p>Stars: <span [innerHTML]="generateStars(hotel.star_rating)"></span></p>
+
+  <p>
+    See prices and more on link:
+    <a [href]="hotel.url" target="_blank">{{ hotel.url }}</a>
+  </p>
+
   <app-image-carousel
     [images]="[
       hotel.photo1,
