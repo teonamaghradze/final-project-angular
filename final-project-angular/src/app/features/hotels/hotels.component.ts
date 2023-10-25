@@ -17,15 +17,25 @@ export class HotelsComponent {
   inputName: string = '';
   filteredHotels: any[] = [];
   sortedHotels: any[] = [];
+  // Track the current page and number of hotels to display per page
+  initialHotelsToShow = 10;
+  hotelsToLoad = 10;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.http.get<any>('/assets/hotels.json').subscribe((res) => {
       this.hotels = res;
-      this.filteredHotels = res;
+      this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
       console.log(this.hotels);
     });
+  }
+
+  loadMoreHotels() {
+    this.filteredHotels = this.hotels.slice(
+      0,
+      this.filteredHotels.length + this.hotelsToLoad
+    );
   }
 
   filterHotels() {
