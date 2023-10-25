@@ -137,9 +137,15 @@ section {
   }
 }
 
-@media (max-width: 1380px) {
-  .cover {
-    max-width: 705px;
-    margin-top: 12rem;
+@media (max-width: 1200px) {
+  .details-container {
+    flex-direction: column;
+  }
+  .image-container {
+    margin: 0 auto;
+    .cover {
+      width: 100%;
+      margin-top: 0;
+    }
   }
 }
