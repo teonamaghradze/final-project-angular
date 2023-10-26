@@ -22,6 +22,7 @@ export class FavoriteTripsComponent {
     private cdr: ChangeDetectorRef
   ) {
     this.favCards = this.cardService.getSavedCards();
+    this.cdr.markForCheck();
   }
 
   showDetails(cardId: number) {
@@ -33,6 +34,7 @@ export class FavoriteTripsComponent {
     if (cardIndex !== -1) {
       this.favCards.splice(cardIndex, 1);
       this.cardService.removeCard(cardId);
+      this.cdr.markForCheck();
     }
   }
 }

@@ -8,6 +8,8 @@ import {
   ElementRef,
   NgZone,
 } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -26,6 +28,7 @@ export interface PlaceSearchResult {
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
   templateUrl: './destinations.component.html',
   styleUrls: ['./destinations.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DestinationsComponent implements OnInit {
   @ViewChild('inputField') inputField!: ElementRef;
@@ -34,7 +37,7 @@ export class DestinationsComponent implements OnInit {
 
   @Output() placeChanged = new EventEmitter<PlaceSearchResult>();
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {}
 
@@ -57,6 +60,7 @@ export class DestinationsComponent implements OnInit {
 
       this.ngZone.run(() => {
         this.placeChanged.emit(result);
+        this.cdr.markForCheck();
       });
     });
   }

@@ -1,11 +1,19 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { Hotel } from './interfaces/hotels.interface';
 
 @Component({
   selector: 'app-hotels',
   templateUrl: './hotels.component.html',
   styleUrls: ['./hotels.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HotelsComponent {
   @ViewChild('carouselContainer', { static: true })
@@ -22,7 +30,7 @@ export class HotelsComponent {
   initialHotelsToShow = 8;
   hotelsToLoad = 8;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
   ngOnInit() {
     this.http.get<Hotel[]>('/assets/hotels.json').subscribe({
@@ -30,6 +38,7 @@ export class HotelsComponent {
         this.hotels = res;
 
         this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
+        this.cdr.markForCheck();
       },
       error: (error) => {
         console.error('Error loading hotel data:', error);
@@ -57,6 +66,7 @@ export class HotelsComponent {
     this.inputName = (event.target as HTMLInputElement).value;
 
     this.filterHotels();
+    this.cdr.markForCheck();
   }
 
   sortHotelDesc(): void {
@@ -64,6 +74,7 @@ export class HotelsComponent {
       (a: Hotel, b: Hotel) => a.rating_average - b.rating_average
     );
     this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
+    this.cdr.markForCheck();
   }
 
   sortHotelAsc() {
@@ -73,6 +84,7 @@ export class HotelsComponent {
       return b.rating_average - a.rating_average;
     });
     this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
+    this.cdr.markForCheck();
   }
 
   generateStars(starRating: number): string {

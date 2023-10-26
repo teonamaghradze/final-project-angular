@@ -85,6 +85,7 @@ export class SignUpComponent {
       this.registrationForm.errors['passwordMismatch']
     ) {
       this.passwordMatched = false;
+      this.cd.markForCheck();
       return;
     }
 
@@ -119,6 +120,7 @@ export class SignUpComponent {
             },
           });
       }
+      this.cd.markForCheck();
     }
   }
 

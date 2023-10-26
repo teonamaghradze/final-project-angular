@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { TripService } from '../road-plan/services/trip.service';
 
 interface Restaurant {
@@ -19,9 +24,13 @@ interface Restaurant {
   selector: 'app-maps',
   templateUrl: './maps.component.html',
   styleUrls: ['./maps.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MapsComponent {
-  constructor(private tripService: TripService) {}
+  constructor(
+    private tripService: TripService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   // restaurants: Restaurant[] = [];
   restaurants: any[] = [];
@@ -60,6 +69,8 @@ export class MapsComponent {
             });
             // this.center = newData;
             // return newData;
+
+            this.cdr.markForCheck();
           });
       } else {
         console.error(

@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { Router } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
@@ -10,6 +15,7 @@ import { User } from './interfaces/user.interface';
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginComponent {
   public loginForm!: FormGroup;
@@ -20,7 +26,8 @@ export class LoginComponent {
     private formBuilder: FormBuilder,
     private router: Router,
     private http: HttpClient,
-    private auth: AuthService
+    private auth: AuthService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit(): void {
@@ -50,9 +57,11 @@ export class LoginComponent {
         } else {
           alert('User not found');
         }
+        this.cdr.markForCheck();
       },
       error: (error) => {
         console.error('Error during login:', error);
+        this.cdr.markForCheck();
       },
     });
   }
