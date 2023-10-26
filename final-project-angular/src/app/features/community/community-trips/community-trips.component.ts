@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { HttpClient } from '@angular/common/http';
 import { CardService } from '../services/card.service';
 import { Card } from '../interfaces/card.interface';
@@ -7,6 +13,7 @@ import { Card } from '../interfaces/card.interface';
   selector: 'app-community-trips',
   templateUrl: './community-trips.component.html',
   styleUrls: ['./community-trips.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommunityTripsComponent implements OnInit {
   data: Card[] = [];
@@ -21,7 +28,11 @@ export class CommunityTripsComponent implements OnInit {
   numCardsToLoad = 8;
   currentlyDisplayedCards: Card[] = [];
 
-  constructor(private http: HttpClient, private cardService: CardService) {}
+  constructor(
+    private http: HttpClient,
+    private cardService: CardService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     // Load saved filters when the component is initialized
@@ -32,6 +43,7 @@ export class CommunityTripsComponent implements OnInit {
         this.data = res;
         this.filterData();
         this.loadInitialCards();
+        this.cdr.markForCheck();
       },
       (error) => {
         console.error('Error loading data:', error);
@@ -65,6 +77,7 @@ export class CommunityTripsComponent implements OnInit {
     this.filterData();
     this.saveFilters();
     this.loadInitialCards();
+    this.cdr.markForCheck();
   }
 
   loadInitialCards() {
@@ -72,6 +85,7 @@ export class CommunityTripsComponent implements OnInit {
       0,
       this.numCardsToDisplay
     );
+    this.cdr.markForCheck();
   }
 
   loadMoreCards() {
@@ -79,6 +93,7 @@ export class CommunityTripsComponent implements OnInit {
     if (endIndex <= this.filteredData.length) {
       this.currentlyDisplayedCards = this.filteredData.slice(0, endIndex);
     }
+    this.cdr.markForCheck();
   }
 
   filterDays() {
@@ -86,6 +101,7 @@ export class CommunityTripsComponent implements OnInit {
     this.filterData();
     this.saveFilters();
     this.loadInitialCards();
+    this.cdr.markForCheck();
   }
 
   toggleCard(card: Card) {

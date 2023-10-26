@@ -1,4 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, throwError } from 'rxjs';
@@ -9,16 +16,23 @@ import { CardData } from '../interfaces/cardData.interface';
   selector: 'app-community-trip-details',
   templateUrl: './community-trip-details.component.html',
   styleUrls: ['./community-trip-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
   cardId: number = 0;
   cardDetails$: Observable<CardData> | null = null;
-  cardData: any;
+
+  cardData: CardData | null = null;
+
   private ngUnsubscribe = new Subject<void>();
 
   showDay: { [day: string]: boolean } = {};
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
@@ -32,13 +46,22 @@ export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
     });
 
     this.cardDetails$?.pipe(takeUntil(this.ngUnsubscribe)).subscribe((data) => {
-      this.cardData = data[this.cardId];
-      console.log(typeof this.cardData, 'dsaadasd');
+      if (data) {
+        if (Array.isArray(data)) {
+          this.cardData = data[this.cardId] || null;
+          this.cdr.markForCheck();
+        } else {
+          this.cardData = null;
+        }
+        console.log(typeof this.cardData, 'dsaadasd');
+        console.log(this.cardData);
+      }
     });
   }
 
   toggleDay(day: string) {
     this.showDay[day] = !this.showDay[day];
+    this.cdr.markForCheck();
   }
 
   ngOnDestroy() {

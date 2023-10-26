@@ -6,6 +6,8 @@ export interface CardData {
   likes: string;
   count: string;
   fulldescription: string;
+  description: string;
+  id: string;
   cover: string;
   [key: string]: string | undefined;
 }

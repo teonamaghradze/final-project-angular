@@ -4,10 +4,13 @@ import { TripService } from '../road-plan/services/trip.service';
 interface Restaurant {
   name: string;
   address: string;
-  cuisine: string;
-  description: string;
-  photo: string;
-  images: string;
+  cuisine: { key: string; name: string; description?: string }[];
+  description?: string;
+  photo: {
+    images: {
+      small: {};
+    };
+  };
   price: string;
   rating: string;
 }
@@ -49,9 +52,10 @@ export class MapsComponent {
         this.tripService
           .getData(location.lat, location.lng)
           .subscribe((data: any) => {
-            this.restaurants = data.data;
+            this.restaurants = data.data as any;
+            console.log(this.restaurants);
 
-            const newData = this.restaurants.map((el: any) => {
+            const newData = this.restaurants.map((el) => {
               console.log(el);
             });
             // this.center = newData;

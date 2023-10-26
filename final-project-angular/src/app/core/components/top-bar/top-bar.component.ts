@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+} from '@angular/core';
+
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
@@ -6,9 +12,14 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   selector: 'app-top-bar',
   templateUrl: './top-bar.component.html',
   styleUrls: ['./top-bar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TopBarComponent {
-  constructor(public auth: AuthService, private router: Router) {}
+  constructor(
+    public auth: AuthService,
+    private router: Router,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   activeLink: string = 'community';
   isMenuShown: boolean = false;
@@ -16,6 +27,7 @@ export class TopBarComponent {
   // Function to update the active link when a link is clicked.
   setActiveLink(link: string) {
     this.activeLink = link;
+    this.cdr.markForCheck();
   }
 
   // handle the login/logout action
@@ -33,6 +45,7 @@ export class TopBarComponent {
   //show menu
   showMobileMenu() {
     this.isMenuShown = !this.isMenuShown;
+    this.cdr.markForCheck();
     console.log(this.isMenuShown);
   }
 }

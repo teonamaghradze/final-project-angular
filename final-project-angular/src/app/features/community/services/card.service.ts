@@ -18,7 +18,7 @@ export class CardService {
     console.log('addcard');
   }
 
-  removeCard(card: Card) {
+  removeCard(card: any) {
     const index = this.savedCards.findIndex((c) => c.id === card.id);
     if (index !== -1) {
       this.savedCards.splice(index, 1);
