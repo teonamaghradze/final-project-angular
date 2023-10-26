@@ -6,20 +6,16 @@ import {
 } from '@angular/core';
 
 import { Router, RouterLink } from '@angular/router';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthService } from '../../../shared/services/auth.service';
 import { NgIf, NgStyle } from '@angular/common';
 
 @Component({
-    selector: 'app-top-bar',
-    templateUrl: './top-bar.component.html',
-    styleUrls: ['./top-bar.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        RouterLink,
-        NgIf,
-        NgStyle,
-    ],
+  selector: 'app-top-bar',
+  templateUrl: './top-bar.component.html',
+  styleUrls: ['./top-bar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.Default,
+  standalone: true,
+  imports: [RouterLink, NgIf, NgStyle],
 })
 export class TopBarComponent {
   constructor(
@@ -42,8 +38,6 @@ export class TopBarComponent {
     if (this.auth.isLoggedInUser()) {
       // User is logged in, log them out
       this.auth.logout();
-
-      console.log(this.auth.isLoggedInUser);
     } else {
       this.router.navigate(['/login']);
     }

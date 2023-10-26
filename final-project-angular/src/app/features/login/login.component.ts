@@ -8,21 +8,17 @@ import { Router, RouterLink } from '@angular/router';
 
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { AuthService } from 'src/app/shared/services/auth.service';
+import { AuthService } from '../../shared/services/auth.service';
 import { User } from './interfaces/user.interface';
 import { TopBarComponent } from '../../core/components/top-bar/top-bar.component';
 
 @Component({
-    selector: 'app-login',
-    templateUrl: './login.component.html',
-    styleUrls: ['./login.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        TopBarComponent,
-        ReactiveFormsModule,
-        RouterLink,
-    ],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [TopBarComponent, ReactiveFormsModule, RouterLink],
 })
 export class LoginComponent {
   public loginForm!: FormGroup;
@@ -55,12 +51,15 @@ export class LoginComponent {
           return el.email === email && el.password === password;
         });
 
+        console.log(user, 'user');
+
         if (user) {
           this.auth.login();
           alert('Login success');
           this.loginForm.reset();
           this.router.navigate(['']);
           localStorage.setItem('user', JSON.stringify(user));
+          this.cdr.detectChanges();
         } else {
           alert('User not found');
         }

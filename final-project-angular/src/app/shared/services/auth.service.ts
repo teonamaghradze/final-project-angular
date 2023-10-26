@@ -11,6 +11,7 @@ export class AuthService {
 
   constructor() {
     this.retrieveUserData();
+    console.log(this.isloggedin, 'isloggedin');
   }
 
   retrieveUserData() {
@@ -18,8 +19,6 @@ export class AuthService {
     if (userData) {
       this.user = JSON.parse(userData);
       this.isLoggedIn = true;
-    } else {
-      this.isLoggedIn = false;
     }
   }
 

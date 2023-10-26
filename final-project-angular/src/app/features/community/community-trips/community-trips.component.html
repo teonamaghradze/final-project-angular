@@ -33,6 +33,21 @@
     <div class="city-card" *ngFor="let city of currentlyDisplayedCards">
       <div class="add-remove-buttons">
         <button
+          *ngIf="isCardSaved(city)"
+          class="remove-button"
+          (click)="removeCard(city)"
+        >
+          {{ "remove &#10006;" }}
+        </button>
+        <button
+          *ngIf="!isCardSaved(city)"
+          class="add-button"
+          (click)="addCard(city)"
+        >
+          {{ "add &#10004;" }}
+        </button>
+
+        <!-- <button
           (click)="toggleCard(city)"
           [ngClass]="{
             'add-button': !isCardSaved(city),
@@ -40,7 +55,7 @@
           }"
         >
           {{ isCardSaved(city) ? "remove &#10006;" : "add &#10004;" }}
-        </button>
+        </button> -->
       </div>
 
       <div (click)="showDetails(city.id)">

@@ -74,31 +74,6 @@ describe('CommunityTripsComponent', () => {
     });
   });
 
-  describe('loadMoreCards', () => {
-    // it('should set currentlyDisplayedCards to filtered values', () => {
-    //   component.currentlyDisplayedCards = ['card 1', 'card 2'];
-    //   component.numCardsToLoad = 1;
-    //   component.filteredData = ['card 1', 'card 2', 'card 3', 'card 4'];
-    //   component.loadMoreCards();
-    //   expect(component.currentlyDisplayedCards.length).toBe(3);
-    //   expect(component.currentlyDisplayedCards[2]).toBe('card 3');
-    // });
-  });
-  describe('toggleCard', () => {
-    it('should call getSavedCards from cardService', () => {
-      component.toggleCard('card' as any);
-      expect(mockCardService.getSavedCards).toHaveBeenCalled();
-    });
-    it('should call removeCard from cardService if card was found in array', () => {
-      component.toggleCard('card' as any);
-      expect(mockCardService.removeCard).toHaveBeenCalled();
-    });
-    it('should call addCard from cardService if card was not found in array', () => {
-      component.toggleCard('card 1' as any);
-      expect(mockCardService.addCard).toHaveBeenCalled();
-    });
-  });
-
   describe('isCardSaved', () => {
     it('should call isCardSaved method', () => {
       component.isCardSaved('card' as any);

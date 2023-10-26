@@ -15,6 +15,11 @@ import {
   provideHttpClient,
 } from '@angular/common/http';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import {
+  BrowserAnimationsModule,
+  NoopAnimationsModule,
+  provideAnimations,
+} from '@angular/platform-browser/animations';
 // import { EmployeeService } from './app/Features/Employees-feature/services/employee.service';
 
 import { provideRouter } from '@angular/router';
@@ -24,8 +29,14 @@ import { ROUTES } from './app/shared/routes/routes';
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter(ROUTES),
-
-    importProvidersFrom(BrowserModule, FormsModule, ReactiveFormsModule),
+    provideAnimations(),
+    importProvidersFrom(
+      BrowserModule,
+      FormsModule,
+      ReactiveFormsModule,
+      BrowserAnimationsModule,
+      NoopAnimationsModule
+    ),
     provideHttpClient(withInterceptorsFromDi()),
   ],
 }).catch((err) => console.error(err));

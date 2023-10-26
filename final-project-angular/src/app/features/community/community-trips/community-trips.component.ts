@@ -8,7 +8,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { CardService } from './services/card.service';
 import { Card } from './interfaces/card.interface';
-import { NgFor, NgClass } from '@angular/common';
+import { NgFor, NgClass, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TopBarComponent } from '../../../core/components/top-bar/top-bar.component';
@@ -20,6 +20,7 @@ import { TopBarComponent } from '../../../core/components/top-bar/top-bar.compon
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
+    CommonModule,
     TopBarComponent,
     ReactiveFormsModule,
     FormsModule,
@@ -117,16 +118,26 @@ export class CommunityTripsComponent implements OnInit {
     this.cdr.markForCheck();
   }
 
-  toggleCard(card: Card) {
-    console.log('Toggle Card Called');
-    console.log('Is Card Saved:', this.isCardSaved(card));
+  // toggleCard(card: Card) {
+  //   console.log('Toggle Card Called');
+  //   console.log('Is Card Saved:', this.isCardSaved(card));
 
-    const index = this.cardService.getSavedCards().indexOf(card);
-    if (index === -1) {
-      this.cardService.addCard(card);
-    } else {
-      this.cardService.removeCard(card);
-    }
+  //   const index = this.cardService.getSavedCards().indexOf(card);
+  //   console.log(index, 'ind');
+
+  //   if (index === -1) {
+  //     this.cardService.addCard(card);
+  //   } else {
+  //     this.cardService.removeCard(card);
+  //   }
+  // }
+
+  addCard(card: Card) {
+    this.cardService.addCard(card);
+  }
+
+  removeCard(card: Card) {
+    this.cardService.removeCard(card);
   }
 
   // Check if a card is in the savedCards collection
