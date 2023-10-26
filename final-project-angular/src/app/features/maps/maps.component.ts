@@ -5,6 +5,8 @@ import {
 } from '@angular/core';
 
 import { TripService } from '../road-plan/services/trip.service';
+import { NgFor, NgIf } from '@angular/common';
+import { GoogleMapsModule } from '@angular/google-maps';
 
 interface Restaurant {
   name: string;
@@ -21,10 +23,16 @@ interface Restaurant {
 }
 
 @Component({
-  selector: 'app-maps',
-  templateUrl: './maps.component.html',
-  styleUrls: ['./maps.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-maps',
+    templateUrl: './maps.component.html',
+    styleUrls: ['./maps.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        GoogleMapsModule,
+        NgFor,
+        NgIf,
+    ],
 })
 export class MapsComponent {
   constructor(

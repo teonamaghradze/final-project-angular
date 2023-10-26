@@ -8,12 +8,25 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { CardService } from '../services/card.service';
 import { Card } from '../interfaces/card.interface';
+import { NgFor, NgClass } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { TopBarComponent } from '../../../core/components/top-bar/top-bar.component';
 
 @Component({
-  selector: 'app-community-trips',
-  templateUrl: './community-trips.component.html',
-  styleUrls: ['./community-trips.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-community-trips',
+    templateUrl: './community-trips.component.html',
+    styleUrls: ['./community-trips.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        TopBarComponent,
+        ReactiveFormsModule,
+        FormsModule,
+        RouterLink,
+        NgFor,
+        NgClass,
+    ],
 })
 export class CommunityTripsComponent implements OnInit {
   data: Card[] = [];

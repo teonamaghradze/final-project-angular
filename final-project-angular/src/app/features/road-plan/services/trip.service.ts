@@ -18,7 +18,7 @@ export class TripService {
 
   getData(latitude: number, longitude: number): Observable<Restaurant[]> {
     const headers = new HttpHeaders({
-      'X-RapidAPI-Key': '2be78c4877mshccdbbc203a80f0fp1ce79fjsne64cd595e355',
+      'X-RapidAPI-Key': '018477b84bmsh4a6886fc9bc736ap126166jsnb72ea34a3704',
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
     });
 

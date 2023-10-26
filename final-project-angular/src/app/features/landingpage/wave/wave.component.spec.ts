@@ -8,8 +8,8 @@ describe('WaveComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WaveComponent]
-    });
+    imports: [WaveComponent]
+});
     fixture = TestBed.createComponent(WaveComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgFor } from '@angular/common';
 interface Testimonial {
   id: number;
   author: string;
@@ -9,9 +10,11 @@ interface Testimonial {
 }
 
 @Component({
-  selector: 'app-testimonials',
-  templateUrl: './testimonials.component.html',
-  styleUrls: ['./testimonials.component.scss'],
+    selector: 'app-testimonials',
+    templateUrl: './testimonials.component.html',
+    styleUrls: ['./testimonials.component.scss'],
+    standalone: true,
+    imports: [NgFor],
 })
 export class TestimonialsComponent {
   testimonials: Testimonial[] = [];

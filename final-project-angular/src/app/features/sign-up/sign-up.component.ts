@@ -4,25 +4,26 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  AbstractControl,
-  ValidationErrors,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
 
 import { Users } from './interfaces/users';
 import { UserDataService } from './services/user-data.service';
 
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../login/interfaces/user.interface';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'sign-up-register',
-  templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.scss'],
+    selector: 'sign-up-register',
+    templateUrl: './sign-up.component.html',
+    styleUrls: ['./sign-up.component.scss'],
+    standalone: true,
+    imports: [
+        RouterLink,
+        ReactiveFormsModule,
+        NgIf,
+    ],
 })
 export class SignUpComponent {
   registrationForm: FormGroup;

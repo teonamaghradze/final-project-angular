@@ -8,8 +8,8 @@ describe('ImageCarouselComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ImageCarouselComponent]
-    });
+    imports: [ImageCarouselComponent]
+});
     fixture = TestBed.createComponent(ImageCarouselComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

@@ -8,8 +8,8 @@ describe('CommunityTripsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CommunityTripsComponent]
-    });
+    imports: [CommunityTripsComponent]
+});
     fixture = TestBed.createComponent(CommunityTripsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

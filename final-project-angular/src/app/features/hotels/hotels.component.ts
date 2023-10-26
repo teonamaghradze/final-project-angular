@@ -8,12 +8,22 @@ import {
 } from '@angular/core';
 
 import { Hotel } from './interfaces/hotels.interface';
+import { ImageCarouselComponent } from '../image-carousel/image-carousel.component';
+import { NgFor } from '@angular/common';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-hotels',
-  templateUrl: './hotels.component.html',
-  styleUrls: ['./hotels.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-hotels',
+    templateUrl: './hotels.component.html',
+    styleUrls: ['./hotels.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        ReactiveFormsModule,
+        FormsModule,
+        NgFor,
+        ImageCarouselComponent,
+    ],
 })
 export class HotelsComponent {
   @ViewChild('carouselContainer', { static: true })

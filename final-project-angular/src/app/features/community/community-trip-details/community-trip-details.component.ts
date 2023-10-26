@@ -6,17 +6,24 @@ import {
   ChangeDetectorRef,
 } from '@angular/core';
 
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError, takeUntil } from 'rxjs/operators';
 import { CardData } from '../interfaces/cardData.interface';
+import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-community-trip-details',
-  templateUrl: './community-trip-details.component.html',
-  styleUrls: ['./community-trip-details.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-community-trip-details',
+    templateUrl: './community-trip-details.component.html',
+    styleUrls: ['./community-trip-details.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [
+        NgIf,
+        RouterLink,
+        NgFor,
+    ],
 })
 export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
   cardId: number = 0;

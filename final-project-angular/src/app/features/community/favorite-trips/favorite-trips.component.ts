@@ -7,12 +7,16 @@ import {
 
 import { CardService } from '../services/card.service';
 import { Card } from '../interfaces/card.interface';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-favorite-trips',
-  templateUrl: './favorite-trips.component.html',
-  styleUrls: ['./favorite-trips.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-favorite-trips',
+    templateUrl: './favorite-trips.component.html',
+    styleUrls: ['./favorite-trips.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [RouterLink, NgFor],
 })
 export class FavoriteTripsComponent {
   favCards: Card[] = [];
