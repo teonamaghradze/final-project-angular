@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CardService } from '../services/card.service';
+import { Card } from '../interfaces/card.interface';
 
 @Component({
   selector: 'app-community-trips',
@@ -8,9 +9,9 @@ import { CardService } from '../services/card.service';
   styleUrls: ['./community-trips.component.scss'],
 })
 export class CommunityTripsComponent implements OnInit {
-  data: any;
+  data: Card[] = [];
   inputName: string = '';
-  filteredData: any[] = [];
+  filteredData: Card[] = [];
 
   // Select filter
   selectedDays = '';
@@ -18,7 +19,7 @@ export class CommunityTripsComponent implements OnInit {
   // load more cards
   numCardsToDisplay = 12;
   numCardsToLoad = 8;
-  currentlyDisplayedCards: any[] = [];
+  currentlyDisplayedCards: Card[] = [];
 
   constructor(private http: HttpClient, private cardService: CardService) {}
 
@@ -51,7 +52,7 @@ export class CommunityTripsComponent implements OnInit {
   }
 
   filterData() {
-    this.filteredData = this.data.filter((item: any) => {
+    this.filteredData = this.data.filter((item: Card) => {
       return (
         item.description.toLowerCase().includes(this.inputName.toLowerCase()) &&
         item.duration.toLowerCase().includes(this.selectedDays.toLowerCase())
@@ -59,8 +60,8 @@ export class CommunityTripsComponent implements OnInit {
     });
   }
 
-  filterCity(event: any) {
-    this.inputName = event.target.value;
+  filterCity(event: Event) {
+    this.inputName = (event.target as HTMLInputElement).value;
     this.filterData();
     this.saveFilters();
     this.loadInitialCards();
@@ -87,19 +88,8 @@ export class CommunityTripsComponent implements OnInit {
     this.loadInitialCards();
   }
 
-  // // Toggle the card's presence in the savedCards collection
-  // toggleCard(card: any) {
-  //   const index = this.cardService.getSavedCards().indexOf(card);
-  //   if (index === -1) {
-  //     this.cardService.addCard(card);
-  //   } else {
-  //     this.cardService.removeCard(card);
-  //   }
-  // }
-
-  toggleCard(card: any) {
+  toggleCard(card: Card) {
     console.log('Toggle Card Called');
-    // console.log('Card:', card);
     console.log('Is Card Saved:', this.isCardSaved(card));
 
     const index = this.cardService.getSavedCards().indexOf(card);
@@ -111,7 +101,7 @@ export class CommunityTripsComponent implements OnInit {
   }
 
   // Check if a card is in the savedCards collection
-  isCardSaved(card: any) {
+  isCardSaved(card: Card) {
     return this.cardService.isCardSaved(card);
   }
 

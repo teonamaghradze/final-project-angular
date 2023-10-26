@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+interface Testimonial {
+  id: number;
+  author: string;
+  content: string;
+  avatar: string;
+  text: string;
+}
 
 @Component({
   selector: 'app-testimonials',
@@ -7,16 +14,16 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./testimonials.component.scss'],
 })
 export class TestimonialsComponent {
-  testimonials: any;
+  testimonials: Testimonial[] = [];
 
   constructor(private http: HttpClient) {
-    this.http.get('assets/db.json').subscribe(
-      (res) => {
+    this.http.get<Testimonial[]>('assets/db.json').subscribe({
+      next: (res) => {
         this.testimonials = res;
       },
-      (error) => {
+      error: (error) => {
         console.error('Error loading data:', error);
-      }
-    );
+      },
+    });
   }
 }

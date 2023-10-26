@@ -1,6 +1,17 @@
 import { Component } from '@angular/core';
 import { TripService } from '../road-plan/services/trip.service';
 
+interface Restaurant {
+  name: string;
+  address: string;
+  cuisine: string;
+  description: string;
+  photo: string;
+  images: string;
+  price: string;
+  rating: string;
+}
+
 @Component({
   selector: 'app-maps',
   templateUrl: './maps.component.html',
@@ -9,8 +20,9 @@ import { TripService } from '../road-plan/services/trip.service';
 export class MapsComponent {
   constructor(private tripService: TripService) {}
 
-  restaurants: any;
-  display: any;
+  // restaurants: Restaurant[] = [];
+  restaurants: any[] = [];
+  display: google.maps.LatLngLiteral | null = null;
   center: google.maps.LatLngLiteral = {
     lat: 0,
     lng: 0,
@@ -38,7 +50,6 @@ export class MapsComponent {
           .getData(location.lat, location.lng)
           .subscribe((data: any) => {
             this.restaurants = data.data;
-            // this.addMarkers(this.map);
 
             const newData = this.restaurants.map((el: any) => {
               console.log(el);

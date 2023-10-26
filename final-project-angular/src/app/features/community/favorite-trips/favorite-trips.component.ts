@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CardService } from '../services/card.service';
+import { Card } from '../interfaces/card.interface';
 
 @Component({
   selector: 'app-favorite-trips',
@@ -7,7 +8,7 @@ import { CardService } from '../services/card.service';
   styleUrls: ['./favorite-trips.component.scss'],
 })
 export class FavoriteTripsComponent {
-  favCards: any[] = [];
+  favCards: Card[] = [];
 
   constructor(private cardService: CardService) {
     this.favCards = this.cardService.getSavedCards();
@@ -17,7 +18,7 @@ export class FavoriteTripsComponent {
     this.cardService.showDetails(cardId);
   }
 
-  deleteCard(cardId: number) {
+  deleteCard(cardId: any) {
     const cardIndex = this.favCards.findIndex((card) => card.id === cardId);
     if (cardIndex !== -1) {
       this.favCards.splice(cardIndex, 1);

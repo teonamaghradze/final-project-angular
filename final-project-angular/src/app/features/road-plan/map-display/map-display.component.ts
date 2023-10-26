@@ -55,8 +55,8 @@ export class MapDisplayComponent {
 
     this.directionsService
       .route(request)
-      .pipe(map((res: any) => res.result))
-      .subscribe((result: any) => {
+      .pipe(map((res) => res.result))
+      .subscribe((result) => {
         this.directionsResult = result;
         console.log(result);
         this.markerPosition = undefined;

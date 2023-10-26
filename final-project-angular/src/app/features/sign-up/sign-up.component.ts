@@ -10,8 +10,6 @@ import {
   Validators,
   AbstractControl,
   ValidationErrors,
-  FormsModule,
-  ReactiveFormsModule,
 } from '@angular/forms';
 
 import { Users } from './interfaces/users';
@@ -19,6 +17,7 @@ import { UserDataService } from './services/user-data.service';
 
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { User } from '../login/interfaces/user.interface';
 
 @Component({
   selector: 'sign-up-register',
@@ -105,18 +104,20 @@ export class SignUpComponent {
         this.userDataService.setUserData(formData);
         this.cd.markForCheck();
 
-        this.http.post<any>('http://localhost:3000/users', formData).subscribe(
-          (res) => {
-            console.log(formData.email);
+        this.http
+          .post<User[]>('http://localhost:3000/users', formData)
+          .subscribe({
+            next: (res) => {
+              console.log(formData.email);
 
-            alert('Signup successful');
-            this.registrationForm.reset();
-            this.router.navigate(['/login']);
-          },
-          (err) => {
-            alert('Not registered');
-          }
-        );
+              alert('Signup successful');
+              this.registrationForm.reset();
+              this.router.navigate(['/login']);
+            },
+            error: (err) => {
+              alert('Not registered');
+            },
+          });
       }
     }
   }

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { User } from './interfaces/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -12,8 +13,8 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent {
   public loginForm!: FormGroup;
-  email: any;
-  password: any;
+  email: string = '';
+  password: string = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -34,9 +35,9 @@ export class LoginComponent {
     const email = this.loginForm.value.email;
     const password = this.loginForm.value.password;
 
-    this.http.get<any>('http://localhost:3000/users').subscribe(
-      (res) => {
-        const user = res.find((el: any) => {
+    this.http.get<User[]>('http://localhost:3000/users').subscribe({
+      next: (res) => {
+        const user = res.find((el: User) => {
           return el.email === email && el.password === password;
         });
 
@@ -50,9 +51,9 @@ export class LoginComponent {
           alert('User not found');
         }
       },
-      (err) => {
-        alert('Something went wrong');
-      }
-    );
+      error: (error) => {
+        console.error('Error during login:', error);
+      },
+    });
   }
 }

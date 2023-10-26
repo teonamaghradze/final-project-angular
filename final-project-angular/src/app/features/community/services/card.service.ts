@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { Card } from '../interfaces/card.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CardService {
-  private savedCards: any[] = JSON.parse(
+  private savedCards: Card[] = JSON.parse(
     localStorage.getItem('savedCards') || '[]'
   );
 
   constructor(private router: Router) {}
 
-  addCard(card: any) {
+  addCard(card: Card) {
     this.savedCards.push(card);
     localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
     console.log('addcard');
   }
 
-  removeCard(card: any) {
+  removeCard(card: Card) {
     const index = this.savedCards.findIndex((c) => c.id === card.id);
     if (index !== -1) {
       this.savedCards.splice(index, 1);
@@ -26,7 +27,7 @@ export class CardService {
     console.log('removecard');
   }
 
-  isCardSaved(card: any) {
+  isCardSaved(card: Card) {
     return this.savedCards.some((c) => c.id === card.id);
   }
 

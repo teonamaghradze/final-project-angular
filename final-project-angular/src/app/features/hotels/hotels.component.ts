@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Hotel } from './interfaces/hotels.interface';
 
 @Component({
   selector: 'app-hotels',
@@ -13,10 +14,10 @@ export class HotelsComponent {
   currentIndex = 0;
   imageWidth!: number;
 
-  hotels: any;
+  hotels: Hotel[] = [];
   inputName: string = '';
-  filteredHotels: any[] = [];
-  sortedHotels: any[] = [];
+  filteredHotels: Hotel[] = [];
+  sortedHotels: Hotel[] = [];
   // current page and number of hotels to display per page
   initialHotelsToShow = 8;
   hotelsToLoad = 8;
@@ -24,10 +25,15 @@ export class HotelsComponent {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http.get<any>('/assets/hotels.json').subscribe((res) => {
-      this.hotels = res;
+    this.http.get<Hotel[]>('/assets/hotels.json').subscribe({
+      next: (res) => {
+        this.hotels = res;
 
-      this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
+        this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
+      },
+      error: (error) => {
+        console.error('Error loading hotel data:', error);
+      },
     });
   }
 
@@ -39,7 +45,7 @@ export class HotelsComponent {
   }
 
   filterHotels() {
-    this.filteredHotels = this.hotels.filter((hotel: any) => {
+    this.filteredHotels = this.hotels.filter((hotel: Hotel) => {
       return (
         hotel.city.toLowerCase().includes(this.inputName.toLowerCase()) ||
         hotel.country.toLowerCase().includes(this.inputName.toLowerCase())
@@ -47,14 +53,15 @@ export class HotelsComponent {
     });
   }
 
-  filterCity(event: any) {
-    this.inputName = event.target.value;
+  filterCity(event: Event) {
+    this.inputName = (event.target as HTMLInputElement).value;
+
     this.filterHotels();
   }
 
   sortHotelDesc(): void {
     this.sortedHotels = this.hotels.sort(
-      (a: any, b: any) => a.rating_average - b.rating_average
+      (a: Hotel, b: Hotel) => a.rating_average - b.rating_average
     );
     this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);
   }
@@ -62,7 +69,7 @@ export class HotelsComponent {
   sortHotelAsc() {
     console.log(this.hotels);
 
-    this.sortedHotels = this.hotels.sort((a: any, b: any) => {
+    this.sortedHotels = this.hotels.sort((a: Hotel, b: Hotel) => {
       return b.rating_average - a.rating_average;
     });
     this.filteredHotels = this.hotels.slice(0, this.initialHotelsToShow);

@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-HttpParams;
+interface Restaurant {
+  name: string;
+}
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +16,7 @@ export class TripService {
 
   constructor(private http: HttpClient) {}
 
-  getData(latitude: number, longitude: number): Observable<any> {
+  getData(latitude: number, longitude: number): Observable<Restaurant[]> {
     const headers = new HttpHeaders({
       'X-RapidAPI-Key': '2be78c4877mshccdbbc203a80f0fp1ce79fjsne64cd595e355',
       'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com',
@@ -30,11 +32,13 @@ export class TripService {
       .set('lunit', 'km')
       .set('lang', 'en_US');
 
-    return this.http.get(this.apiBaseUrl, { headers, params }).pipe(
-      catchError((error: any) => {
-        console.error('Error:', error);
-        return throwError(error);
-      })
-    );
+    return this.http
+      .get<Restaurant[]>(this.apiBaseUrl, { headers, params })
+      .pipe(
+        catchError((error) => {
+          console.error('Error:', error);
+          return throwError(() => new Error('Error getting data'));
+        })
+      );
   }
 }

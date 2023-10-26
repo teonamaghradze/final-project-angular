@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -8,9 +7,9 @@ export class AuthService {
   private isLoggedIn: boolean = false;
 
   // remove later
-  user: any;
+  user: string = '';
 
-  constructor(private http: HttpClient) {
+  constructor() {
     this.retrieveUserData();
   }
 
@@ -19,7 +18,6 @@ export class AuthService {
     if (userData) {
       this.user = JSON.parse(userData);
       this.isLoggedIn = true;
-      console.log('dsada');
     } else {
       this.isLoggedIn = false;
     }
