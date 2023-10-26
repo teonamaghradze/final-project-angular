@@ -2,6 +2,7 @@ import { LoginGuard } from 'src/app/features/login/guards/login.guard';
 import { AuthGuard } from '../guards/auth.guard';
 import { Routes } from '@angular/router';
 import { RoadTripComponent } from 'src/app/features/road-plan/road-trip/road-trip.component';
+import { CommunityTripDetailsComponent } from 'src/app/features/community/community-trips/community-trip-details/community-trip-details.component';
 
 export const ROUTES: Routes = [
   {
@@ -53,7 +54,7 @@ export const ROUTES: Routes = [
     path: 'card-details/:id',
     loadComponent: () =>
       import(
-        '../../features/community/community-trip-details/community-trip-details.component'
+        '../../features/community/community-trips/community-trip-details/community-trip-details.component'
       ).then((m) => m.CommunityTripDetailsComponent),
   },
 
@@ -66,7 +67,7 @@ export const ROUTES: Routes = [
     path: 'favorites',
     loadComponent: () =>
       import(
-        '../../features/community/favorite-trips/favorite-trips.component'
+        '../../features/community/community-trips/favorite-trips/favorite-trips.component'
       ).then((m) => m.FavoriteTripsComponent),
   },
   {

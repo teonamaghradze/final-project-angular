@@ -14,16 +14,12 @@ import { CardData } from '../interfaces/cardData.interface';
 import { NgIf, NgFor } from '@angular/common';
 
 @Component({
-    selector: 'app-community-trip-details',
-    templateUrl: './community-trip-details.component.html',
-    styleUrls: ['./community-trip-details.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        NgIf,
-        RouterLink,
-        NgFor,
-    ],
+  selector: 'app-community-trip-details',
+  templateUrl: './community-trip-details.component.html',
+  styleUrls: ['./community-trip-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [NgIf, RouterLink, NgFor],
 })
 export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
   cardId: number = 0;
