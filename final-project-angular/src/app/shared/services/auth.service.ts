@@ -19,6 +19,9 @@ export class AuthService {
     if (userData) {
       this.user = JSON.parse(userData);
       this.isLoggedIn = true;
+      console.log('dsada');
+    } else {
+      this.isLoggedIn = false;
     }
   }
 
@@ -27,6 +30,7 @@ export class AuthService {
   }
 
   logout() {
+    localStorage.removeItem('user');
     this.isLoggedIn = false;
   }
 
