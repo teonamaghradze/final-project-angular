@@ -1,8 +1,7 @@
+@import "../../../shared/styles/variables.scss";
+
 header {
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
   padding: 12rem 0 0;
 
   h1 {
@@ -18,34 +17,34 @@ header {
 
   input {
     width: 40rem;
-    border: 2px solid rgb(239, 237, 237);
+    border: 2px solid $borderGray;
     outline: none;
     border-radius: 10px;
-    background-image: url("../../../../assets/magnifying-glass-solid.svg");
+    background-image: url("../../../../assets/images/magnifying-glass-solid.svg");
     background-repeat: no-repeat;
     background-size: 1rem;
     background-position: left 3% center;
 
     padding: 1rem 2.5rem;
     &::placeholder {
-      color: #999;
+      color: $txtGray;
     }
 
     &:focus {
-      border: 2px solid #9b8df1;
+      border: 2px solid $mainViolet;
     }
   }
 
   select {
     cursor: pointer;
-    border: 2px solid rgb(239, 237, 237);
+    border: 2px solid $borderGray;
     outline: none;
     border-radius: 10px;
     padding: 1rem;
     border-left: none;
     option {
       font-size: 14px;
-      color: #333;
+      color: $mainDark;
     }
   }
 }
@@ -120,7 +119,7 @@ header {
 }
 
 .red-button {
-  background-color: red;
+  background-color: $buttonRed;
 }
 
 .center-button {
@@ -131,9 +130,9 @@ header {
 }
 
 .load-more-button {
-  color: #9b8df1;
+  color: $mainViolet;
   padding: 10px 20px;
-  border: 1px solid #9b8df1;
+  border: 1px solid $mainViolet;
   border-radius: 6rem;
   background: none;
   font-size: 1rem;
@@ -160,16 +159,15 @@ header {
     border-radius: 4px;
     cursor: pointer;
     font-size: 0.7rem;
+    color: $mainWhite;
   }
 
   .add-button {
-    background-color: #8a77f2;
-    color: white;
+    background-color: $hoverViolet;
   }
 
   .remove-button {
-    background-color: #f44336;
-    color: white;
+    background-color: $buttonRed;
   }
 }
 
@@ -181,7 +179,7 @@ header {
   font-size: 18px;
   cursor: pointer;
   transition: background-color 0.3s;
-  border-bottom: 2px solid #9b8df1;
+  border-bottom: 2px solid $mainViolet;
   margin-left: 5rem;
   display: inline;
   margin-top: 4rem;
@@ -189,13 +187,12 @@ header {
 }
 
 .favorite-button:hover {
-  color: #7460f6;
+  color: $hoverViolet;
 }
 
 @media (max-width: 1400px) {
   .city-cards-container {
     grid-template-columns: repeat(3, 1fr);
-    // margin-left: 11rem;
   }
 }
 

@@ -1,15 +1,21 @@
-<nav class="top-bar-container">
+<nav class="top-bar-container flex-row">
   <section
-    class="logo-container"
+    class="logo-container flex-row"
     routerLink="/"
     [class.active]="activeLink === 'logo'"
     (click)="setActiveLink('logo')"
   >
-    <img src="../../assets/tripplanner-logo-blue.png" alt="trip planner logo" />
+    <img
+      src="../../assets/images/tripplanner-logo-blue.png"
+      alt="trip planner logo"
+    />
     <span>Trip Planner</span>
   </section>
 
-  <section class="trips-container" [class.show-mobile-menu]="showMobileMenu">
+  <section
+    class="trips-container flex-row"
+    [class.show-mobile-menu]="showMobileMenu"
+  >
     <span
       routerLink="/community"
       [class.active]="activeLink === 'community'"
@@ -48,7 +54,7 @@
 
   <img
     class="burger"
-    src="../../../../assets/bars-solid.svg"
+    src="../../../../assets/images/bars-solid.svg"
     (click)="showMobileMenu()"
     alt=""
   />

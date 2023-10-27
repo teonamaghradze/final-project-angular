@@ -251,6 +251,24 @@
       "phoneNumber": "+995555281138",
       "agreement": true,
       "id": 28
+    },
+    {
+      "email": "aa@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "dfds",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 29
+    },
+    {
+      "email": "maghradzeteo@gmail.com",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "sdffds",
+      "phoneNumber": "+995555281138",
+      "agreement": true,
+      "id": 30
     }
   ]
 }

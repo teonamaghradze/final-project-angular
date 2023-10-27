@@ -7,13 +7,13 @@
       <h2>{{ city.title }}</h2>
       <p>{{ city.description }}</p>
 
-      <div class="card-footer">
-        <div class="author">
+      <div class="card-footer flex-row">
+        <div class="author flex-row">
           <img class="avatar" src="{{ city.avatar }}" alt="" />
           <p>{{ city.author }}</p>
         </div>
 
-        <div class="likes-duration">
+        <div class="likes-duration flex-row">
           <p>{{ city.duration }} • {{ city.count }}</p>
           <img class="likes" src="{{ city.likes }}" alt="" />
         </div>

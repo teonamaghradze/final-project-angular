@@ -118,20 +118,6 @@ export class CommunityTripsComponent implements OnInit {
     this.cdr.markForCheck();
   }
 
-  // toggleCard(card: Card) {
-  //   console.log('Toggle Card Called');
-  //   console.log('Is Card Saved:', this.isCardSaved(card));
-
-  //   const index = this.cardService.getSavedCards().indexOf(card);
-  //   console.log(index, 'ind');
-
-  //   if (index === -1) {
-  //     this.cardService.addCard(card);
-  //   } else {
-  //     this.cardService.removeCard(card);
-  //   }
-  // }
-
   addCard(card: Card) {
     this.cardService.addCard(card);
   }

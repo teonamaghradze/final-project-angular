@@ -1,7 +1,7 @@
 <app-top-bar></app-top-bar>
 
 <main>
-  <header>
+  <header class="flex-column">
     <h1>Trip finder</h1>
     <p>
       Find trips created by other users and get inspired for your next trip!
@@ -46,16 +46,6 @@
         >
           {{ "add &#10004;" }}
         </button>
-
-        <!-- <button
-          (click)="toggleCard(city)"
-          [ngClass]="{
-            'add-button': !isCardSaved(city),
-            'remove-button': isCardSaved(city)
-          }"
-        >
-          {{ isCardSaved(city) ? "remove &#10006;" : "add &#10004;" }}
-        </button> -->
       </div>
 
       <div (click)="showDetails(city.id)">
@@ -79,7 +69,7 @@
   </div>
   <div class="center-button">
     <button class="load-more-button" (click)="loadMoreCards()">
-      <img src="../../../../assets/spinner-solid.svg" alt="" />
+      <img src="../../../../assets/images/spinner-solid.svg" alt="" />
       Load More
     </button>
   </div>

@@ -12,18 +12,15 @@ import { ImageCarouselComponent } from '../image-carousel/image-carousel.compone
 import { NgFor } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+// import "../../shared/database/hotels.json"
+
 @Component({
-    selector: 'app-hotels',
-    templateUrl: './hotels.component.html',
-    styleUrls: ['./hotels.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [
-        ReactiveFormsModule,
-        FormsModule,
-        NgFor,
-        ImageCarouselComponent,
-    ],
+  selector: 'app-hotels',
+  templateUrl: './hotels.component.html',
+  styleUrls: ['./hotels.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [ReactiveFormsModule, FormsModule, NgFor, ImageCarouselComponent],
 })
 export class HotelsComponent {
   @ViewChild('carouselContainer', { static: true })
