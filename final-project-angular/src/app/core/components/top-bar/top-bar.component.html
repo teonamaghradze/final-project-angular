@@ -12,37 +12,19 @@
     <span>Trip Planner</span>
   </section>
 
-  <section
-    class="trips-container flex-row"
-    [class.show-mobile-menu]="showMobileMenu"
-  >
-    <span
-      routerLink="/community"
-      [class.active]="activeLink === 'community'"
-      (click)="setActiveLink('community')"
-      >Community Trips</span
-    >
-    <span
-      routerLink="/roads"
-      [class.active]="activeLink === 'roads'"
-      (click)="setActiveLink('roads')"
-      >Routes</span
-    >
-    <span
-      routerLink="/restaurants"
-      [class.active]="activeLink === 'restaurants'"
-      (click)="setActiveLink('restaurants')"
-      >Restaurants</span
-    >
-    <span
-      routerLink="/hotels"
-      [class.active]="activeLink === 'hotels'"
-      (click)="setActiveLink('hotels')"
-      >Hotels</span
-    >
+  <section class="trips-container flex-row">
+    <ng-container *ngFor="let link of navigationLinks">
+      <span
+        [routerLink]="link.url"
+        [class.active]="activeLink === link.name"
+        (click)="setActiveLink(link.name)"
+      >
+        {{ link.title }}
+      </span>
+    </ng-container>
   </section>
 
-  <section class="login-signup" [class.show-mobile-menu]="showMobileMenu">
+  <section class="login-signup">
     <button (click)="toggleLogin()">
       {{ auth.isLoggedInUser() ? "Logout" : "Login" }}
     </button>
@@ -56,7 +38,7 @@
     class="burger"
     src="../../../../assets/images/bars-solid.svg"
     (click)="showMobileMenu()"
-    alt=""
+    alt="burger icon"
   />
 
   <div class="mobile-nav-container">

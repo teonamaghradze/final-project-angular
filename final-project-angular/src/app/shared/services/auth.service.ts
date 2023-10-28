@@ -6,12 +6,10 @@ import { Injectable } from '@angular/core';
 export class AuthService {
   private isLoggedIn: boolean = false;
 
-  // remove later
   user: string = '';
 
   constructor() {
     this.retrieveUserData();
-    console.log(this.isloggedin, 'isloggedin');
   }
 
   retrieveUserData() {

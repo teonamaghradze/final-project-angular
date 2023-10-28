@@ -104,6 +104,7 @@ export class CommunityTripsComponent implements OnInit {
 
   loadMoreCards() {
     const endIndex = this.currentlyDisplayedCards.length + this.numCardsToLoad;
+
     if (endIndex <= this.filteredData.length) {
       this.currentlyDisplayedCards = this.filteredData.slice(0, endIndex);
     }

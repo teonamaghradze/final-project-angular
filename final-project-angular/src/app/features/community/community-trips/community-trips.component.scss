@@ -127,22 +127,21 @@ header {
   justify-content: center;
   align-items: center;
   margin: 5rem 0 15rem 0;
-}
+  .load-more-button {
+    color: $mainViolet;
+    padding: 10px 20px;
+    border: 1px solid $mainViolet;
+    border-radius: 6rem;
+    background: none;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 auto;
 
-.load-more-button {
-  color: $mainViolet;
-  padding: 10px 20px;
-  border: 1px solid $mainViolet;
-  border-radius: 6rem;
-  background: none;
-  font-size: 1rem;
-  font-weight: 600;
-  margin: 0 auto;
-
-  cursor: pointer;
-  img {
-    width: 1rem;
-    margin-right: 5px;
+    cursor: pointer;
+    img {
+      width: 1rem;
+      margin-right: 5px;
+    }
   }
 }
 

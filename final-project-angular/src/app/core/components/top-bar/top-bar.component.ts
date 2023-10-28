@@ -1,13 +1,12 @@
 import {
   Component,
-  OnInit,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
 } from '@angular/core';
 
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../../shared/services/auth.service';
-import { NgIf, NgStyle } from '@angular/common';
+import { NgFor, NgIf, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-top-bar',
@@ -15,7 +14,7 @@ import { NgIf, NgStyle } from '@angular/common';
   styleUrls: ['./top-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
   standalone: true,
-  imports: [RouterLink, NgIf, NgStyle],
+  imports: [RouterLink, NgIf, NgStyle, NgFor],
 })
 export class TopBarComponent {
   constructor(
@@ -24,7 +23,14 @@ export class TopBarComponent {
     private cdr: ChangeDetectorRef
   ) {}
 
-  activeLink: string = 'community';
+  navigationLinks: { name: string; title: string; url: string }[] = [
+    { name: 'community', title: 'Community Trips', url: '/community' },
+    { name: 'roads', title: 'Routes', url: '/roads' },
+    { name: 'restaurants', title: 'Restaurants', url: '/restaurants' },
+    { name: 'hotels', title: 'Hotels', url: '/hotels' },
+  ];
+
+  activeLink: string = '';
   isMenuShown: boolean = false;
 
   // Function to update the active link when a link is clicked.
@@ -47,6 +53,5 @@ export class TopBarComponent {
   showMobileMenu() {
     this.isMenuShown = !this.isMenuShown;
     this.cdr.markForCheck();
-    console.log(this.isMenuShown);
   }
 }
