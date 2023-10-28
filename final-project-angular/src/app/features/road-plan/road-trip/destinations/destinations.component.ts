@@ -26,14 +26,22 @@ export interface PlaceSearchResult {
   selector: 'app-destinations',
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
-  template: `<mat-form-field appearance="outline">
-    <input #inputField matInput [placeholder]="placeholder" />
-  </mat-form-field> `,
+  template: `<input #inputField placeholder="Enter a location" />`,
+  styles: [
+    `
+      input {
+        padding: 1rem;
+        border: 1px solid gray;
+        border-radius: 0.2rem;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DestinationsComponent implements OnInit {
   @ViewChild('inputField') inputField!: ElementRef;
   @Input() placeholder: string = '';
+
   autocomplete: google.maps.places.Autocomplete | undefined;
 
   @Output() placeChanged = new EventEmitter<PlaceSearchResult>();
@@ -57,7 +65,6 @@ export class DestinationsComponent implements OnInit {
         imageUrl: this.getPhotoIrl(place),
         iconUrl: place?.icon,
       };
-      console.log(place);
 
       this.ngZone.run(() => {
         this.placeChanged.emit(result);

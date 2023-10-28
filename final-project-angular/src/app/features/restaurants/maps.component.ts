@@ -31,8 +31,6 @@ export class MapsComponent {
   };
   zoom = 2;
 
-  // markerPosition: google.maps.LatLng | undefined;
-
   moveMap(event: google.maps.MapMouseEvent) {
     if (event.latLng != null) this.center = event.latLng.toJSON();
   }
@@ -47,7 +45,6 @@ export class MapsComponent {
       if (status === 'OK' && results[0].geometry.location) {
         const location = results[0].geometry.location.toJSON();
         this.center = location;
-        // this.markerPosition = location;
 
         this.zoom = 15;
 

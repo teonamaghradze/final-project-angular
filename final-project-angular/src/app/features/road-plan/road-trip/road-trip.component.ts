@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import {
   DestinationsComponent,
   PlaceSearchResult,
-} from '../destinations/destinations.component';
-import { DestinationDetailsComponent } from '../destination-details/destination-details.component';
-import { MapDisplayComponent } from '../map-display/map-display.component';
+} from './destinations/destinations.component';
+import { DestinationDetailsComponent } from './destination-details/destination-details.component';
+import { MapDisplayComponent } from './map-display/map-display.component';
 
 @Component({
   selector: 'app-road-trip',
