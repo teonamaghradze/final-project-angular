@@ -26,7 +26,7 @@ export class LoginComponent {
   password: string = '';
 
   constructor(
-    private formBuilder: FormBuilder,
+    private fb: FormBuilder,
     private router: Router,
     private http: HttpClient,
     private auth: AuthService,
@@ -34,7 +34,7 @@ export class LoginComponent {
   ) {}
 
   ngOnInit(): void {
-    this.loginForm = this.formBuilder.group({
+    this.loginForm = this.fb.group({
       email: [''],
       password: [''],
     });
@@ -50,8 +50,6 @@ export class LoginComponent {
         const user = res.find((el: User) => {
           return el.email === email && el.password === password;
         });
-
-        console.log(user, 'user');
 
         if (user) {
           this.auth.login();

@@ -1,4 +1,4 @@
-@import "../../../shared/styles/variables.scss";
+@import "../../shared/styles/variables.scss";
 
 header {
   display: flex;
@@ -7,7 +7,7 @@ header {
   padding-left: 4rem;
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background: url("../../../../assets/images/cover1.png");
+  background: url("../../../assets/images/cover1.png");
   background-size: 60%;
   background-repeat: no-repeat;
   background-position: top 55% right;

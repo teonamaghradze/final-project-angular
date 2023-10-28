@@ -61,7 +61,9 @@ export const ROUTES: Routes = [
   {
     path: 'restaurants',
     loadComponent: () =>
-      import('../../features/maps/maps.component').then((m) => m.MapsComponent),
+      import('../../features/restaurants/maps.component').then(
+        (m) => m.MapsComponent
+      ),
   },
   {
     path: 'favorites',
