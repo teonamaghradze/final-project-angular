@@ -1,5 +1,5 @@
-<section>
-  <div class="input-btns">
+<section class="flex-column">
+  <div class="input-btns flex-row">
     <input
       [(ngModel)]="inputName"
       (input)="filterCity($event)"
@@ -17,9 +17,13 @@
   </div>
 
   <div class="hotel-list">
-    <div *ngFor="let hotel of filteredHotels" class="hotel-card">
+    <div
+      *ngFor="let hotel of filteredHotels"
+      class="hotel-card"
+      id="hotel-card-container"
+    >
       <header class="header">
-        <h4 class="hotel-name">{{ hotel.hotel_name }}</h4>
+        <h4 id="hotel-title" class="hotel-name">{{ hotel.hotel_name }}</h4>
         <div>
           <p class="hotel-rating">Rating: {{ hotel.rating_average }}</p>
         </div>
@@ -44,8 +48,8 @@
 
       <p class="hotel-overview">Overview: {{ hotel?.overview }}</p>
 
-      <p class="hotel-stars">
-        Stars: <span [innerHTML]="generateStars(hotel.star_rating)"></span>
+      <p>
+        <span [innerHTML]="generateStars(hotel.star_rating)"></span>
       </p>
 
       <p class="hotel-link">

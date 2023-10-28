@@ -14,7 +14,6 @@ import { map } from 'rxjs';
   imports: [CommonModule, GoogleMapsModule],
 
   templateUrl: './map-display.component.html',
-  styleUrls: ['./map-display.component.scss'],
 })
 export class MapDisplayComponent {
   @Input() from: PlaceSearchResult | undefined;

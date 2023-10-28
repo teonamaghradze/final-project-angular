@@ -1,21 +1,25 @@
-.display-area {
-  height: calc(100vh - 180px);
+@import "../../../shared/styles/variables.scss";
+
+h1 {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 2.5rem;
 }
 
 .input-area {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
   padding: 20px;
-  border-radius: 4px;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  border: 1px solid #e3e3e3;
+  text-align: center;
+  gap: 10px;
+  background-color: $mainWhite;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid $borderGray;
   border-radius: 6px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
+  h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+  }
 }
 
 .destination-images {
@@ -26,34 +30,15 @@
   margin-bottom: 5rem;
 }
 
-h1 {
-  text-align: center;
-  margin-top: 10rem;
-  font-size: 2.5rem;
-}
-
-.input-area {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  align-items: center;
-  background-color: #fff;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  border: 1px solid #e3e3e3;
-  border-radius: 6px;
-  align-items: center;
-  text-align: center;
-  // margin: 5rem 24rem;
-}
-
-.input-area h2 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
+.display-area {
+  height: calc(100vh - 180px);
 }
 
 @media (max-width: 700px) {
   .destination-images {
+    flex-direction: column;
+  }
+  .input-area {
     flex-direction: column;
   }
 }

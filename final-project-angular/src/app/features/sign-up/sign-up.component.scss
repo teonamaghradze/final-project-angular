@@ -1,26 +1,26 @@
+@import "../../shared/styles/variables.scss";
+
 .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 2rem 5rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
   h2 {
     font-size: 3rem;
     margin-bottom: 3rem;
     text-align: center;
+    line-height: 4rem;
   }
   .login-container {
     width: 40%;
     height: 700px;
-    background: url("../../../assets/login.jpg");
+    background: url("../../../assets/images/login.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: white;
+    color: $mainWhite;
+
     p {
       width: 300px;
       text-align: center;
@@ -29,9 +29,10 @@
     }
     a {
       background-color: none;
-      color: white;
+      color: $mainWhite;
+
       border: none;
-      border: 1px solid white;
+      border: 1px solid $mainWhite;
       border-radius: 10rem;
       text-decoration: none;
       padding: 12px 40px;
@@ -39,13 +40,13 @@
       font-size: 16px;
       transition: background-color 0.3s;
       margin-top: 1.5rem;
-    }
-    a:hover {
-      border-color: #483d8d;
-      color: #483d8d;
+
+      &:hover {
+        border-color: #483d8d;
+        color: #483d8d;
+      }
     }
   }
-
   form {
     display: flex;
     flex-direction: column;
@@ -55,56 +56,73 @@
     padding: 7rem;
     border-radius: 6px;
     .create {
-      color: #9b8df1;
+      color: $mainViolet;
     }
     .flex {
       width: 60%;
+      label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 6px;
+        color: $mainDark;
+      }
+    }
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid $borderGray;
+      border-radius: 4px;
+      outline: none;
+    }
+    div {
+      color: $errorMessages;
+      margin-top: 6px;
+    }
+    .check {
+      margin: 20px 0;
+      color: $mainDark;
+      input[type="checkbox"] {
+        margin-right: 5px;
+        transform: scale(1.2);
+      }
+    }
+    button {
+      background-color: $mainViolet;
+      color: $mainWhite;
+      border: none;
+      border-radius: 10rem;
+      padding: 12px 40px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+    .submit-btn:hover {
+      background-color: $hoverViolet;
     }
   }
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 6px;
-    color: #333;
-  }
+}
 
-  input[type="text"],
-  input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    outline: none;
+@media (max-width: 1150px) {
+  .container {
+    form {
+      padding: 7rem 0rem;
+    }
   }
+}
 
-  div {
-    color: #f44336;
-    margin-top: 6px;
-  }
-
-  .check {
-    margin: 20px 0;
-    color: #333;
-  }
-
-  input[type="checkbox"] {
-    margin-right: 5px;
-    transform: scale(1.2);
-  }
-
-  button {
-    background-color: #9b8df1;
-    color: white;
-    border: none;
-    border-radius: 10rem;
-    padding: 12px 40px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-  }
-
-  .submit-btn:hover {
-    background-color: #b5acf2;
+@media (max-width: 900px) {
+  .container {
+    margin: 0;
+    flex-direction: column;
+    .login-container {
+      width: 100%;
+    }
+    form {
+      padding: 2rem 0rem;
+      width: 100%;
+      margin-bottom: -16rem;
+    }
   }
 }

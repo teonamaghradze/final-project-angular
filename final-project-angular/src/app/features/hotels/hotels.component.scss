@@ -1,117 +1,108 @@
+@import "../../shared/styles/variables.scss";
+
 section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  color: $mainDark;
+
   .load-more-btn {
     cursor: pointer;
     background: none;
-    border: 1px solid #665ab3;
+    border: 1px solid $loadMoreBtn;
     border-radius: 5px;
-    color: #665ab3;
+    color: $loadMoreBtn;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
   }
   .input-btns {
-    display: flex;
     margin-top: 8rem;
     margin-bottom: 4rem;
     gap: 2rem;
   }
-}
-.search-input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-
-  max-width: 400px;
-}
-
-.sort-btns {
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.sort-button {
-  // padding: 10px 20px;
-  background-color: #9b8df1;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 61px;
-
-  &:hover {
-    background-color: #665ab3;
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $borderGray;
+    border-radius: 5px;
+    max-width: 400px;
   }
-}
-button {
-  padding: 8px;
-}
-
-.hotel-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 18px;
-  margin-bottom: 58px;
-  max-width: 500px;
-  .header {
+  .sort-btns {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-
-  .hotel-name {
-    font-size: 24px;
-    max-width: 390px;
-  }
-
-  .hotel-location {
-    color: #555;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-
-  .hotel-address {
-    color: #777;
-    text-align: center;
-    margin-top: 1rem;
-  }
-
-  .checkin-checkout {
-    color: #555;
-    text-align: center;
-  }
-
-  .reviews {
-    color: #9b8df1;
-    font-weight: 500;
-  }
-
-  .hotel-overview {
-    color: #333;
-  }
-
-  .hotel-rating {
-    color: #28a745;
-  }
-
-  .hotel-stars {
-    color: #f0ad4e;
-  }
-
-  .hotel-link {
-    a {
-      color: #007bff;
-      text-decoration: none;
+    gap: 3px;
+    button {
+      padding: 8px;
+    }
+    .sort-button {
+      background-color: $mainViolet;
+      color: $mainWhite;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 61px;
 
       &:hover {
-        text-decoration: underline;
+        background-color: $hoverViolet;
       }
     }
   }
 
-  .app-image-carousel {
-    margin-top: 20px;
+  .hotel-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 5px;
+    padding: 18px;
+    margin-bottom: 58px;
+    max-width: 500px;
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .hotel-name {
+        font-size: 24px;
+        max-width: 390px;
+      }
+      .hotel-rating {
+        color: $ratingGreen;
+      }
+    }
+
+    .reviews {
+      color: $mainViolet;
+      font-weight: 500;
+    }
+
+    .hotel-location {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .hotel-address {
+      color: $txtGray;
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .checkin-checkout {
+      text-align: center;
+    }
+
+    .hotel-link {
+      a {
+        color: $hoverViolet;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .app-image-carousel {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  #hotel-card-container {
+    padding-left: 2rem;
   }
 }

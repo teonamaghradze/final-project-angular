@@ -1,25 +1,23 @@
+@import "../../../../shared/styles/variables.scss";
+
 .advantages-container {
   margin-top: 10rem;
-
   header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     h3 {
-      color: #9b8df1;
+      color: $mainViolet;
       margin-top: 2rem;
       font-weight: 500;
       font-size: 1.1rem;
     }
 
     h1 {
-      color: #2a3055;
+      color: $mainDark;
       font-weight: 600;
       font-size: 1.8rem;
       margin-bottom: 2rem;
     }
     p {
-      color: #a3acbd;
+      color: $mainPageTxt;
       font-weight: 400;
       font-size: 17px;
       max-width: 600px;
@@ -27,41 +25,38 @@
       line-height: 1.8rem;
     }
   }
+  .features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 3rem auto;
+    padding: 30px 40px;
+    section {
+      background-color: $mainWhite;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      .icon {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      h3 {
+        color: #2a3055;
+        font-weight: 500;
+        margin-top: 2rem;
+        font-size: 1.2rem;
+      }
+
+      p {
+        color: #626684;
+      }
+    }
+  }
 }
 
-.features {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  max-width: 1400px;
-  margin: 3rem auto;
-  padding: 30px 40px;
-}
-
-section {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  flex: 1;
-}
-
-.icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-h3 {
-  color: #2a3055;
-  font-weight: 500;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-}
-
-p {
-  color: #626684;
-}
 .ocean {
   height: 150px;
   width: 100%;

@@ -1,14 +1,16 @@
+@import "../../../../shared/styles/variables.scss";
+
 h1 {
   font-size: 3rem;
   text-align: center;
   margin-top: -18rem;
   margin-bottom: 2rem;
-  color: #9b8df1;
+  color: $mainViolet;
 
   ~ p {
     font-size: 18px;
     text-align: center;
-    color: #bcbaba;
+    color: $mainPageTxt;
   }
 }
 
@@ -16,37 +18,34 @@ section {
   display: flex;
   justify-content: space-around;
   gap: 3rem;
-  //   gap: 2rem;
   margin: 11rem;
   div {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    border: 2px solid #9b8df1;
+    border: 2px solid $mainViolet;
     padding: 2rem;
     border-radius: 1rem;
+    p:last-child {
+      font-size: 14px;
+      color: $mainPageTxt;
+    }
   }
-}
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+  }
 
-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-}
-
-.txt {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 10px 0;
-  color: #bcbaba;
-  font-weight: 400;
-  line-height: 1.5rem;
-}
-
-div p:last-child {
-  font-size: 14px;
-  color: #777;
+  .txt {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: $txtGray;
+    font-weight: 400;
+    line-height: 1.5rem;
+  }
 }
 
 @media (max-width: 1150px) {
