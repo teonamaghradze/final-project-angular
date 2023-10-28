@@ -13,14 +13,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
-export interface PlaceSearchResult {
-  address: string;
-  location?: google.maps.LatLng;
-  imageUrl?: string;
-  iconUrl?: string;
-  name?: string;
-}
+import { PlaceSearchResult } from './interfaces/placeSearchResult.interface';
 
 @Component({
   selector: 'app-destinations',

@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  DestinationsComponent,
-  PlaceSearchResult,
-} from './destinations/destinations.component';
+import { DestinationsComponent } from './destinations/destinations.component';
+import { PlaceSearchResult } from './destinations/interfaces/placeSearchResult.interface';
 import { DestinationDetailsComponent } from './destination-details/destination-details.component';
 import { MapDisplayComponent } from './map-display/map-display.component';
 

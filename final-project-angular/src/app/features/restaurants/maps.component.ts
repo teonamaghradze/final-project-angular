@@ -54,16 +54,15 @@ export class MapsComponent {
   }
 
   private fetchRestaurantData(latitude: number, longitude: number) {
-    this.tripService.getData(latitude, longitude).subscribe(
-      (data: any) => {
+    this.tripService.getData(latitude, longitude).subscribe({
+      next: (data: any) => {
         this.restaurants = data.data as Restaurant[];
-        // this.markerPosition = undefined;
 
         this.cdr.markForCheck();
       },
-      (error) => {
+      error: (error) => {
         console.error('Error fetching restaurant data:', error);
-      }
-    );
+      },
+    });
   }
 }

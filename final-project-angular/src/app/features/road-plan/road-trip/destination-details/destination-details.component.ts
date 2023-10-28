@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlaceSearchResult } from '../destinations/destinations.component';
+import { PlaceSearchResult } from '../destinations/interfaces/placeSearchResult.interface';
+
 import { MatCardModule } from '@angular/material/card';
 
 @Component({

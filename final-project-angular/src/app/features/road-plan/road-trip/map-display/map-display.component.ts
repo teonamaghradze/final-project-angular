@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PlaceSearchResult } from '../destinations/destinations.component';
+import { PlaceSearchResult } from '../destinations/interfaces/placeSearchResult.interface';
 import {
   GoogleMapsModule,
   MapDirectionsService,
