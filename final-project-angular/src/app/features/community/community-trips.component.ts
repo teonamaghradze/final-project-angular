@@ -11,7 +11,7 @@ import { Card } from './interfaces/card.interface';
 import { NgFor, NgClass, CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TopBarComponent } from '../../../core/components/top-bar/top-bar.component';
+import { TopBarComponent } from '../../core/components/top-bar/top-bar.component';
 
 @Component({
   selector: 'app-community-trips',
@@ -52,17 +52,17 @@ export class CommunityTripsComponent implements OnInit {
     // Load saved filters when the component is initialized
     this.loadSavedFilters();
 
-    this.http.get('assets/data.json').subscribe(
-      (res: any) => {
+    this.http.get('assets/data.json').subscribe({
+      next: (res: any) => {
         this.data = res;
         this.filterData();
         this.loadInitialCards();
         this.cdr.markForCheck();
       },
-      (error) => {
+      error: (error) => {
         console.error('Error loading data:', error);
-      }
-    );
+      },
+    });
   }
 
   // Save the current filters to local storage
@@ -112,7 +112,6 @@ export class CommunityTripsComponent implements OnInit {
   }
 
   filterDays() {
-    console.log(this.selectedDays);
     this.filterData();
     this.saveFilters();
     this.loadInitialCards();

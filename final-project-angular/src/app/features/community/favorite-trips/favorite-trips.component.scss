@@ -1,4 +1,4 @@
-@import "../../../../shared/styles/variables.scss";
+@import "../../../shared/styles/variables.scss";
 
 .city-cards-container {
   display: grid;
@@ -79,7 +79,6 @@
 
 .back-btn:hover {
   background-color: $mainWhite;
-
   color: $mainDark;
 }
 

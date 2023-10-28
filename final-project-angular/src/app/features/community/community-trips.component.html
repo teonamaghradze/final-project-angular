@@ -1,5 +1,3 @@
-<app-top-bar></app-top-bar>
-
 <main>
   <header class="flex-column">
     <h1>Trip finder</h1>
@@ -29,6 +27,7 @@
   <button class="favorite-button" routerLink="/favorites">
     See saved trips &#10154;
   </button>
+
   <div class="city-cards-container">
     <div class="city-card" *ngFor="let city of currentlyDisplayedCards">
       <div class="add-remove-buttons">

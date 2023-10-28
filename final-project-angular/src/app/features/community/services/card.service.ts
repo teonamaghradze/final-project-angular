@@ -15,7 +15,6 @@ export class CardService {
   addCard(card: Card) {
     this.savedCards.push(card);
     localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
-    console.log('addcard');
   }
 
   removeCard(card: any) {
@@ -24,7 +23,6 @@ export class CardService {
       this.savedCards.splice(index, 1);
       localStorage.setItem('savedCards', JSON.stringify(this.savedCards));
     }
-    console.log('removecard');
   }
 
   isCardSaved(card: Card) {

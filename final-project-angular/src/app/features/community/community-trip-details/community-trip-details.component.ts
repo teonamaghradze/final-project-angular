@@ -40,7 +40,9 @@ export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.cardId = +params['id'];
-      this.cardDetails$ = this.http.get<CardData>('assets/data.json').pipe(
+
+      const url = `assets/data.json?id=${this.cardId}`;
+      this.cardDetails$ = this.http.get<CardData>(url).pipe(
         catchError((error) => {
           console.error('Error loading data:', error);
           return throwError(() => error);
@@ -56,8 +58,6 @@ export class CommunityTripDetailsComponent implements OnInit, OnDestroy {
         } else {
           this.cardData = null;
         }
-        console.log(typeof this.cardData, 'dsaadasd');
-        console.log(this.cardData);
       }
     });
   }
