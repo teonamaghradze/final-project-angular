@@ -8,11 +8,9 @@ import {
 } from '@angular/core';
 
 import { Hotel } from './interfaces/hotels.interface';
-import { ImageCarouselComponent } from '../image-carousel/image-carousel.component';
+import { ImageCarouselComponent } from './image-carousel/image-carousel.component';
 import { NgFor } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
-// import "../../shared/database/hotels.json"
 
 @Component({
   selector: 'app-hotels',
@@ -85,8 +83,6 @@ export class HotelsComponent {
   }
 
   sortHotelAsc() {
-    console.log(this.hotels);
-
     this.sortedHotels = this.hotels.sort((a: Hotel, b: Hotel) => {
       return b.rating_average - a.rating_average;
     });

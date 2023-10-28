@@ -8,7 +8,7 @@ export const ROUTES: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('../../features/landingpage/main-page/main-page.component').then(
+      import('../../features/landingpage/main-page.component').then(
         (m) => m.MainPageComponent
       ),
   },

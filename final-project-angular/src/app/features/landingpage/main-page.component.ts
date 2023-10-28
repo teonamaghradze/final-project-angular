@@ -3,7 +3,7 @@ import { TestimonialsComponent } from './testimonials/testimonials.component';
 import { AdvantagesComponent } from './advantages/advantages.component';
 import { WaveComponent } from './wave/wave.component';
 import { RouterLink } from '@angular/router';
-import { TopBarComponent } from '../../../core/components/top-bar/top-bar.component';
+import { TopBarComponent } from '../../core/components/top-bar/top-bar.component';
 
 @Component({
   selector: 'app-main-page',
