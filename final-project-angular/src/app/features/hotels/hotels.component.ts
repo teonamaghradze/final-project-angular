@@ -21,7 +21,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
   imports: [ReactiveFormsModule, FormsModule, NgFor, ImageCarouselComponent],
 })
 export class HotelsComponent {
-  @ViewChild('carouselContainer', { static: true })
   carouselContainer!: ElementRef;
 
   currentIndex = 0;
@@ -96,10 +95,6 @@ export class HotelsComponent {
       stars.push('&#x2B50;');
     }
     return stars.join('');
-  }
-
-  ngAfterViewInit() {
-    this.imageWidth = this.carouselContainer?.nativeElement?.clientWidth || 0;
   }
 
   prevSlide() {

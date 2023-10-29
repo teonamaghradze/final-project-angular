@@ -2,14 +2,12 @@ import {
   Component,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
-  ViewChild,
 } from '@angular/core';
 
-import { TripService } from '../../shared/services/trip.service';
+import { TripService } from './services/trip.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { Restaurant } from './interfaces/restaurant.interface';
-import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-maps',
@@ -43,12 +41,12 @@ export class MapsComponent {
 
   searchPlace(query: string) {
     const geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ address: query }, (results: any, status: any) => {
-      if (status === 'OK' && results[0].geometry.location) {
+    geocoder.geocode({ address: query }, (results, status) => {
+      if (status === 'OK' && results && results[0].geometry.location) {
         const location = results[0].geometry.location.toJSON();
         this.center = location;
 
-        this.zoom = 15;
+        this.zoom = 17;
 
         this.fetchRestaurantData(location.lat, location.lng);
       }

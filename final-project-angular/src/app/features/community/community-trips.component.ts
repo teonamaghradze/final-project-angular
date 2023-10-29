@@ -30,8 +30,8 @@ import { TopBarComponent } from '../../core/components/top-bar/top-bar.component
   ],
 })
 export class CommunityTripsComponent implements OnInit {
-  data: Card[] = [];
   inputName: string = '';
+  data: Card[] = [];
   filteredData: Card[] = [];
 
   // Select filter
@@ -49,7 +49,7 @@ export class CommunityTripsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // Load saved filters when the component is initialized
+    // load saved filters from localstorage
     this.loadSavedFilters();
 
     this.http.get('assets/data.json').subscribe({

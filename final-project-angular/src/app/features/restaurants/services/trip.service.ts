@@ -24,13 +24,7 @@ export class TripService {
 
     const params = new HttpParams()
       .set('latitude', latitude.toString())
-      .set('longitude', longitude.toString())
-      .set('limit', '30')
-      .set('currency', 'USD')
-      .set('distance', '2')
-      .set('open_now', 'false')
-      .set('lunit', 'km')
-      .set('lang', 'en_US');
+      .set('longitude', longitude.toString());
 
     return this.http
       .get<Restaurant[]>(this.apiBaseUrl, { headers, params })

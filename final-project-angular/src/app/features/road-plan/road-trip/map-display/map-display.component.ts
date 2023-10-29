@@ -17,8 +17,12 @@ import { map } from 'rxjs';
     `
       p {
         font-size: 18px;
-        color: red;
-        font-weight: bold;
+        color: #40476f;
+        font-weight: 500;
+        text-decoration: underline;
+      }
+      span {
+        font-weight: 100;
       }
     `,
   ],
