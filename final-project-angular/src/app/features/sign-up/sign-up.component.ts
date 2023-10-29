@@ -1,10 +1,12 @@
+import { Component, ChangeDetectorRef } from '@angular/core';
 import {
-  Component,
-  Input,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-} from '@angular/core';
-import { FormBuilder, FormGroup, Validators, AbstractControl, ValidationErrors, ReactiveFormsModule } from '@angular/forms';
+  FormBuilder,
+  FormGroup,
+  Validators,
+  AbstractControl,
+  ValidationErrors,
+  ReactiveFormsModule,
+} from '@angular/forms';
 
 import { Users } from './interfaces/users';
 import { UserDataService } from './services/user-data.service';
@@ -15,15 +17,11 @@ import { User } from '../login/interfaces/user.interface';
 import { NgIf } from '@angular/common';
 
 @Component({
-    selector: 'sign-up-register',
-    templateUrl: './sign-up.component.html',
-    styleUrls: ['./sign-up.component.scss'],
-    standalone: true,
-    imports: [
-        RouterLink,
-        ReactiveFormsModule,
-        NgIf,
-    ],
+  selector: 'sign-up-register',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss'],
+  standalone: true,
+  imports: [RouterLink, ReactiveFormsModule, NgIf],
 })
 export class SignUpComponent {
   registrationForm: FormGroup;
@@ -33,8 +31,6 @@ export class SignUpComponent {
 
   passwordMatched: boolean = true;
 
-  @Input() selectedUser: Users | null = null;
-
   constructor(
     private fb: FormBuilder,
     private userDataService: UserDataService,
@@ -42,7 +38,6 @@ export class SignUpComponent {
     private cd: ChangeDetectorRef,
     private http: HttpClient
   ) {
-    console.log(this.selectedUser, 'seslds');
     this.userData = this.userDataService.getUsersData();
 
     this.registrationForm = this.fb.group(
@@ -110,8 +105,6 @@ export class SignUpComponent {
           .post<User[]>('http://localhost:3000/users', formData)
           .subscribe({
             next: (res) => {
-              console.log(formData.email);
-
               alert('Signup successful');
               this.registrationForm.reset();
               this.router.navigate(['/login']);

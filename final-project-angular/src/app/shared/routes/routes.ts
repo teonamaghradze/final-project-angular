@@ -13,14 +13,6 @@ export const ROUTES: Routes = [
       ),
   },
 
-  // {
-  //   path: 'roads',
-  //   loadComponent: () =>
-  //     import('../../features/road-plan/road-trip/road-trip.component').then(
-  //       (mod) => mod.RoadTripComponent
-  //     ),
-  // },
-
   { path: 'roads', component: RoadTripComponent },
 
   {

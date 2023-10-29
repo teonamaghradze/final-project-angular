@@ -33,7 +33,7 @@ export class TopBarComponent {
   activeLink: string = '';
   isMenuShown: boolean = false;
 
-  // Function to update the active link when a link is clicked.
+  //update the active link when a link is clicked.
   setActiveLink(link: string) {
     this.activeLink = link;
     this.cdr.markForCheck();
@@ -44,6 +44,13 @@ export class TopBarComponent {
     if (this.auth.isLoggedInUser()) {
       // User is logged in, log them out
       this.auth.logout();
+
+      // Check the current route and navigate there
+      const currentRoute = this.router.url;
+
+      if (currentRoute === '/community') {
+        this.router.navigate(['/']);
+      }
     } else {
       this.router.navigate(['/login']);
     }

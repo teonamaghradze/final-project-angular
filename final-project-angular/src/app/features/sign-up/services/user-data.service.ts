@@ -6,12 +6,11 @@ import { Users } from '../interfaces/users';
 })
 export class UserDataService {
   private usersData: Users[] = [];
-  public isLoggedIn: boolean = false; //es guardistvis
+  public isLoggedIn: boolean = false; // guardistvis
   public currentUser: string = '';
 
   setUserData(data: Users) {
     this.usersData.push(data);
-    console.log(data);
   }
 
   getUsersData() {
@@ -33,7 +32,7 @@ export class UserDataService {
     return userEmail;
   }
 
-  //esec guardistvis
+  // guardistvis
   getIsLoggedIn() {
     return this.isLoggedIn;
   }
