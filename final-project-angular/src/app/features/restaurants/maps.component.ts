@@ -2,12 +2,14 @@ import {
   Component,
   ChangeDetectionStrategy,
   ChangeDetectorRef,
+  ViewChild,
 } from '@angular/core';
 
 import { TripService } from '../../shared/services/trip.service';
 import { NgFor, NgIf } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { Restaurant } from './interfaces/restaurant.interface';
+import { GoogleMap } from '@angular/google-maps';
 
 @Component({
   selector: 'app-maps',

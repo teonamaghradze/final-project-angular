@@ -2,7 +2,6 @@ import { LoginGuard } from 'src/app/features/login/guards/login.guard';
 import { AuthGuard } from '../guards/auth.guard';
 import { Routes } from '@angular/router';
 import { RoadTripComponent } from 'src/app/features/road-plan/road-trip/road-trip.component';
-import { CommunityTripDetailsComponent } from 'src/app/features/community/community-trip-details/community-trip-details.component';
 
 export const ROUTES: Routes = [
   {

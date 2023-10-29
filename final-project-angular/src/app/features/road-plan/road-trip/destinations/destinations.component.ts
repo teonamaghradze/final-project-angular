@@ -1,9 +1,7 @@
 import {
   Component,
-  Input,
   Output,
   EventEmitter,
-  OnInit,
   ViewChild,
   ElementRef,
   NgZone,
@@ -19,7 +17,7 @@ import { PlaceSearchResult } from './interfaces/placeSearchResult.interface';
   selector: 'app-destinations',
   standalone: true,
   imports: [CommonModule, MatFormFieldModule, MatInputModule],
-  template: `<input #inputField placeholder="Enter a location" />`,
+  template: `<input #inputField />`,
   styles: [
     `
       input {
@@ -31,17 +29,13 @@ import { PlaceSearchResult } from './interfaces/placeSearchResult.interface';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class DestinationsComponent implements OnInit {
+export class DestinationsComponent {
   @ViewChild('inputField') inputField!: ElementRef;
-  @Input() placeholder: string = '';
+  @Output() placeChanged = new EventEmitter<PlaceSearchResult>();
 
   autocomplete: google.maps.places.Autocomplete | undefined;
 
-  @Output() placeChanged = new EventEmitter<PlaceSearchResult>();
-
   constructor(private ngZone: NgZone, private cdr: ChangeDetectorRef) {}
-
-  ngOnInit(): void {}
 
   ngAfterViewInit() {
     this.autocomplete = new google.maps.places.Autocomplete(
@@ -55,7 +49,7 @@ export class DestinationsComponent implements OnInit {
         address: this.inputField.nativeElement.value,
         name: place?.name,
         location: place?.geometry?.location,
-        imageUrl: this.getPhotoIrl(place),
+        imageUrl: this.getPhotoUrl(place),
         iconUrl: place?.icon,
       };
 
@@ -66,7 +60,7 @@ export class DestinationsComponent implements OnInit {
     });
   }
 
-  getPhotoIrl(
+  getPhotoUrl(
     place: google.maps.places.PlaceResult | undefined
   ): string | undefined {
     return place?.photos && place.photos.length > 0

@@ -341,6 +341,15 @@
       "phoneNumber": "+995555281155",
       "agreement": true,
       "id": 38
+    },
+    {
+      "email": "a@gmailcom",
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "nickname": "12",
+      "phoneNumber": "+995555545454",
+      "agreement": true,
+      "id": 39
     }
   ]
 }

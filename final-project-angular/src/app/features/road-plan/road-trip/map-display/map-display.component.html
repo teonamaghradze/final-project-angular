@@ -1,3 +1,7 @@
+<div *ngIf="directionsResult">
+  <p>Estimated Travel Time: {{ getEstimatedTravelTime() }}</p>
+</div>
+
 <google-map #map width="100%" height="100%" [zoom]="zoom">
   <map-directions-renderer
     *ngIf="directionsResult"

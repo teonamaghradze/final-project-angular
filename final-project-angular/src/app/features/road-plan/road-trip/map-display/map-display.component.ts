@@ -12,8 +12,16 @@ import { map } from 'rxjs';
   selector: 'app-map-display',
   standalone: true,
   imports: [CommonModule, GoogleMapsModule],
-
   templateUrl: './map-display.component.html',
+  styles: [
+    `
+      p {
+        font-size: 18px;
+        color: red;
+        font-weight: bold;
+      }
+    `,
+  ],
 })
 export class MapDisplayComponent {
   @Input() from: PlaceSearchResult | undefined;
@@ -57,8 +65,18 @@ export class MapDisplayComponent {
       .pipe(map((res) => res.result))
       .subscribe((result) => {
         this.directionsResult = result;
-        console.log(result);
         this.markerPosition = undefined;
       });
+  }
+
+  getEstimatedTravelTime(): string {
+    if (this.directionsResult) {
+      const route = this.directionsResult.routes[0];
+      if (route && route.legs && route.legs.length > 0) {
+        const leg = route.legs[0];
+        return leg.duration?.text ?? 'N/A';
+      }
+    }
+    return 'N/A';
   }
 }
